@@ -13,6 +13,7 @@ public class FFApiActions {
 	public static final String	IMPORT				= "Import.ff";
 	public static final String	SEARCH				= "Search.ff";
 	public static final String	PRODUCT_CAMPAIGN	= "ProductCampaign.ff";
+	public static final String	DATABASE_EXPIRATION	= "DatabaseExpiration.ff";
 
 	private FFApiActions() {
 	}

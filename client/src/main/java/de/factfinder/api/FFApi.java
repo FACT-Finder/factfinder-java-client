@@ -27,6 +27,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import de.factfinder.api.utils.FFApiHelper;
 import de.factfinder.ffcompare.FFCompare;
+import de.factfinder.ffdatabaseexpiration.FFDatabaseExpiration;
 import de.factfinder.ffimport.FFImport;
 import de.factfinder.ffproductcampaigns.FFProductCampaign;
 import de.factfinder.ffrecommender.FFRecommender;
@@ -458,6 +459,31 @@ public class FFApi {
 		ids.forEach(id -> addIfNotNull(additionalProps, "productNumber", id));
 		addIfNotNull(additionalProps, IDS_ONLY, idsOnly);
 		return sendRequestAndDeserialize(FFApiActions.PRODUCT_CAMPAIGN, additionalProps, new TypeReference<List<FFProductCampaign>>() {});
+	}
+
+	/**
+	 * @return results if the databases are up-to-date.
+	 */
+	public FFDatabaseExpiration getDatabaseExpiration() {
+		return sendRequestAndDeserialize(FFApiActions.DATABASE_EXPIRATION, new ArrayListValuedHashMap<>(), new TypeReference<FFDatabaseExpiration>() {});
+	}
+
+	/**
+	 * @param channel the channel
+	 * @return results if the database is up-to-date.
+	 */
+	public FFDatabaseExpiration getDatabaseExpiration(final String channel) {
+		return getDatabaseExpiration(channel, null);
+	}
+
+	/**
+	 * @param channel the channel
+	 * @param customParameters parameters which will be added additional to the request url
+	 * @return results if the database is up-to-date.
+	 */
+	public FFDatabaseExpiration getDatabaseExpiration(final String channel, final List<CustomParameter> customParameters) {
+		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
+		return sendRequestAndDeserialize(FFApiActions.DATABASE_EXPIRATION, additionalProps, new TypeReference<FFDatabaseExpiration>() {});
 	}
 
 	private MultiValuedMap<String, String> getMapWithChannelAndCustomParams(final String channel, final List<CustomParameter> customParameters) {
