@@ -8,6 +8,10 @@ import org.apache.logging.log4j.Logger;
 import de.factfinder.api.FFApi;
 import de.factfinder.fftagcloud.FFTagCloud;
 
+/**
+ * This class demonstrates the usage of the FACT-Finder JSON API for requesting the tag cloud.
+ *
+ */
 public class RunnerTagCloud {
 	private static final Logger	LOG	= LogManager.getLogger(RunnerTagCloud.class.getSimpleName());
 

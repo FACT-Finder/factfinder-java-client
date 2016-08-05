@@ -6,6 +6,10 @@ import org.apache.logging.log4j.Logger;
 import de.factfinder.api.FFApi;
 import de.factfinder.ffdatabaseexpiration.FFDatabaseExpiration;
 
+/**
+ * This class demonstrates the usage of the FACT-Finder JSON API to check if the channel resources are up-to-date.
+ *
+ */
 public class RunnerDatabaseExpiration {
 	private static final Logger	LOG	= LogManager.getLogger(RunnerDatabaseExpiration.class.getSimpleName());
 
@@ -18,6 +22,5 @@ public class RunnerDatabaseExpiration {
 			LOG.info("Channel: " + channel);
 			result.get(channel).forEach(message -> LOG.info("\t" + message));
 		}
-
 	}
 }

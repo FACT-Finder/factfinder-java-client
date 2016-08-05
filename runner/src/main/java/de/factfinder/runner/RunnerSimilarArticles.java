@@ -8,6 +8,10 @@ import de.factfinder.ffsimilarrecords.FFSimilarRecords;
 import de.factfinder.ffsimilarrecords.SimilarityRecord;
 import de.factfinder.runner.print.SearchResultInformationPrinter;
 
+/**
+ * This class demonstrates the usage of the FACT-Finder JSON API to get similar products.
+ *
+ */
 public class RunnerSimilarArticles {
 	private static final Logger	LOG		= LogManager.getLogger(RunnerSimilarArticles.class.getCanonicalName());
 	private static final String	CHANNEL	= Settings.getChannel();

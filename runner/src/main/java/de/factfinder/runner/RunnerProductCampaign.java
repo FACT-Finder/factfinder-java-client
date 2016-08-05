@@ -11,6 +11,10 @@ import de.factfinder.ffproductcampaigns.FFProductCampaign;
 import de.factfinder.runner.print.CampaignInformationPrinter;
 import de.factfinder.runner.print.SearchResultInformationPrinter;
 
+/**
+ * This class demonstrates the usage of the FACT-Finder JSON API to check for product campaigns.
+ *
+ */
 public final class RunnerProductCampaign {
 	private static final String			CHANNEL								= Settings.getChannel();
 	private static final String			PRODUCT_NUMBER						= "025-0004";

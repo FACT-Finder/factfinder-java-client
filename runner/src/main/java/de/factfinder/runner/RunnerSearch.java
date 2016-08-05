@@ -12,7 +12,10 @@ import de.factfinder.ffsuggest.FFSuggest;
 import de.factfinder.ffsuggest.Suggestion;
 import de.factfinder.runner.print.SearchResultInformationPrinter;
 
-
+/**
+ * This class demonstrates the usage of the FACT-Finder JSON API for search and suggest results.
+ *
+ */
 public class RunnerSearch {
 	private static final Logger	LOG	= LogManager.getLogger(RunnerSearch.class.getSimpleName());
 
@@ -89,7 +92,6 @@ public class RunnerSearch {
 	 * @param proxy The service instance.
 	 * @param searchParams The search parameters.
 	 * @param searchControlParams the search control parameters.
-	 * @throws RemoteException If the request fails.
 	 */
 	private static void printSuggestEntries(final FFApi api, final SearchParams searchParams, final SearchControlParams searchControlParams) {
 		// Iterate over the suggest search terms

@@ -8,12 +8,16 @@ import org.apache.logging.log4j.Logger;
 
 import de.factfinder.api.FFApi;
 import de.factfinder.ffcompare.Attribute;
-import de.factfinder.ffcompare.FFCompare;
 import de.factfinder.ffcompare.CompareRecord;
+import de.factfinder.ffcompare.FFCompare;
 import de.factfinder.runner.print.SearchResultInformationPrinter;
 
+/**
+ * This class demonstrates the usage of the FACT-Finder JSON API to compare products.
+ *
+ */
 public class RunnerProductCompare {
-	private static final Logger LOG = LogManager.getLogger(RunnerProductCompare.class.getSimpleName());
+	private static final Logger	LOG	= LogManager.getLogger(RunnerProductCompare.class.getSimpleName());
 
 	public static void main(final String[] args) {
 		final FFApi api = new FFApi(Settings.getEndpointUrl(), Settings.getAuthentication());
