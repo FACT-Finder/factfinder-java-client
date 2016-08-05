@@ -1,0 +1,225 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "advisorTree",
+      "category",
+      "name",
+      "activeQuestions",
+      "target",
+      "pushedProductsRecords",
+      "flavour",
+      "feedbackTexts"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "advisorTree": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "text",
+            "visible",
+            "answers"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            },
+            "visible": {
+              "type": "boolean"
+            },
+            "answers": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/answer"
+              }
+            }
+          }
+        }
+      },
+      "category": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "activeQuestions": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/question"
+        }
+      },
+      "target": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "destination"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "destination": {
+            "type": "string"
+          }
+        }
+      },
+      "pushedProductsRecords": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "record",
+            "simiMalusAdd",
+            "simiMalusMul",
+            "foundWords",
+            "keywords",
+            "position",
+            "searchSimilarity"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "record": {
+              "type": "object"
+            },
+            "simiMalusAdd": {
+              "type": "integer"
+            },
+            "simiMalusMul": {
+              "type": "number"
+            },
+            "foundWords": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "keywords": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "position": {
+              "type": "integer"
+            },
+            "searchSimilarity": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "flavour": {
+        "enum": ["ADVISOR", "REDIRECT", "FEEDBACK"]
+      },
+      "feedbackTexts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "text",
+            "label",
+            "html"
+          ],
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "text": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "html": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "answer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "text",
+        "params"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "params": {
+          "type": "string"
+        },
+        "questions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/question"
+          }
+        }
+      }
+    },
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "text",
+        "visible",
+        "answers"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "answers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/answer"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,842 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "searchResult"
+  ],
+  "properties": {
+    "searchResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "breadCrumbTrailItems",
+        "simiLastRecord",
+        "searchParams",
+        "resultCount",
+        "campaigns",
+        "resultStatus",
+        "simiFirstRecord",
+        "refKey",
+        "resultsPerPageList",
+        "timedOut",
+        "sortsList",
+        "singleWordResults",
+        "searchTime",
+        "records",
+        "channel",
+        "filters",
+        "groups",
+        "paging",
+        "searchControlParams",
+        "resultArticleNumberStatus"
+      ],
+      "properties": {
+        "breadCrumbTrailItems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "text",
+              "searchParams",
+              "value",
+              "associatedFieldName",
+              "type"
+            ],
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "searchParams": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              },
+              "associatedFieldName": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "type": {
+                "enum": ["search", "filter", "advisor", "unspecified"]
+              }
+            }
+          }
+        },
+        "simiLastRecord": {
+          "type": "integer"
+        },
+        "searchParams": {
+          "type": "string"
+        },
+        "resultCount": {
+          "type": "integer"
+        },
+        "campaigns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "advisorTree",
+              "category",
+              "name",
+              "activeQuestions",
+              "target",
+              "pushedProductsRecords",
+              "flavour",
+              "feedbackTexts"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "advisorTree": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "text",
+                    "visible",
+                    "answers"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "visible": {
+                      "type": "boolean"
+                    },
+                    "answers": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/answer"
+                      }
+                    }
+                  }
+                }
+              },
+              "category": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "activeQuestions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/question"
+                }
+              },
+              "target": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "name",
+                  "destination"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "destination": {
+                    "type": "string"
+                  }
+                }
+              },
+              "pushedProductsRecords": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "record",
+                    "simiMalusAdd"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "record": {
+                      "$ref": "#/definitions/record"
+                    },
+                    "simiMalusAdd": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              },
+              "flavour": {
+                "type": "string"
+              },
+              "feedbackTexts": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "text",
+                    "label",
+                    "html"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "html": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "resultStatus": {
+          "enum": [
+            "resultsFound",
+            "nothingFound",
+            "errorOccured"
+          ]
+        },
+        "simiFirstRecord": {
+          "type": "integer"
+        },
+        "refKey": {
+          "type": "string"
+        },
+        "resultsPerPageList": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "selected",
+              "default",
+              "searchParams",
+              "value"
+            ],
+            "properties": {
+              "selected": {
+                "type": "boolean"
+              },
+              "default": {
+                "type": "boolean"
+              },
+              "searchParams": {
+                "type": "string"
+              },
+              "value": {
+                "type": "integer"
+              }
+            }
+          }
+        },
+        "timedOut": {
+          "type": "boolean"
+        },
+        "sortsList": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "selected",
+              "order",
+              "searchParams",
+              "description",
+              "name"
+            ],
+            "properties": {
+              "selected": {
+                "type": "boolean"
+              },
+              "order": {
+                "enum": [
+                  "asc",
+                  "desc"
+                ]
+              },
+              "searchParams": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "singleWordResults": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "recordCount",
+              "searchParams",
+              "previewRecords",
+              "word"
+            ],
+            "properties": {
+              "recordCount": {
+                "type": "integer"
+              },
+              "searchParams": {
+                "type": "string"
+              },
+              "previewRecords": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "searchSimilarity",
+                    "position",
+                    "id",
+                    "record",
+                    "keywords",
+                    "foundWords",
+                    "simiMalusAdd"
+                  ],
+                  "properties": {
+                    "searchSimilarity": {
+                      "type": "number"
+                    },
+                    "position": {
+                      "type": "integer"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "record": {
+                      "$ref": "#/definitions/record"
+                    },
+                    "keywords": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "foundWords": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "simiMalusAdd": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              },
+              "word": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "searchTime": {
+          "type": "integer"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "searchSimilarity",
+              "position",
+              "id",
+              "record",
+              "keywords",
+              "foundWords",
+              "simiMalusAdd"
+            ],
+            "properties": {
+              "searchSimilarity": {
+                "type": "number"
+              },
+              "position": {
+                "type": "integer"
+              },
+              "id": {
+                "type": "string"
+              },
+              "record": {
+                "$ref": "#/definitions/record"
+              },
+              "keywords": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "foundWords": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "simiMalusAdd": {
+                "type": "integer"
+              }
+            }
+          }
+        },
+        "channel": {
+          "type": "string"
+        },
+        "filters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "substring": {
+                "type": "boolean"
+              },
+              "name": {
+                "type": "string"
+              },
+              "valueList": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "value",
+                    "exclude",
+                    "type"
+                  ],
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    },
+                    "exclude": {
+                      "type": "boolean"
+                    },
+                    "type": {
+                      "enum": [
+                        "and",
+                        "or"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "selectedElements",
+              "unit",
+              "name",
+              "groupOrder",
+              "detailedLinks",
+              "filterStyle",
+              "type",
+              "elements",
+              "showPreviewImages",
+              "selectionType"
+            ],
+            "properties": {
+              "selectedElements": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/element"
+                }
+              },
+              "unit": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "groupOrder": {
+                "type": "integer"
+              },
+              "detailedLinks": {
+                "type": "integer"
+              },
+              "filterStyle": {
+                "enum": [
+                  "DEFAULT",
+                  "SLIDER",
+                  "MULTISELECT",
+                  "TREE"
+                ]
+              },
+              "type": {
+                "enum": [
+                  "number",
+                  "multi",
+                  "text",
+                  "categoryPath"
+                ]
+              },
+              "elements": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/element"
+                }
+              },
+              "showPreviewImages": {
+                "type": "boolean"
+              },
+              "selectionType": {
+                "enum": [
+                  "singleHideUnselected",
+                  "singleShowUnselected",
+                  "multiSelectOr",
+                  "multiSelectAnd"
+                ]
+              }
+            }
+          }
+        },
+        "paging": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "pageCount",
+            "pageLinks",
+            "previousLink",
+            "firstLink",
+            "resultsPerPage",
+            "lastLink",
+            "currentPage",
+            "nextLink"
+          ],
+          "properties": {
+            "pageCount": {
+              "type": "integer"
+            },
+            "pageLinks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "searchResult",
+                  "number",
+                  "caption",
+                  "currentPage"
+                ],
+                "properties": {
+                  "searchParams": {
+                    "type": "string"
+                  },
+                  "number": {
+                    "type": "integer"
+                  },
+                  "caption": {
+                    "type": "string"
+                  },
+                  "currentPage": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            },
+            "previousLink": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": false,
+              "required": [
+                "searchParams",
+                "number",
+                "caption",
+                "currentPage"
+              ],
+              "properties": {
+                "searchParams": {
+                  "type": "string"
+                },
+                "number": {
+                  "type": "integer"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "currentPage": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "firstLink": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": false,
+              "required": [
+                "searchParams",
+                "number",
+                "caption",
+                "currentPage"
+              ],
+              "properties": {
+                "searchParams": {
+                  "type": "string"
+                },
+                "number": {
+                  "type": "integer"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "currentPage": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "resultsPerPage": {
+              "type": "integer"
+            },
+            "lastLink": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": false,
+              "required": [
+                "searchParams",
+                "number",
+                "caption",
+                "currentPage"
+              ],
+              "properties": {
+                "searchParams": {
+                  "type": "string"
+                },
+                "number": {
+                  "type": "integer"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "currentPage": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "currentPage": {
+              "type": "integer"
+            },
+            "nextLink": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": false,
+              "required": [
+                "searchParams",
+                "number",
+                "caption",
+                "currentPage"
+              ],
+              "properties": {
+                "searchParams": {
+                  "type": "string"
+                },
+                "number": {
+                  "type": "integer"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "currentPage": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "searchControlParams": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "useKeywords",
+            "disableCache",
+            "useAsn",
+            "generateAdvisorTree",
+            "idsOnly",
+            "useFoundWords",
+            "useCampaigns"
+          ],
+          "properties": {
+            "useKeywords": {
+              "type": "boolean"
+            },
+            "disableCache": {
+              "type": "boolean"
+            },
+            "useAsn": {
+              "type": "boolean"
+            },
+            "generateAdvisorTree": {
+              "type": "boolean"
+            },
+            "idsOnly": {
+              "type": "boolean"
+            },
+            "useFoundWords": {
+              "type": "boolean"
+            },
+            "useCampaigns": {
+              "type": "boolean"
+            }
+          }
+        },
+        "resultArticleNumberStatus": {
+          "enum": [
+            "noArticleNumberSearch",
+            "nothingFound",
+            "resultsFound"
+          ]
+        }
+      }
+    }
+  },
+  "definitions": {
+    "answer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "text",
+        "params"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "params": {
+          "type": "string"
+        },
+        "questions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/question"
+          }
+        }
+      }
+    },
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "text",
+        "visible",
+        "answers"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "answers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/answer"
+          }
+        }
+      }
+    },
+    "record": {
+      "type": "object"
+    },
+    "element": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordCount",
+        "previewImageURL",
+        "clusterLevel",
+        "selected",
+        "searchParams",
+        "name",
+        "associatedFieldName"
+      ],
+      "properties": {
+        "recordCount": {
+          "type": "integer"
+        },
+        "previewImageURL": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "clusterLevel": {
+          "type": "integer"
+        },
+        "selected": {
+          "type": "boolean"
+        },
+        "searchParams": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "associatedFieldName": {
+          "type": "string"
+        },
+        "absoluteMinValue": {
+          "type": "integer"
+        },
+        "absoluteMaxValue": {
+          "type": "integer"
+        },
+        "selectedMinValue": {
+          "type": "integer"
+        },
+        "selectedMaxValue": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

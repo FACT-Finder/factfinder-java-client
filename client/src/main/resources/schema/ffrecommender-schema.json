@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "timedOut",
+    "resultRecords"
+  ],
+  "properties": {
+    "resultRecords": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "record"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "record": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "timedOut": {
+      "type": "boolean"
+    }
+  }
+}

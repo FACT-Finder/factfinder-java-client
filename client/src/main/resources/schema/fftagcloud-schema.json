@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "weight",
+      "query",
+      "searchCount",
+      "params"
+    ],
+    "properties": {
+      "weight": {
+        "type": "number"
+      },
+      "query": {
+        "type": "string"
+      },
+      "searchCount": {
+        "type": "integer"
+      },
+      "params": {
+        "type": "string"
+      }
+    }
+  }
+}
