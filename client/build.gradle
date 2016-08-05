@@ -1,0 +1,66 @@
+import com.sun.codemodel.JCodeModel
+import org.jsonschema2pojo.*
+import org.jsonschema2pojo.rules.RuleFactory
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies.classpath 'org.jsonschema2pojo:jsonschema2pojo-core:0.4.24'
+}
+
+ext {
+    schemaFiles = file("${sourceSets.main.resources.srcDirs[0]}/schema") ;
+    fileNameToClassName = [
+            'fftagcloud-schema.json'          : 'FFTagCloud',
+            'ffresult-schema.json'            : 'FFResult',
+            'ffcompare-schema.json'           : 'FFCompare',
+            'ffdatabaseexpiration-schema.json': 'FFDatabaseExpiration',
+            'ffimport-schema.json'            : 'FFImport',
+            'ffproductcampaigns-schema.json'  : 'FFProductCampaigns',
+            'ffrecommender-schema.json'       : 'FFRecommender',
+            'ffsuggest-schema.json'           : 'FFSuggest',
+            'ffsimilarrecords-schema.json'    : 'FFSimilarRecords'
+    ]
+    thePackage = 'de.factfinder';
+    outputDir = sourceSets.main.java.srcDirs[0];
+    generationConfig = new DefaultGenerationConfig() {
+        @Override
+        public boolean isIncludeHashcodeAndEquals() { return true; }
+
+        @Override
+        public boolean isIncludeToString() { return true; }
+
+        @Override
+        public boolean isUseCommonsLang3() { return true; }
+    };
+}
+
+task generateFFJavaClient << {
+    JCodeModel codeModel = new JCodeModel();
+
+    project.schemaFiles.eachFile { schemaFile ->
+        URL source = schemaFile.toURI().toURL();
+        SchemaMapper mapper = new SchemaMapper(new RuleFactory(project.generationConfig, new Jackson2Annotator(), new SchemaStore()), new SchemaGenerator());
+        if (!project.fileNameToClassName.containsKey(schemaFile.name)) {
+            throw new GradleException("Could not find classname for file ${schemaFile.name}");
+        }
+        def className = project.fileNameToClassName[schemaFile.name];
+        mapper.generate(codeModel, className, "${thePackage}.${className.toLowerCase()}", source);
+    }
+    project.outputDir.mkdirs();
+    codeModel.build(project.outputDir);
+
+}
+
+dependencies {
+    def jacksonVersion = '2.8.1'
+    compile 'com.fasterxml.jackson.core:jackson-core:' + jacksonVersion
+    compile 'com.fasterxml.jackson.core:jackson-annotations:' + jacksonVersion
+    compile 'com.fasterxml.jackson.core:jackson-databind:' + jacksonVersion
+    compile 'org.apache.commons:commons-lang3:3.4'
+    compile 'org.apache.commons:commons-collections4:4.1'
+    compile 'org.apache.httpcomponents:httpclient:4.5.2'
+    compile 'commons-validator:commons-validator:1.3.1'
+    compile 'oro:oro:2.0.8'
+}

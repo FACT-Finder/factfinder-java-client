@@ -1,0 +1,13 @@
+# ignore eclipse project files
+.settings/
+target/
+*.classpath
+*.project
+
+# ignore intellij idea project files
+.idea/
+*.iml
+
+# ignore gradle files
+.gradle
+build/
