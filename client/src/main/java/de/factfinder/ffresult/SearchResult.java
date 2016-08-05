@@ -138,7 +138,7 @@ public class SearchResult {
      * 
      */
     @JsonProperty("records")
-    private List<Record_> records = new ArrayList<Record_>();
+    private List<ResultRecord> records = new ArrayList<ResultRecord>();
     /**
      * 
      * (Required)
@@ -502,7 +502,7 @@ public class SearchResult {
      *     The records
      */
     @JsonProperty("records")
-    public List<Record_> getRecords() {
+    public List<ResultRecord> getRecords() {
         return records;
     }
 
@@ -514,7 +514,7 @@ public class SearchResult {
      *     The records
      */
     @JsonProperty("records")
-    public void setRecords(List<Record_> records) {
+    public void setRecords(List<ResultRecord> records) {
         this.records = records;
     }
 

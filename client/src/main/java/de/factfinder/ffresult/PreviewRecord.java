@@ -7,6 +7,8 @@ import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import de.factfinder.api.Record;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -30,7 +32,7 @@ public class PreviewRecord {
      * 
      */
     @JsonProperty("searchSimilarity")
-    private Double searchSimilarity;
+    private Double  searchSimilarity;
     /**
      * 
      * (Required)
@@ -44,14 +46,14 @@ public class PreviewRecord {
      * 
      */
     @JsonProperty("id")
-    private String id;
+    private String  id;
     /**
      * 
      * (Required)
      * 
      */
     @JsonProperty("record")
-    private Record record;
+    private Record  record;
     /**
      * 
      * (Required)

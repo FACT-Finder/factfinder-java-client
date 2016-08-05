@@ -1,5 +1,5 @@
 
-package de.factfinder.ffcompare;
+package de.factfinder.ffsimilarrecords;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,8 @@ import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import de.factfinder.api.Record;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -20,7 +22,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
     "simiMalusMul",
     "fieldNames"
 })
-public class Record {
+public class SimilarityRecord {
 
     /**
      * 
@@ -28,14 +30,14 @@ public class Record {
      * 
      */
     @JsonProperty("id")
-    private String id;
+    private String  id;
     /**
      * 
      * (Required)
      * 
      */
     @JsonProperty("record")
-    private Record_ record;
+    private Record  record;
     /**
      * 
      * (Required)
@@ -49,7 +51,7 @@ public class Record {
      * 
      */
     @JsonProperty("simiMalusMul")
-    private Double simiMalusMul;
+    private Double  simiMalusMul;
     /**
      * 
      * (Required)
@@ -90,7 +92,7 @@ public class Record {
      *     The record
      */
     @JsonProperty("record")
-    public Record_ getRecord() {
+    public Record getRecord() {
         return record;
     }
 
@@ -102,7 +104,7 @@ public class Record {
      *     The record
      */
     @JsonProperty("record")
-    public void setRecord(Record_ record) {
+    public void setRecord(Record record) {
         this.record = record;
     }
 
@@ -193,10 +195,10 @@ public class Record {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Record) == false) {
+        if ((other instanceof SimilarityRecord) == false) {
             return false;
         }
-        Record rhs = ((Record) other);
+        SimilarityRecord rhs = ((SimilarityRecord) other);
         return new EqualsBuilder().append(id, rhs.id).append(record, rhs.record).append(respectContentDelimiters, rhs.respectContentDelimiters).append(simiMalusMul, rhs.simiMalusMul).append(fieldNames, rhs.fieldNames).isEquals();
     }
 

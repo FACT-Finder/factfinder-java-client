@@ -7,6 +7,8 @@ import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import de.factfinder.api.Record;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -22,7 +24,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
     "foundWords",
     "simiMalusAdd"
 })
-public class Record_ {
+public class ResultRecord {
 
     /**
      * 
@@ -30,7 +32,7 @@ public class Record_ {
      * 
      */
     @JsonProperty("searchSimilarity")
-    private Double searchSimilarity;
+    private Double  searchSimilarity;
     /**
      * 
      * (Required)
@@ -44,14 +46,14 @@ public class Record_ {
      * 
      */
     @JsonProperty("id")
-    private String id;
+    private String  id;
     /**
      * 
      * (Required)
      * 
      */
     @JsonProperty("record")
-    private Record record;
+    private Record  record;
     /**
      * 
      * (Required)
@@ -257,10 +259,10 @@ public class Record_ {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Record_) == false) {
+        if ((other instanceof ResultRecord) == false) {
             return false;
         }
-        Record_ rhs = ((Record_) other);
+        ResultRecord rhs = ((ResultRecord) other);
         return new EqualsBuilder().append(searchSimilarity, rhs.searchSimilarity).append(position, rhs.position).append(id, rhs.id).append(record, rhs.record).append(keywords, rhs.keywords).append(foundWords, rhs.foundWords).append(simiMalusAdd, rhs.simiMalusAdd).isEquals();
     }
 

@@ -25,14 +25,14 @@ public class FFSimilarRecords {
      * 
      */
     @JsonProperty("attributes")
-    private List<Attribute> attributes = new ArrayList<Attribute>();
+    private List<Attribute>        attributes = new ArrayList<Attribute>();
     /**
      * 
      * (Required)
      * 
      */
     @JsonProperty("records")
-    private List<Record> records = new ArrayList<Record>();
+    private List<SimilarityRecord> records    = new ArrayList<SimilarityRecord>();
 
     /**
      * 
@@ -66,7 +66,7 @@ public class FFSimilarRecords {
      *     The records
      */
     @JsonProperty("records")
-    public List<Record> getRecords() {
+    public List<SimilarityRecord> getRecords() {
         return records;
     }
 
@@ -78,7 +78,7 @@ public class FFSimilarRecords {
      *     The records
      */
     @JsonProperty("records")
-    public void setRecords(List<Record> records) {
+    public void setRecords(List<SimilarityRecord> records) {
         this.records = records;
     }
 

@@ -25,14 +25,14 @@ public class FFCompare {
      * 
      */
     @JsonProperty("attributes")
-    private List<Attribute> attributes = new ArrayList<Attribute>();
+    private List<Attribute>     attributes = new ArrayList<Attribute>();
     /**
      * 
      * (Required)
      * 
      */
     @JsonProperty("records")
-    private List<Record> records = new ArrayList<Record>();
+    private List<CompareRecord> records    = new ArrayList<CompareRecord>();
 
     /**
      * 
@@ -66,7 +66,7 @@ public class FFCompare {
      *     The records
      */
     @JsonProperty("records")
-    public List<Record> getRecords() {
+    public List<CompareRecord> getRecords() {
         return records;
     }
 
@@ -78,7 +78,7 @@ public class FFCompare {
      *     The records
      */
     @JsonProperty("records")
-    public void setRecords(List<Record> records) {
+    public void setRecords(List<CompareRecord> records) {
         this.records = records;
     }
 
