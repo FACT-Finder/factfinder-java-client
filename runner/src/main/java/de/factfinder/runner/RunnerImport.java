@@ -10,9 +10,12 @@ import de.factfinder.ffimport.FFImport;
  * This class demonstrates the usage of the FACT-Finder JSON API to externally trigger product data and suggest imports.
  *
  */
-public class RunnerImport {
+public final class RunnerImport {
 	private static final Logger	LOG		= LogManager.getLogger(RunnerImport.class.getSimpleName());
 	private static final String	CHANNEL	= Settings.getChannel();
+
+	private RunnerImport() {
+	}
 
 	public static void main(final String[] args) {
 		final FFApi api = new FFApi(Settings.getEndpointUrl(), Settings.getAuthentication());

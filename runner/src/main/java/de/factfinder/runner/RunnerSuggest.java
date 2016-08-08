@@ -14,12 +14,16 @@ import de.factfinder.ffsuggest.Suggestion;
  * This class demonstrates the usage of the FACT-Finder JSON API for suggest results.
  *
  */
-public class RunnerSuggest {
+public final class RunnerSuggest {
 	private static final Logger	LOG	= LogManager.getLogger(RunnerSuggest.class.getSimpleName());
+
+	private RunnerSuggest() {
+	}
 
 	public static void main(final String[] args) {
 		final FFApi api = new FFApi(Settings.getEndpointUrl(), Settings.getAuthentication());
 
+		// the search terms are examples for different inputs into the search box
 		final List<String> searchTerms = Arrays.asList("sh", "sho", "shoe", "shoes");
 
 		for (final String searchTerm : searchTerms) {
@@ -31,8 +35,7 @@ public class RunnerSuggest {
 	private static void printSuggestions(final FFSuggest suggest, final String searchTerm) {
 		LOG.info("Found " + suggest.getSuggestions().size() + " suggest entries for search term [" + searchTerm + ']');
 		for (final Suggestion suggestion : suggest.getSuggestions()) {
-			// By default the list is limited to 10 entries. This value can be configured by Omikron.
-			LOG.info("search term=[" + suggestion.getName() + "], type=[" + suggestion.getType() + "], hit count=" + suggestion.getHitCount());
+			LOG.info("\tsearch term=[" + suggestion.getName() + "], type=[" + suggestion.getType() + "], hit count=" + suggestion.getHitCount());
 		}
 	}
 }

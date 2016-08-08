@@ -10,8 +10,11 @@ import de.factfinder.ffdatabaseexpiration.FFDatabaseExpiration;
  * This class demonstrates the usage of the FACT-Finder JSON API to check if the channel resources are up-to-date.
  *
  */
-public class RunnerDatabaseExpiration {
+public final class RunnerDatabaseExpiration {
 	private static final Logger	LOG	= LogManager.getLogger(RunnerDatabaseExpiration.class.getSimpleName());
+
+	private RunnerDatabaseExpiration() {
+	}
 
 	public static void main(final String[] args) {
 		final FFApi api = new FFApi(Settings.getEndpointUrl(), Settings.getAuthentication());

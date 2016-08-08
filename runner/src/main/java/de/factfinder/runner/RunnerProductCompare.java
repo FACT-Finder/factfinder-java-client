@@ -16,8 +16,11 @@ import de.factfinder.runner.print.SearchResultInformationPrinter;
  * This class demonstrates the usage of the FACT-Finder JSON API to compare products.
  *
  */
-public class RunnerProductCompare {
+public final class RunnerProductCompare {
 	private static final Logger	LOG	= LogManager.getLogger(RunnerProductCompare.class.getSimpleName());
+
+	private RunnerProductCompare() {
+	}
 
 	public static void main(final String[] args) {
 		final FFApi api = new FFApi(Settings.getEndpointUrl(), Settings.getAuthentication());
@@ -32,7 +35,6 @@ public class RunnerProductCompare {
 		LOG.info("=== END PRODUCT COMPARISON (NORMAL) ===");
 
 		LOG.info("=== BEGIN PRODUCT COMPARISON (IDs ONLY)===");
-		// when requesting idsOnly, the records will be returned with its id and the field values of the compare attributes
 		cr = api.getComparedProducts(Settings.getChannel(), recordIds, true);
 		printCompareResult(srip, cr);
 		LOG.info("=== END PRODUCT COMPARISON (IDs ONLY) ===");
@@ -45,7 +47,7 @@ public class RunnerProductCompare {
 		}
 		LOG.info("---");
 		for (final CompareRecord rec : cr.getRecords()) {
-			srip.printRecord(rec, "");
+			srip.printCompareRecord(rec);
 		}
 	}
 }
