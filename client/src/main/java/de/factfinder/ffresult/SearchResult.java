@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonValue;
+import de.factfinder.ffproductcampaigns.FFProductCampaign;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -75,7 +77,7 @@ public class SearchResult {
      * 
      */
     @JsonProperty("campaigns")
-    private List<Campaign> campaigns = new ArrayList<Campaign>();
+    private List<FFProductCampaign> campaigns = new ArrayList<FFProductCampaign>();
     /**
      * 
      * (Required)
@@ -286,7 +288,7 @@ public class SearchResult {
      *     The campaigns
      */
     @JsonProperty("campaigns")
-    public List<Campaign> getCampaigns() {
+    public List<FFProductCampaign> getCampaigns() {
         return campaigns;
     }
 
@@ -298,7 +300,7 @@ public class SearchResult {
      *     The campaigns
      */
     @JsonProperty("campaigns")
-    public void setCampaigns(List<Campaign> campaigns) {
+    public void setCampaigns(List<FFProductCampaign> campaigns) {
         this.campaigns = campaigns;
     }
 
