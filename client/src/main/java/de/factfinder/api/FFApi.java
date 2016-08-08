@@ -489,6 +489,11 @@ public class FFApi {
 		return sendRequestAndDeserialize(FFApiActions.DATABASE_EXPIRATION, additionalProps, new TypeReference<FFDatabaseExpiration>() {});
 	}
 
+	public void track(final String channel, final MultiValuedMap<String, String> parameters) {
+		parameters.put("channel", channel);
+		sendRequest(FFApiActions.TRACKING, parameters);
+	}
+
 	private MultiValuedMap<String, String> getMapWithChannelAndCustomParams(final String channel, final List<CustomParameter> customParameters) {
 		Validate.notNull(channel, "The channel may not be null");
 		final MultiValuedMap<String, String> map = new ArrayListValuedHashMap<String, String>();
