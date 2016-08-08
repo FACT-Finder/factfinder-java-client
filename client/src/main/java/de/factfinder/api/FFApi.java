@@ -3,11 +3,14 @@ package de.factfinder.api;
 import static de.factfinder.api.utils.FFApiHelper.PROPERTY_CHANNEL;
 import static de.factfinder.api.utils.FFApiHelper.PROPERTY_DO;
 import static de.factfinder.api.utils.FFApiHelper.addIfNotNull;
+import static java.net.URLEncoder.encode;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -503,7 +506,6 @@ public class FFApi {
 			// Create connection
 
 			final URL url = getUrl(action, additionalGetParameters);
-			System.out.println(url);
 			connection = (HttpURLConnection) url.openConnection();
 			connection.setRequestMethod("GET");
 			connection.setRequestProperty("Content-Type", "application/json");
@@ -539,9 +541,13 @@ public class FFApi {
 	private URL getUrl(final String action, final MultiValuedMap<String, String> additionalGetParameters) {
 		final StringBuilder urlParameter = new StringBuilder("?format=json");
 		addIfNotNull(additionalGetParameters, "version", VERSION);
-
 		final Consumer<Map.Entry<String, String>> addToUrl = entry -> {
-			urlParameter.append("&").append(entry.getKey()).append("=").append(entry.getValue());
+			try {
+				urlParameter.append("&");
+				urlParameter.append(encode(entry.getKey(), UTF_8.name()));
+				urlParameter.append("=");
+				urlParameter.append(encode(entry.getValue(), UTF_8.name()));
+			} catch (final UnsupportedEncodingException e) {} // only when charset is invalid
 		};
 		additionalGetParameters.entries().forEach(addToUrl);
 		FFApiHelper.convertToParameters(authentication).entries().forEach(addToUrl);
