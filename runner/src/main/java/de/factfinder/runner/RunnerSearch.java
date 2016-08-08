@@ -13,7 +13,7 @@ import de.factfinder.ffsuggest.Suggestion;
 import de.factfinder.runner.print.SearchResultInformationPrinter;
 
 /**
- * This class demonstrates the usage of the FACT-Finder JSON API for search and suggest results.
+ * This class demonstrates the usage of the FACT-Finder JSON API for search results.
  *
  */
 public class RunnerSearch {
@@ -54,10 +54,6 @@ public class RunnerSearch {
 		searchInfoPrinter.printSearchParameters(params);
 		LOG.info("==== END SEARCH PARAMETERS SENT ====\n");
 
-		LOG.info("==== BEGIN SUGGEST ENTRIES ====");
-		printSuggestEntries(api, params, searchControlParams);
-		LOG.info("==== END SUGGEST ENTRIES ====");
-
 		if (result.getResultStatus() == SearchResult.ResultStatus.RESULTS_FOUND) {
 			// After searching the search parameters which weren't set before are initialized with default values. I.e. if you don't specify a channel, it
 			// will be set with the default channel. Which of your channels is the default channel can be configured by Omikron.
@@ -78,34 +74,6 @@ public class RunnerSearch {
 
 		} else {
 			LOG.info("An unknown error occurred while searching. Please check the logs of the search application.");
-		}
-	}
-
-	/**
-	 * Sends suggest requests and prints the suggested search terms.
-	 *
-	 * <p>
-	 * This method simulates a user typing in a search term. For each additional character a request is sent and the suggested search terms are printed. If the
-	 * search terms reads {@code ring}, this method sends requests for {@code r}, {@code ri}, {@code rin}, and {@code ring} to simulate user input.
-	 * </p>
-	 *
-	 * @param proxy The service instance.
-	 * @param searchParams The search parameters.
-	 * @param searchControlParams the search control parameters.
-	 */
-	private static void printSuggestEntries(final FFApi api, final SearchParams searchParams, final SearchControlParams searchControlParams) {
-		// Iterate over the suggest search terms
-		for (int i = 1; i <= searchParams.getQuery().length(); i++) {
-			// Create the partial search term
-			final String searchTerm = searchParams.getQuery().substring(0, i);
-
-			final FFSuggest suggestions = api.getSuggestions(searchParams.getChannel(), searchTerm);
-
-			LOG.info("Found " + suggestions.getSuggestions().size() + " suggest entries for search term [" + searchTerm + ']');
-			for (final Suggestion suggestion : suggestions.getSuggestions()) {
-				// By default the list is limited to 10 entries. This value can be configured by Omikron.
-				LOG.info("search term=[" + suggestion.getName() + "], type=[" + suggestion.getType() + "], hit count=" + suggestion.getHitCount());
-			}
 		}
 	}
 }
