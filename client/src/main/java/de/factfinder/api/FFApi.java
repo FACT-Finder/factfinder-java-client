@@ -517,7 +517,15 @@ public class FFApi {
 
 			return readInputStream(connection.getInputStream());
 		} catch (final Exception e) {
-			throw new RuntimeException("Could not send the request to fact finder.", e);
+			int statusCode = -1;
+			String response = null;
+			if (connection != null) {
+				try {
+					statusCode = connection.getResponseCode();
+					response = readInputStream(connection.getErrorStream());
+				} catch (final Exception ex) {}
+			}
+			throw new FFApiException(statusCode, response, e);
 		} finally {
 			if (connection != null) {
 				connection.disconnect();
@@ -526,6 +534,7 @@ public class FFApi {
 	}
 
 	private String readInputStream(final InputStream inputStream) throws IOException {
+		if (inputStream == null) return "";
 		final BufferedReader rd = new BufferedReader(new InputStreamReader(inputStream));
 		final StringBuilder response = new StringBuilder();
 		String line;

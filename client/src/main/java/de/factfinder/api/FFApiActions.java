@@ -3,7 +3,7 @@ package de.factfinder.api;
 /**
  * Contains the different action end points of the factfinder json api
  */
-public class FFApiActions {
+public final class FFApiActions {
 
 	public static final String	RECOMMENDER			= "Recommender.ff";
 	public static final String	SIMILAR_RECORDS		= "SimilarRecords.ff";

@@ -13,7 +13,7 @@ import de.factfinder.ffresult.ValueList;
 /**
  * Contains constants and helper methods.
  */
-public class FFApiHelper {
+public final class FFApiHelper {
 	public static final String	PROPERTY_DO							= "do";
 	public static final String	PROPERTY_CHANNEL					= "channel";
 	public static final String	SORT_PREFIX							= "sort";
