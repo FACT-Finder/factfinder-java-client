@@ -28,7 +28,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
     "flavour",
     "feedbackTexts"
 })
-public class FFProductCampaign {
+public class FFCampaign {
 
     /**
      * 
@@ -85,7 +85,7 @@ public class FFProductCampaign {
      * 
      */
     @JsonProperty("flavour")
-    private FFProductCampaign.Flavour flavour;
+    private FFCampaign.Flavour flavour;
     /**
      * 
      * (Required)
@@ -270,7 +270,7 @@ public class FFProductCampaign {
      *     The flavour
      */
     @JsonProperty("flavour")
-    public FFProductCampaign.Flavour getFlavour() {
+    public FFCampaign.Flavour getFlavour() {
         return flavour;
     }
 
@@ -282,7 +282,7 @@ public class FFProductCampaign {
      *     The flavour
      */
     @JsonProperty("flavour")
-    public void setFlavour(FFProductCampaign.Flavour flavour) {
+    public void setFlavour(FFCampaign.Flavour flavour) {
         this.flavour = flavour;
     }
 
@@ -325,10 +325,10 @@ public class FFProductCampaign {
         if (other == this) {
             return true;
         }
-        if ((other instanceof FFProductCampaign) == false) {
+        if ((other instanceof FFCampaign) == false) {
             return false;
         }
-        FFProductCampaign rhs = ((FFProductCampaign) other);
+        FFCampaign rhs = ((FFCampaign) other);
         return new EqualsBuilder().append(id, rhs.id).append(advisorTree, rhs.advisorTree).append(category, rhs.category).append(name, rhs.name).append(activeQuestions, rhs.activeQuestions).append(target, rhs.target).append(pushedProductsRecords, rhs.pushedProductsRecords).append(flavour, rhs.flavour).append(feedbackTexts, rhs.feedbackTexts).isEquals();
     }
 
@@ -339,10 +339,10 @@ public class FFProductCampaign {
         REDIRECT("REDIRECT"),
         FEEDBACK("FEEDBACK");
         private final String value;
-        private final static Map<String, FFProductCampaign.Flavour> CONSTANTS = new HashMap<String, FFProductCampaign.Flavour>();
+        private final static Map<String, FFCampaign.Flavour> CONSTANTS = new HashMap<String, FFCampaign.Flavour>();
 
         static {
-            for (FFProductCampaign.Flavour c: values()) {
+            for (FFCampaign.Flavour c: values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
@@ -358,8 +358,8 @@ public class FFProductCampaign {
         }
 
         @JsonCreator
-        public static FFProductCampaign.Flavour fromValue(String value) {
-            FFProductCampaign.Flavour constant = CONSTANTS.get(value);
+        public static FFCampaign.Flavour fromValue(String value) {
+            FFCampaign.Flavour constant = CONSTANTS.get(value);
             if (constant == null) {
                 throw new IllegalArgumentException(value);
             } else {

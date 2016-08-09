@@ -17,7 +17,7 @@ ext {
             'ffcompare-schema.json'           : 'FFCompare',
             'ffdatabaseexpiration-schema.json': 'FFDatabaseExpiration',
             'ffimport-schema.json'            : 'FFImport',
-            'ffproductcampaigns-schema.json'  : 'FFProductCampaigns',
+            'ffproductcampaigns-schema.json'  : 'FFCampaigns',
             'ffrecommender-schema.json'       : 'FFRecommender',
             'ffsuggest-schema.json'           : 'FFSuggest',
             'ffsimilarrecords-schema.json'    : 'FFSimilarRecords'

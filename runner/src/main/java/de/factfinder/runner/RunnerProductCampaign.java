@@ -7,7 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import de.factfinder.api.FFApi;
-import de.factfinder.ffproductcampaigns.FFProductCampaign;
+import de.factfinder.ffproductcampaigns.FFCampaign;
 import de.factfinder.runner.print.CampaignInformationPrinter;
 import de.factfinder.runner.print.SearchResultInformationPrinter;
 
@@ -38,13 +38,13 @@ public final class RunnerProductCampaign {
 
 	private static void printProductCampaigns(final CampaignInformationPrinter campaignInfoPrinter, final FFApi api) {
 		LOG.info("Product campaigns");
-		final List<FFProductCampaign> campaigns = api.getProductCampaigns(CHANNEL, PRODUCT_NUMBER, IDS_ONLY);
+		final List<FFCampaign> campaigns = api.getProductCampaigns(CHANNEL, PRODUCT_NUMBER, IDS_ONLY);
 		campaignInfoPrinter.printCampaigns(campaigns);
 	}
 
 	private static void printShoppingCartCampaigns(final CampaignInformationPrinter campaignInfoPrinter, final FFApi api) {
 		LOG.info("Shopping cart campaigns");
-		final List<FFProductCampaign> campaigns = api.getShoppingCartCampaigns(CHANNEL, SHOPPING_CART_PRODUCT_NUMBER_LIST, IDS_ONLY);
+		final List<FFCampaign> campaigns = api.getShoppingCartCampaigns(CHANNEL, SHOPPING_CART_PRODUCT_NUMBER_LIST, IDS_ONLY);
 		campaignInfoPrinter.printCampaigns(campaigns);
 	}
 

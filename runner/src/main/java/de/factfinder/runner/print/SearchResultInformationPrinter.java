@@ -9,7 +9,7 @@ import de.factfinder.api.Record;
 import de.factfinder.api.SearchParams;
 import de.factfinder.api.SortItem;
 import de.factfinder.ffcompare.CompareRecord;
-import de.factfinder.ffproductcampaigns.FFProductCampaign;
+import de.factfinder.ffproductcampaigns.FFCampaign;
 import de.factfinder.ffresult.Element;
 import de.factfinder.ffresult.Filter;
 import de.factfinder.ffresult.Group;
@@ -138,7 +138,7 @@ public final class SearchResultInformationPrinter {
 	}
 
 	private void printCampaigns(final SearchResult result) {
-		final List<FFProductCampaign> campaigns = result.getCampaigns();
+		final List<FFCampaign> campaigns = result.getCampaigns();
 		if (!campaigns.isEmpty()) {
 			final CampaignInformationPrinter cip = new CampaignInformationPrinter(this);
 			LOG.info("--- START CAMPAIGNS ---");

@@ -32,7 +32,7 @@ import de.factfinder.api.utils.FFApiHelper;
 import de.factfinder.ffcompare.FFCompare;
 import de.factfinder.ffdatabaseexpiration.FFDatabaseExpiration;
 import de.factfinder.ffimport.FFImport;
-import de.factfinder.ffproductcampaigns.FFProductCampaign;
+import de.factfinder.ffproductcampaigns.FFCampaign;
 import de.factfinder.ffrecommender.FFRecommender;
 import de.factfinder.ffresult.FFResult;
 import de.factfinder.ffresult.SearchControlParams;
@@ -385,7 +385,7 @@ public class FFApi {
 	 * @param id the product id
 	 * @return product campaigns
 	 */
-	public List<FFProductCampaign> getProductCampaigns(final String channel, final String id) {
+	public List<FFCampaign> getProductCampaigns(final String channel, final String id) {
 		return getProductCampaigns(channel, id, null);
 	}
 
@@ -397,7 +397,7 @@ public class FFApi {
 	 * @param idsOnly if true request only product ids
 	 * @return product campaigns
 	 */
-	public List<FFProductCampaign> getProductCampaigns(final String channel, final String id, final Boolean idsOnly) {
+	public List<FFCampaign> getProductCampaigns(final String channel, final String id, final Boolean idsOnly) {
 		return getProductCampaigns(channel, id, idsOnly, null);
 	}
 
@@ -410,14 +410,14 @@ public class FFApi {
 	 * @param customParameters parameters which will be added additional to the request url
 	 * @return product campaigns
 	 */
-	public List<FFProductCampaign> getProductCampaigns(final String channel, final String id, final Boolean idsOnly,
+	public List<FFCampaign> getProductCampaigns(final String channel, final String id, final Boolean idsOnly,
 			final Iterable<CustomParameter> customParameters) {
 		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
 		Validate.notNull(id, "The id may not be null");
 		additionalProps.put(PROPERTY_DO, "getProductCampaigns");
 		addIfNotNull(additionalProps, "productNumber", id);
 		addIfNotNull(additionalProps, IDS_ONLY, idsOnly);
-		return sendRequestAndDeserialize(FFApiActions.PRODUCT_CAMPAIGN, additionalProps, new TypeReference<List<FFProductCampaign>>() {});
+		return sendRequestAndDeserialize(FFApiActions.PRODUCT_CAMPAIGN, additionalProps, new TypeReference<List<FFCampaign>>() {});
 	}
 
 	/**
@@ -427,7 +427,7 @@ public class FFApi {
 	 * @param ids the product ids
 	 * @return shopping cart campaigns
 	 */
-	public List<FFProductCampaign> getShoppingCartCampaigns(final String channel, final Collection<String> ids) {
+	public List<FFCampaign> getShoppingCartCampaigns(final String channel, final Collection<String> ids) {
 		return getShoppingCartCampaigns(channel, ids, null);
 	}
 
@@ -439,7 +439,7 @@ public class FFApi {
 	 * @param idsOnly if true request only product ids
 	 * @return shopping cart campaigns
 	 */
-	public List<FFProductCampaign> getShoppingCartCampaigns(final String channel, final Collection<String> ids, final Boolean idsOnly) {
+	public List<FFCampaign> getShoppingCartCampaigns(final String channel, final Collection<String> ids, final Boolean idsOnly) {
 		return getShoppingCartCampaigns(channel, ids, idsOnly, null);
 	}
 
@@ -452,7 +452,7 @@ public class FFApi {
 	 * @param customParameters parameters which will be added additional to the request url
 	 * @return shopping cart campaigns
 	 */
-	public List<FFProductCampaign> getShoppingCartCampaigns(final String channel, final Collection<String> ids, final Boolean idsOnly,
+	public List<FFCampaign> getShoppingCartCampaigns(final String channel, final Collection<String> ids, final Boolean idsOnly,
 			final Iterable<CustomParameter> customParameters) {
 		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
 		Validate.notNull(ids, "The ids may not be null");
@@ -460,7 +460,7 @@ public class FFApi {
 		additionalProps.put(PROPERTY_DO, "getShoppingCartCampaigns");
 		ids.forEach(id -> addIfNotNull(additionalProps, "productNumber", id));
 		addIfNotNull(additionalProps, IDS_ONLY, idsOnly);
-		return sendRequestAndDeserialize(FFApiActions.PRODUCT_CAMPAIGN, additionalProps, new TypeReference<List<FFProductCampaign>>() {});
+		return sendRequestAndDeserialize(FFApiActions.PRODUCT_CAMPAIGN, additionalProps, new TypeReference<List<FFCampaign>>() {});
 	}
 
 	/**
