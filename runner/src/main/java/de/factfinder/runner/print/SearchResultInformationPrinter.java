@@ -10,19 +10,19 @@ import de.factfinder.api.SearchParams;
 import de.factfinder.api.SortItem;
 import de.factfinder.ffcompare.CompareRecord;
 import de.factfinder.ffproductcampaigns.FFProductCampaign;
+import de.factfinder.ffresult.Element;
 import de.factfinder.ffresult.Filter;
 import de.factfinder.ffresult.Group;
 import de.factfinder.ffresult.Group.FilterStyle;
 import de.factfinder.ffresult.ResultRecord;
 import de.factfinder.ffresult.SearchResult;
-import de.factfinder.ffresult.SelectedElement;
 import de.factfinder.ffresult.ValueList;
 
 /**
  * Prints information about the search result.
  */
 public final class SearchResultInformationPrinter {
-	private final static Logger	LOG	= LogManager.getLogger(SearchResultInformationPrinter.class.getSimpleName());
+	private static final Logger	LOG	= LogManager.getLogger(SearchResultInformationPrinter.class.getSimpleName());
 
 	/**
 	 * Prints the search parameters.
@@ -109,7 +109,6 @@ public final class SearchResultInformationPrinter {
 	 * Prints a {@link Record}.
 	 *
 	 * @param record The record.
-	 * @param prefix text which will be appended in front.
 	 */
 	public void printRecord(final Record record) {
 		LOG.info("Record content:");
@@ -141,7 +140,7 @@ public final class SearchResultInformationPrinter {
 	private void printCampaigns(final SearchResult result) {
 		final List<FFProductCampaign> campaigns = result.getCampaigns();
 		if (!campaigns.isEmpty()) {
-			CampaignInformationPrinter cip = new CampaignInformationPrinter(this);
+			final CampaignInformationPrinter cip = new CampaignInformationPrinter(this);
 			LOG.info("--- START CAMPAIGNS ---");
 			cip.printCampaigns(campaigns);
 			LOG.info("--- END CAMPAIGNS ---");
@@ -157,7 +156,7 @@ public final class SearchResultInformationPrinter {
 		LOG.info("--- START ASN / FACETS ---");
 		LOG.info("Number of groups: " + result.getGroups().size());
 		for (final Group group : result.getGroups()) {
-			StringBuilder groupMsg = new StringBuilder(150);
+			final StringBuilder groupMsg = new StringBuilder(150);
 			groupMsg.append("The group [").append(group.getName()).append("] contains ").append(group.getElements().size()).append(" elements and is ");
 			if (group.getSelectedElements().isEmpty()) {
 				groupMsg.append("not ");
@@ -172,14 +171,14 @@ public final class SearchResultInformationPrinter {
 			}
 
 			if (group.getFilterStyle() == FilterStyle.SLIDER) {
-				final SelectedElement sliderElement = group.getElements().get(0);
+				final Element sliderElement = group.getElements().get(0);
 				LOG.info("\tAvailable range [min:" + sliderElement.getAbsoluteMinValue() + "; max:" + sliderElement.getAbsoluteMaxValue() + "]");
 				if (sliderElement.getSelected()) {
 					LOG.info("\tSelected range [min:" + sliderElement.getSelectedMinValue() + "; max:" + sliderElement.getSelectedMaxValue() + "]");
 				}
 			} else {
-				for (final SelectedElement element : group.getElements()) {
-					StringBuilder elementMsg = new StringBuilder(100);
+				for (final Element element : group.getElements()) {
+					final StringBuilder elementMsg = new StringBuilder(100);
 					elementMsg.append("\t").append(element.getName()).append(unit).append(" (").append(element.getRecordCount()).append(")");
 					if (element.getSelected()) {
 						elementMsg.append(" <= selected");

@@ -95,7 +95,7 @@ public final class CampaignInformationPrinter {
 	}
 
 	private void printPushedProducts(final FFProductCampaign campaign) {
-		List<PushedProductsRecord> pushedProductsRecords = campaign.getPushedProductsRecords();
+		final List<PushedProductsRecord> pushedProductsRecords = campaign.getPushedProductsRecords();
 		if (!pushedProductsRecords.isEmpty()) {
 			LOG.info("\tPUSHED PRODUCTS");
 			for (final PushedProductsRecord product : pushedProductsRecords) {

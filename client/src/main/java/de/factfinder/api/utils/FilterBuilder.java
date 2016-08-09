@@ -6,8 +6,8 @@ import de.factfinder.ffresult.ValueList;
 /**
  * A builder for the {@link Filter}.
  */
-public class FilterBuilder {
-	private Filter	filter	= new Filter();
+public final class FilterBuilder {
+	private final Filter	filter	= new Filter();
 
 	private FilterBuilder(final String name) {
 		filter.setName(name);

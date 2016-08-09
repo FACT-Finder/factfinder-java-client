@@ -24,7 +24,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
     "selectedMinValue",
     "selectedMaxValue"
 })
-public class SelectedElement {
+public class Element {
 
     /**
      * 
@@ -347,10 +347,10 @@ public class SelectedElement {
         if (other == this) {
             return true;
         }
-        if ((other instanceof SelectedElement) == false) {
+        if ((other instanceof Element) == false) {
             return false;
         }
-        SelectedElement rhs = ((SelectedElement) other);
+        Element rhs = ((Element) other);
         return new EqualsBuilder().append(recordCount, rhs.recordCount).append(previewImageURL, rhs.previewImageURL).append(clusterLevel, rhs.clusterLevel).append(selected, rhs.selected).append(searchParams, rhs.searchParams).append(name, rhs.name).append(associatedFieldName, rhs.associatedFieldName).append(absoluteMinValue, rhs.absoluteMinValue).append(absoluteMaxValue, rhs.absoluteMaxValue).append(selectedMinValue, rhs.selectedMinValue).append(selectedMaxValue, rhs.selectedMaxValue).isEquals();
     }
 

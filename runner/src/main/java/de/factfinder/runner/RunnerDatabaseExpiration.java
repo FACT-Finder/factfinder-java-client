@@ -1,5 +1,8 @@
 package de.factfinder.runner;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,11 +22,11 @@ public final class RunnerDatabaseExpiration {
 	public static void main(final String[] args) {
 		final FFApi api = new FFApi(Settings.getEndpointUrl(), Settings.getAuthentication());
 
-		FFDatabaseExpiration result = api.getDatabaseExpiration();
+		final FFDatabaseExpiration result = api.getDatabaseExpiration();
 
-		for (final String channel : result.keySet()) {
-			LOG.info("Channel: " + channel);
-			result.get(channel).forEach(message -> LOG.info("\t" + message));
+		for (final Map.Entry<String, ArrayList<String>> entry : result.entrySet()) {
+			LOG.info("Channel: " + entry.getKey());
+			entry.getValue().forEach(message -> LOG.info("\t" + message));
 		}
 	}
 }

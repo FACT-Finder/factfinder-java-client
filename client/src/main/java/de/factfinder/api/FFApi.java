@@ -54,7 +54,6 @@ public class FFApi {
 	 *
 	 * @param endPoint the endPoint to the fact-finder application
 	 * @param authentication the authentication to access fact-finder
-	 * @param version the api version
 	 */
 	public FFApi(final String endPoint,
 			final Authentication authentication) {
@@ -118,7 +117,7 @@ public class FFApi {
 	 * @param customParameters parameters which will be added additional to the request url
 	 * @return the import results
 	 */
-	public FFImport startImport(final String channel, final Boolean download, final List<CustomParameter> customParameters) {
+	public FFImport startImport(final String channel, final Boolean download, final Iterable<CustomParameter> customParameters) {
 		return startImport(channel, download, customParameters, false);
 	}
 
@@ -151,12 +150,12 @@ public class FFApi {
 	 * @param customParameters parameters which will be added additional to the request url
 	 * @return the import results
 	 */
-	public FFImport startSuggestImport(final String channel, final Boolean download, final List<CustomParameter> customParameters) {
+	public FFImport startSuggestImport(final String channel, final Boolean download, final Iterable<CustomParameter> customParameters) {
 		return startImport(channel, download, customParameters, true);
 
 	}
 
-	private FFImport startImport(final String channel, final Boolean download, final List<CustomParameter> customParameters, final boolean isSuggest) {
+	private FFImport startImport(final String channel, final Boolean download, final Iterable<CustomParameter> customParameters, final boolean isSuggest) {
 		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
 		addIfNotNull(additionalProps, "download", download);
 		addIfNotNull(additionalProps, "type", isSuggest ? "suggest" : null);
@@ -195,7 +194,7 @@ public class FFApi {
 	 * @param customParameters parameters which will be added additional to the request url
 	 * @return products and its differences
 	 */
-	public FFCompare getComparedProducts(final String channel, final List<String> ids, final Boolean idsOnly, final List<CustomParameter> customParameters) {
+	public FFCompare getComparedProducts(final String channel, final List<String> ids, final Boolean idsOnly, final Iterable<CustomParameter> customParameters) {
 		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
 		Validate.notNull(ids, "The ids may not be null");
 		additionalProps.put("ids", ids.stream().collect(Collectors.joining(";")));
@@ -232,7 +231,7 @@ public class FFApi {
 	 * @param customParameters parameters which will be added additional to the request url
 	 * @return the terms for the Tag Cloud
 	 */
-	public List<FFTagCloud> getTagCloud(final String channel, final Integer wordCount, final List<CustomParameter> customParameters) {
+	public List<FFTagCloud> getTagCloud(final String channel, final Integer wordCount, final Iterable<CustomParameter> customParameters) {
 		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
 		additionalProps.put("do", "getTagCloud");
 		addIfNotNull(additionalProps, "wordCount", wordCount);
@@ -258,7 +257,7 @@ public class FFApi {
 	 * @param customParameters parameters which will be added additional to the request url
 	 * @return suggested search terms
 	 */
-	public FFSuggest getSuggestions(final String channel, final String query, final List<CustomParameter> customParameters) {
+	public FFSuggest getSuggestions(final String channel, final String query, final Iterable<CustomParameter> customParameters) {
 		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
 		Validate.notNull(query, "The query may not be null");
 		additionalProps.put("query", query);
@@ -312,7 +311,7 @@ public class FFApi {
 	 * @return similar products
 	 */
 	public FFSimilarRecords getSimilarRecords(final String channel, final String id, final Integer maxRecordsCount, final Boolean idsOnly,
-			final List<CustomParameter> customParameters) {
+			final Iterable<CustomParameter> customParameters) {
 		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
 		Validate.notNull(id, "The id may not be null");
 		additionalProps.put("id", id);
@@ -368,7 +367,7 @@ public class FFApi {
 	 * @return recommendations
 	 */
 	public FFRecommender getRecommendations(final String channel, final Collection<String> ids, final Integer maxResults, final Boolean idsOnly,
-			final List<CustomParameter> customParameters) {
+			final Iterable<CustomParameter> customParameters) {
 		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
 		Validate.notNull(ids, "The ids may not be null");
 
@@ -412,7 +411,7 @@ public class FFApi {
 	 * @return product campaigns
 	 */
 	public List<FFProductCampaign> getProductCampaigns(final String channel, final String id, final Boolean idsOnly,
-			final List<CustomParameter> customParameters) {
+			final Iterable<CustomParameter> customParameters) {
 		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
 		Validate.notNull(id, "The id may not be null");
 		additionalProps.put(PROPERTY_DO, "getProductCampaigns");
@@ -454,7 +453,7 @@ public class FFApi {
 	 * @return shopping cart campaigns
 	 */
 	public List<FFProductCampaign> getShoppingCartCampaigns(final String channel, final Collection<String> ids, final Boolean idsOnly,
-			final List<CustomParameter> customParameters) {
+			final Iterable<CustomParameter> customParameters) {
 		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
 		Validate.notNull(ids, "The ids may not be null");
 		Validate.notEmpty(ids, "The ids may not be empty");
@@ -484,19 +483,25 @@ public class FFApi {
 	 * @param customParameters parameters which will be added additional to the request url
 	 * @return results if the database is up-to-date.
 	 */
-	public FFDatabaseExpiration getDatabaseExpiration(final String channel, final List<CustomParameter> customParameters) {
+	public FFDatabaseExpiration getDatabaseExpiration(final String channel, final Iterable<CustomParameter> customParameters) {
 		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
 		return sendRequestAndDeserialize(FFApiActions.DATABASE_EXPIRATION, additionalProps, new TypeReference<FFDatabaseExpiration>() {});
 	}
 
+	/**
+	 * Tracks various events. See tracking documentation for required parameters.
+	 *
+	 * @param channel the channel
+	 * @param parameters the parameters
+	 */
 	public void track(final String channel, final MultiValuedMap<String, String> parameters) {
 		parameters.put("channel", channel);
 		sendRequest(FFApiActions.TRACKING, parameters);
 	}
 
-	private MultiValuedMap<String, String> getMapWithChannelAndCustomParams(final String channel, final List<CustomParameter> customParameters) {
+	private MultiValuedMap<String, String> getMapWithChannelAndCustomParams(final String channel, final Iterable<CustomParameter> customParameters) {
 		Validate.notNull(channel, "The channel may not be null");
-		final MultiValuedMap<String, String> map = new ArrayListValuedHashMap<String, String>();
+		final MultiValuedMap<String, String> map = new ArrayListValuedHashMap<>();
 		addIfNotNull(map, PROPERTY_CHANNEL, channel);
 		if (customParameters != null) {
 			customParameters.forEach(customParameter -> addIfNotNull(map, customParameter.getKey(), customParameter.getValue()));
@@ -521,14 +526,14 @@ public class FFApi {
 			connection.setDoOutput(true);
 
 			return readInputStream(connection.getInputStream());
-		} catch (final Exception e) {
+		} catch (final IOException e) {
 			int statusCode = -1;
 			String response = null;
 			if (connection != null) {
 				try {
 					statusCode = connection.getResponseCode();
 					response = readInputStream(connection.getErrorStream());
-				} catch (final Exception ex) {}
+				} catch (final IOException ignored) {}
 			}
 			throw new FFApiException(statusCode, response, e);
 		} finally {
@@ -539,16 +544,15 @@ public class FFApi {
 	}
 
 	private String readInputStream(final InputStream inputStream) throws IOException {
-		if (inputStream == null) return "";
-		final BufferedReader rd = new BufferedReader(new InputStreamReader(inputStream));
-		final StringBuilder response = new StringBuilder();
-		String line;
-		while ((line = rd.readLine()) != null) {
-			response.append(line);
-			response.append('\r');
+		if (inputStream == null) { return ""; }
+		final StringBuilder response = new StringBuilder(500);
+		try (final BufferedReader rd = new BufferedReader(new InputStreamReader(inputStream))) {
+			String line;
+			while ((line = rd.readLine()) != null) {
+				response.append(line);
+				response.append('\r');
+			}
 		}
-		rd.close();
-
 		return response.toString();
 	}
 
@@ -561,7 +565,7 @@ public class FFApi {
 				urlParameter.append(encode(entry.getKey(), UTF_8.name()));
 				urlParameter.append("=");
 				urlParameter.append(encode(entry.getValue(), UTF_8.name()));
-			} catch (final UnsupportedEncodingException e) {} // only when charset is invalid
+			} catch (final UnsupportedEncodingException ignored) {} // only when charset is invalid
 		};
 		additionalGetParameters.entries().forEach(addToUrl);
 		FFApiHelper.convertToParameters(authentication).entries().forEach(addToUrl);

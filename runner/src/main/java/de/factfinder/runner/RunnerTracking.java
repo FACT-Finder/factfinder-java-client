@@ -12,8 +12,11 @@ import de.factfinder.api.FFApiException;
  * This class demonstrates the usage of the FACT-Finder JSON API to track various events.
  *
  */
-public class RunnerTracking {
+public final class RunnerTracking {
 	private static final Logger	LOG	= LogManager.getLogger(RunnerTracking.class.getSimpleName());
+
+	private RunnerTracking() {
+	}
 
 	public static void main(final String[] args) {
 		final FFApi api = new FFApi(Settings.getEndpointUrl(), Settings.getAuthentication());

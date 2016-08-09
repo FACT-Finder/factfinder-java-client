@@ -116,10 +116,14 @@ public final class FFApiHelper {
 	}
 
 	private static String getValueSeparator(final ValueList filterValue) {
-		if (filterValue.getType() == ValueList.Type.OR) {
-			return DEFAULT_FILTER_OR_SEPARATOR;
-		} else if (filterValue.getType() == ValueList.Type.AND) { return DEFAULT_FILTER_AND_SEPARATOR; }
-		return "undefined";
+		switch (filterValue.getType()) {
+			case OR:
+				return DEFAULT_FILTER_OR_SEPARATOR;
+			case AND:
+				return DEFAULT_FILTER_AND_SEPARATOR;
+			default:
+				throw new IllegalArgumentException("Unknown value list type: " + filterValue.getType());
+		}
 	}
 
 	private static String getKeyFromFilter(final Filter filter) {

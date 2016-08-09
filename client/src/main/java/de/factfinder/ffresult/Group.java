@@ -37,7 +37,7 @@ public class Group {
      * 
      */
     @JsonProperty("selectedElements")
-    private List<SelectedElement> selectedElements = new ArrayList<SelectedElement>();
+    private List<Element> selectedElements = new ArrayList<Element>();
     /**
      * 
      * (Required)
@@ -86,7 +86,7 @@ public class Group {
      * 
      */
     @JsonProperty("elements")
-    private List<SelectedElement> elements = new ArrayList<SelectedElement>();
+    private List<Element> elements = new ArrayList<Element>();
     /**
      * 
      * (Required)
@@ -110,7 +110,7 @@ public class Group {
      *     The selectedElements
      */
     @JsonProperty("selectedElements")
-    public List<SelectedElement> getSelectedElements() {
+    public List<Element> getSelectedElements() {
         return selectedElements;
     }
 
@@ -122,7 +122,7 @@ public class Group {
      *     The selectedElements
      */
     @JsonProperty("selectedElements")
-    public void setSelectedElements(List<SelectedElement> selectedElements) {
+    public void setSelectedElements(List<Element> selectedElements) {
         this.selectedElements = selectedElements;
     }
 
@@ -278,7 +278,7 @@ public class Group {
      *     The elements
      */
     @JsonProperty("elements")
-    public List<SelectedElement> getElements() {
+    public List<Element> getElements() {
         return elements;
     }
 
@@ -290,7 +290,7 @@ public class Group {
      *     The elements
      */
     @JsonProperty("elements")
-    public void setElements(List<SelectedElement> elements) {
+    public void setElements(List<Element> elements) {
         this.elements = elements;
     }
 

@@ -6,10 +6,11 @@ import lombok.Getter;
  * Exception will be thrown when an error occurs while connection to fact-finder.
  */
 public class FFApiException extends RuntimeException {
+	private static final long serialVersionUID = 1042719219480632336L;
 	@Getter
-	private int		statusCode;
+	private final int		statusCode;
 	@Getter
-	private String	response;
+	private final String	response;
 
 	public FFApiException(final int statusCode,
 			final String response,

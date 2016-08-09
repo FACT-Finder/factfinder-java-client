@@ -13,7 +13,7 @@ import de.factfinder.runner.print.SearchResultInformationPrinter;
  *
  */
 public final class RunnerSimilarArticles {
-	private static final Logger	LOG				= LogManager.getLogger(RunnerSimilarArticles.class.getCanonicalName());
+	private static final Logger	LOG				= LogManager.getLogger(RunnerSimilarArticles.class.getSimpleName());
 	private static final String	CHANNEL			= Settings.getChannel();
 	private static final int	MAX_ARTICLES	= 10;
 	/** Example product id, this needs to be adjusted according to your data. */

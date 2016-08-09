@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class CustomParameter {
-	public String	key;
-	public String	value;
+	private String	key;
+	private String	value;
 }

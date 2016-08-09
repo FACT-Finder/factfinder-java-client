@@ -29,8 +29,6 @@ public final class RunnerRecommender {
 		final FFApi api = new FFApi(Settings.getEndpointUrl(), Settings.getAuthentication());
 		final SearchResultInformationPrinter searchResultInfoPrinter = new SearchResultInformationPrinter();
 
-
-
 		LOG.info("==== BEGIN RECOMMENDATION RESULT (NORMAL) ====");
 		FFRecommender recommendation = api.getRecommendations(CHANNEL, Arrays.asList(RECORD_ID_1), MAX_RETURN_RECORDS, false);
 		printResult(searchResultInfoPrinter, recommendation.getResultRecords());
