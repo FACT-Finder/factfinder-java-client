@@ -1,5 +1,8 @@
 # Changelog
 
+### 1.1.0 (2016-08-10)
+- Adjusted API to be compatible with FACT-Finder 7.1
+
 ### 1.0.2 (2016-08-10)
 - Renamed `FFProductCampaign` to `FFCampaign`
 - Renamed `SelectedElement` to `Element`
