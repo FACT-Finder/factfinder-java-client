@@ -7,7 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import de.factfinder.api.FFApi;
-import de.factfinder.ffproductcampaigns.FFCampaign;
+import de.factfinder.ffcampaigns.FFCampaign;
 import de.factfinder.runner.print.CampaignInformationPrinter;
 import de.factfinder.runner.print.SearchResultInformationPrinter;
 

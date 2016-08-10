@@ -5,12 +5,12 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import de.factfinder.ffproductcampaigns.Answer;
-import de.factfinder.ffproductcampaigns.FFCampaign;
-import de.factfinder.ffproductcampaigns.FeedbackText;
-import de.factfinder.ffproductcampaigns.PushedProductsRecord;
-import de.factfinder.ffproductcampaigns.Question;
-import de.factfinder.ffproductcampaigns.Target;
+import de.factfinder.ffcampaigns.Answer;
+import de.factfinder.ffcampaigns.FFCampaign;
+import de.factfinder.ffcampaigns.FeedbackText;
+import de.factfinder.ffcampaigns.PushedProductsRecord;
+import de.factfinder.ffcampaigns.Question;
+import de.factfinder.ffcampaigns.Target;
 
 /**
  * Prints information about campaigns.

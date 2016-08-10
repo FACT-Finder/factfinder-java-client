@@ -17,8 +17,7 @@
           "name",
           "image",
           "attributes",
-          "type",
-          "priority"
+          "type"
         ],
         "properties": {
           "hitCount": {
@@ -32,9 +31,6 @@
           },
           "image": {
             "type": "string"
-          },
-          "priority": {
-            "type": "integer"
           },
           "attributes": {
             "type": "object"

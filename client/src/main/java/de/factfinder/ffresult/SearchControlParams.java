@@ -18,7 +18,10 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
     "generateAdvisorTree",
     "idsOnly",
     "useFoundWords",
-    "useCampaigns"
+    "useCampaigns",
+    "useAso",
+    "usePersonalization",
+    "useSemanticEnhancer"
 })
 public class SearchControlParams {
 
@@ -71,6 +74,27 @@ public class SearchControlParams {
      */
     @JsonProperty("useCampaigns")
     private Boolean useCampaigns;
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    @JsonProperty("useAso")
+    private Boolean useAso;
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    @JsonProperty("usePersonalization")
+    private Boolean usePersonalization;
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    @JsonProperty("useSemanticEnhancer")
+    private Boolean useSemanticEnhancer;
 
     /**
      * 
@@ -240,6 +264,78 @@ public class SearchControlParams {
         this.useCampaigns = useCampaigns;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     * @return
+     *     The useAso
+     */
+    @JsonProperty("useAso")
+    public Boolean getUseAso() {
+        return useAso;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     * @param useAso
+     *     The useAso
+     */
+    @JsonProperty("useAso")
+    public void setUseAso(Boolean useAso) {
+        this.useAso = useAso;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     * @return
+     *     The usePersonalization
+     */
+    @JsonProperty("usePersonalization")
+    public Boolean getUsePersonalization() {
+        return usePersonalization;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     * @param usePersonalization
+     *     The usePersonalization
+     */
+    @JsonProperty("usePersonalization")
+    public void setUsePersonalization(Boolean usePersonalization) {
+        this.usePersonalization = usePersonalization;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     * @return
+     *     The useSemanticEnhancer
+     */
+    @JsonProperty("useSemanticEnhancer")
+    public Boolean getUseSemanticEnhancer() {
+        return useSemanticEnhancer;
+    }
+
+    /**
+     * 
+     * (Required)
+     * 
+     * @param useSemanticEnhancer
+     *     The useSemanticEnhancer
+     */
+    @JsonProperty("useSemanticEnhancer")
+    public void setUseSemanticEnhancer(Boolean useSemanticEnhancer) {
+        this.useSemanticEnhancer = useSemanticEnhancer;
+    }
+
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
@@ -247,7 +343,7 @@ public class SearchControlParams {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(useKeywords).append(disableCache).append(useAsn).append(generateAdvisorTree).append(idsOnly).append(useFoundWords).append(useCampaigns).toHashCode();
+        return new HashCodeBuilder().append(useKeywords).append(disableCache).append(useAsn).append(generateAdvisorTree).append(idsOnly).append(useFoundWords).append(useCampaigns).append(useAso).append(usePersonalization).append(useSemanticEnhancer).toHashCode();
     }
 
     @Override
@@ -259,7 +355,7 @@ public class SearchControlParams {
             return false;
         }
         SearchControlParams rhs = ((SearchControlParams) other);
-        return new EqualsBuilder().append(useKeywords, rhs.useKeywords).append(disableCache, rhs.disableCache).append(useAsn, rhs.useAsn).append(generateAdvisorTree, rhs.generateAdvisorTree).append(idsOnly, rhs.idsOnly).append(useFoundWords, rhs.useFoundWords).append(useCampaigns, rhs.useCampaigns).isEquals();
+        return new EqualsBuilder().append(useKeywords, rhs.useKeywords).append(disableCache, rhs.disableCache).append(useAsn, rhs.useAsn).append(generateAdvisorTree, rhs.generateAdvisorTree).append(idsOnly, rhs.idsOnly).append(useFoundWords, rhs.useFoundWords).append(useCampaigns, rhs.useCampaigns).append(useAso, rhs.useAso).append(usePersonalization, rhs.usePersonalization).append(useSemanticEnhancer, rhs.useSemanticEnhancer).isEquals();
     }
 
 }

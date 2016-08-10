@@ -1,5 +1,5 @@
 
-package de.factfinder.ffproductcampaigns;
+package de.factfinder.ffcampaigns;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
     "visible",
     "answers"
 })
-public class Question {
+public class AdvisorTree {
 
     /**
      * 
@@ -161,10 +161,10 @@ public class Question {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Question) == false) {
+        if ((other instanceof AdvisorTree) == false) {
             return false;
         }
-        Question rhs = ((Question) other);
+        AdvisorTree rhs = ((AdvisorTree) other);
         return new EqualsBuilder().append(id, rhs.id).append(text, rhs.text).append(visible, rhs.visible).append(answers, rhs.answers).isEquals();
     }
 

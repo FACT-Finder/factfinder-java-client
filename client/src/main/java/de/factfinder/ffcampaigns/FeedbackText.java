@@ -1,5 +1,5 @@
 
-package de.factfinder.ffproductcampaigns;
+package de.factfinder.ffcampaigns;
 
 import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;

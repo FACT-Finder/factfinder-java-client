@@ -13,4 +13,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
 
 })
-public class FFDatabaseExpiration extends HashMap<String, ArrayList<String>> {}
+public class FFDatabaseExpiration extends HashMap<String, ArrayList<String>> {
+
+}

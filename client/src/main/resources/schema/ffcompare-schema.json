@@ -37,10 +37,7 @@
         "additionalProperties": false,
         "required": [
           "id",
-          "record",
-          "respectContentDelimiters",
-          "simiMalusMul",
-          "fieldNames"
+          "record"
         ],
         "properties": {
           "id": {
@@ -48,18 +45,6 @@
           },
           "record": {
             "type": "object"
-          },
-          "respectContentDelimiters": {
-            "type": "boolean"
-          },
-          "simiMalusMul": {
-            "type": "number"
-          },
-          "fieldNames": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
       }

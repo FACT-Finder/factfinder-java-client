@@ -9,7 +9,7 @@ import de.factfinder.api.Record;
 import de.factfinder.api.SearchParams;
 import de.factfinder.api.SortItem;
 import de.factfinder.ffcompare.CompareRecord;
-import de.factfinder.ffproductcampaigns.FFCampaign;
+import de.factfinder.ffcampaigns.FFCampaign;
 import de.factfinder.ffresult.Element;
 import de.factfinder.ffresult.Filter;
 import de.factfinder.ffresult.Group;

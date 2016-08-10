@@ -1,5 +1,5 @@
 
-package de.factfinder.ffproductcampaigns;
+package de.factfinder.ffcampaigns;
 
 import java.util.ArrayList;
 import java.util.List;

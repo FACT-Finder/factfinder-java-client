@@ -16,7 +16,6 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
     "searchParams",
     "name",
     "image",
-    "priority",
     "attributes",
     "type"
 })
@@ -50,13 +49,6 @@ public class Suggestion {
      */
     @JsonProperty("image")
     private String image;
-    /**
-     * 
-     * (Required)
-     * 
-     */
-    @JsonProperty("priority")
-    private Integer priority;
     /**
      * 
      * (Required)
@@ -173,30 +165,6 @@ public class Suggestion {
      * (Required)
      * 
      * @return
-     *     The priority
-     */
-    @JsonProperty("priority")
-    public Integer getPriority() {
-        return priority;
-    }
-
-    /**
-     * 
-     * (Required)
-     * 
-     * @param priority
-     *     The priority
-     */
-    @JsonProperty("priority")
-    public void setPriority(Integer priority) {
-        this.priority = priority;
-    }
-
-    /**
-     * 
-     * (Required)
-     * 
-     * @return
      *     The attributes
      */
     @JsonProperty("attributes")
@@ -247,7 +215,7 @@ public class Suggestion {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(hitCount).append(searchParams).append(name).append(image).append(priority).append(attributes).append(type).toHashCode();
+        return new HashCodeBuilder().append(hitCount).append(searchParams).append(name).append(image).append(attributes).append(type).toHashCode();
     }
 
     @Override
@@ -259,7 +227,7 @@ public class Suggestion {
             return false;
         }
         Suggestion rhs = ((Suggestion) other);
-        return new EqualsBuilder().append(hitCount, rhs.hitCount).append(searchParams, rhs.searchParams).append(name, rhs.name).append(image, rhs.image).append(priority, rhs.priority).append(attributes, rhs.attributes).append(type, rhs.type).isEquals();
+        return new EqualsBuilder().append(hitCount, rhs.hitCount).append(searchParams, rhs.searchParams).append(name, rhs.name).append(image, rhs.image).append(attributes, rhs.attributes).append(type, rhs.type).isEquals();
     }
 
 }

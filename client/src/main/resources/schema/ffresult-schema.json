@@ -694,7 +694,10 @@
             "generateAdvisorTree",
             "idsOnly",
             "useFoundWords",
-            "useCampaigns"
+            "useCampaigns",
+            "useAso",
+            "usePersonalization",
+            "useSemanticEnhancer"
           ],
           "properties": {
             "useKeywords": {
@@ -716,6 +719,15 @@
               "type": "boolean"
             },
             "useCampaigns": {
+              "type": "boolean"
+            },
+            "useAso": {
+              "type": "boolean"
+            },
+            "usePersonalization": {
+              "type": "boolean"
+            },
+            "useSemanticEnhancer": {
               "type": "boolean"
             }
           }
