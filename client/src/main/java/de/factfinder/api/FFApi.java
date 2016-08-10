@@ -29,10 +29,10 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import de.factfinder.api.utils.FFApiHelper;
+import de.factfinder.ffcampaigns.FFCampaign;
 import de.factfinder.ffcompare.FFCompare;
 import de.factfinder.ffdatabaseexpiration.FFDatabaseExpiration;
 import de.factfinder.ffimport.FFImport;
-import de.factfinder.ffproductcampaigns.FFCampaign;
 import de.factfinder.ffrecommender.FFRecommender;
 import de.factfinder.ffresult.FFResult;
 import de.factfinder.ffresult.SearchControlParams;
@@ -41,7 +41,7 @@ import de.factfinder.ffsuggest.FFSuggest;
 import de.factfinder.fftagcloud.FFTagCloud;
 
 public class FFApi {
-	public static final String			VERSION			= "7.0";
+	public static final String			VERSION			= "7.1";
 	private static final UrlValidator	URL_VALIDATOR	= new UrlValidator(new String[] {"http", "https"});
 	private static final String			IDS_ONLY		= "idsOnly";
 
@@ -336,11 +336,11 @@ public class FFApi {
 	 *
 	 * @param channel the channel
 	 * @param ids the product ids
-	 * @param maxResults the max results that should be returned
+	 * @param sid the session id
 	 * @return recommendations
 	 */
-	public FFRecommender getRecommendations(final String channel, final Collection<String> ids, final Integer maxResults) {
-		return getRecommendations(channel, ids, maxResults, null);
+	public FFRecommender getRecommendations(final String channel, final Collection<String> ids, final String sid) {
+		return getRecommendations(channel, ids, sid, null);
 	}
 
 	/**
@@ -348,12 +348,27 @@ public class FFApi {
 	 *
 	 * @param channel the channel
 	 * @param ids the product ids
+	 * @param sid the session id
+	 * @param maxResults the max results that should be returned
+	 * @return recommendations
+	 */
+	public FFRecommender getRecommendations(final String channel, final Collection<String> ids, final String sid, final Integer maxResults) {
+		return getRecommendations(channel, ids, sid, maxResults, null);
+	}
+
+	/**
+	 * Returns recommendations for the given product ids
+	 *
+	 * @param channel the channel
+	 * @param ids the product ids
+	 * @param sid the session id
 	 * @param maxResults the max results that should be returned
 	 * @param idsOnly return only the record ids
 	 * @return recommendations
 	 */
-	public FFRecommender getRecommendations(final String channel, final Collection<String> ids, final Integer maxResults, final Boolean idsOnly) {
-		return getRecommendations(channel, ids, maxResults, idsOnly, null);
+	public FFRecommender getRecommendations(final String channel, final Collection<String> ids, final String sid, final Integer maxResults,
+			final Boolean idsOnly) {
+		return getRecommendations(channel, ids, sid, maxResults, idsOnly, null);
 	}
 
 	/**
@@ -361,19 +376,21 @@ public class FFApi {
 	 *
 	 * @param channel the channel
 	 * @param ids the product ids
+	 * @param sid the session id
 	 * @param maxResults the max results that should be returned
 	 * @param idsOnly return only the record ids
 	 * @param customParameters parameters which will be added additional to the request url
 	 * @return recommendations
 	 */
-	public FFRecommender getRecommendations(final String channel, final Collection<String> ids, final Integer maxResults, final Boolean idsOnly,
-			final Iterable<CustomParameter> customParameters) {
+	public FFRecommender getRecommendations(final String channel, final Collection<String> ids, final String sid, final Integer maxResults,
+			final Boolean idsOnly, final Iterable<CustomParameter> customParameters) {
 		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
 		Validate.notNull(ids, "The ids may not be null");
 
 		additionalProps.put(PROPERTY_DO, "getRecommendation");
 		ids.forEach(id -> addIfNotNull(additionalProps, "id", id));
 		addIfNotNull(additionalProps, "maxResults", maxResults);
+		addIfNotNull(additionalProps, "sid", sid);
 		addIfNotNull(additionalProps, IDS_ONLY, idsOnly);
 		return sendRequestAndDeserialize(FFApiActions.RECOMMENDER, additionalProps, new TypeReference<FFRecommender>() {});
 	}
@@ -410,8 +427,7 @@ public class FFApi {
 	 * @param customParameters parameters which will be added additional to the request url
 	 * @return product campaigns
 	 */
-	public List<FFCampaign> getProductCampaigns(final String channel, final String id, final Boolean idsOnly,
-			final Iterable<CustomParameter> customParameters) {
+	public List<FFCampaign> getProductCampaigns(final String channel, final String id, final Boolean idsOnly, final Iterable<CustomParameter> customParameters) {
 		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
 		Validate.notNull(id, "The id may not be null");
 		additionalProps.put(PROPERTY_DO, "getProductCampaigns");

@@ -49,6 +49,9 @@ public final class FFApiHelper {
 		addIfNotNull(map, "useCampaigns", searchControlParams.getUseCampaigns());
 		addIfNotNull(map, "useFoundWords", searchControlParams.getUseFoundWords());
 		addIfNotNull(map, "useKeywords", searchControlParams.getUseKeywords());
+		addIfNotNull(map, "usePersonalization", searchControlParams.getUsePersonalization());
+		addIfNotNull(map, "useAso", searchControlParams.getUseAso());
+		addIfNotNull(map, "useSemanticEnhancer", searchControlParams.getUseSemanticEnhancer());
 
 		return map;
 	}
