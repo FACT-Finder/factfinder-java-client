@@ -27,6 +27,7 @@ public final class RunnerTracking {
 		trackRecEngineClick(api);
 		trackSearchFeedback(api);
 		trackLogin(api);
+		trackShopCacheHit(api);
 	}
 
 	private static void trackDetailClick(final FFApi api) {
@@ -136,6 +137,30 @@ public final class RunnerTracking {
 		map.put("event", "login");
 		map.put("sid", "abc123def456ghi789");
 		map.put("userId", "user123");
+
+		sendTrackingRequest(api, map);
+	}
+
+	private static void trackShopCacheHit(FFApi api) {
+		final MultiValuedMap<String, String> map = new ArrayListValuedHashMap<>();
+
+		// general information
+		map.put("id", "3865");
+		map.put("sid", "abc123def456ghi789");
+		map.put("event", "log");
+
+		// event specific information
+		map.put("page", "3");
+		map.put("pageSize", "12");
+		map.put("query", "mountain bike");
+		map.put("hitCount", "520");
+		map.put("searchTime", "128");
+		// range of bestSimi and minSimi is 10000 - 0 instead of a percentage
+		map.put("bestSimi", "9941");
+		map.put("minSimi", "9323");
+
+		// optional event specific information (details see integration documentation)
+		map.put("filterBrand", "Cube");
 
 		sendTrackingRequest(api, map);
 	}
