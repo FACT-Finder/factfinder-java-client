@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.0.2 (2016-08-10)
+- Renamed `FFProductCampaign` to `FFCampaign`
+- Renamed `SelectedElement` to `Element`
+- Improved code quality
+- Fixed typos
+
 ### 1.0.1 (2016-08-08)
 - Added tracking api and runner example.
 - Added url-encoding to parameters which are send to FACT-Finder.
