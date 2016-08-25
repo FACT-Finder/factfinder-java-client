@@ -7,6 +7,8 @@ import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import de.factfinder.api.RecordWithId;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -25,7 +27,7 @@ public class FFRecommender {
      * 
      */
     @JsonProperty("resultRecords")
-    private List<ResultRecord> resultRecords = new ArrayList<ResultRecord>();
+    private List<RecordWithId> resultRecords = new ArrayList<RecordWithId>();
     /**
      * 
      * (Required)
@@ -42,7 +44,7 @@ public class FFRecommender {
      *     The resultRecords
      */
     @JsonProperty("resultRecords")
-    public List<ResultRecord> getResultRecords() {
+    public List<RecordWithId> getResultRecords() {
         return resultRecords;
     }
 
@@ -54,7 +56,7 @@ public class FFRecommender {
      *     The resultRecords
      */
     @JsonProperty("resultRecords")
-    public void setResultRecords(List<ResultRecord> resultRecords) {
+    public void setResultRecords(List<RecordWithId> resultRecords) {
         this.resultRecords = resultRecords;
     }
 

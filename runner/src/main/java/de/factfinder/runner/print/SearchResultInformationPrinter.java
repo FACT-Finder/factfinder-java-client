@@ -1,14 +1,15 @@
 package de.factfinder.runner.print;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import de.factfinder.api.Record;
+import de.factfinder.api.RecordWithId;
 import de.factfinder.api.SearchParams;
 import de.factfinder.api.SortItem;
-import de.factfinder.ffcompare.CompareRecord;
 import de.factfinder.ffcampaigns.FFCampaign;
 import de.factfinder.ffresult.Element;
 import de.factfinder.ffresult.Filter;
@@ -96,11 +97,11 @@ public final class SearchResultInformationPrinter {
 	}
 
 	/**
-	 * Prints a single {@link CompareRecord}.
+	 * Prints a {@link RecordWithId}.
 	 *
 	 * @param record The record.
 	 */
-	public void printCompareRecord(final CompareRecord record) {
+	public void printRecord(final RecordWithId record) {
 		LOG.info("Record: id=" + record.getId());
 		printRecord(record.getRecord());
 	}

@@ -8,7 +8,6 @@ import org.apache.logging.log4j.Logger;
 
 import de.factfinder.api.FFApi;
 import de.factfinder.ffcompare.Attribute;
-import de.factfinder.ffcompare.CompareRecord;
 import de.factfinder.ffcompare.FFCompare;
 import de.factfinder.runner.print.SearchResultInformationPrinter;
 
@@ -46,8 +45,6 @@ public final class RunnerProductCompare {
 			LOG.info("Attribute: '" + attr.getAttributeName() + "', Fieldname: '" + attr.getSourceField() + "', hasDifference: " + attr.getDifferent());
 		}
 		LOG.info("---");
-		for (final CompareRecord rec : cr.getRecords()) {
-			srip.printCompareRecord(rec);
-		}
+		cr.getRecords().forEach(srip::printRecord);
 	}
 }

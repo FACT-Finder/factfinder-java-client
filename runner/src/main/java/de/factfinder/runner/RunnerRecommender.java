@@ -7,8 +7,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import de.factfinder.api.FFApi;
+import de.factfinder.api.RecordWithId;
 import de.factfinder.ffrecommender.FFRecommender;
-import de.factfinder.ffrecommender.ResultRecord;
 import de.factfinder.runner.print.SearchResultInformationPrinter;
 
 /**
@@ -51,12 +51,9 @@ public final class RunnerRecommender {
 
 	}
 
-	private static void printResult(final SearchResultInformationPrinter searchResultInfoPrinter, final List<ResultRecord> records) {
+	private static void printResult(final SearchResultInformationPrinter searchResultInfoPrinter, final List<RecordWithId> records) {
 		if (records != null && !records.isEmpty()) {
-			for (final ResultRecord rec : records) {
-				LOG.info("Record: id=" + rec.getId());
-				searchResultInfoPrinter.printRecord(rec.getRecord());
-			}
+			records.forEach(searchResultInfoPrinter::printRecord);
 		} else {
 			LOG.info("No recommendations received.");
 		}

@@ -21,7 +21,6 @@ public final class RunnerImport {
 
 		LOG.info("Start product data import");
 		FFImport result = api.startImport(CHANNEL);
-
 		result.getErrors().forEach(LOG::error);
 		result.getStatus().forEach(LOG::info);
 

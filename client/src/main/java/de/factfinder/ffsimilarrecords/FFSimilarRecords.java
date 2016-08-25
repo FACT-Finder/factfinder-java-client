@@ -12,6 +12,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import de.factfinder.api.RecordWithId;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
@@ -24,14 +25,14 @@ public class FFSimilarRecords {
 	 * 
 	 */
 	@JsonProperty("attributes")
-	private List<Attribute>			attributes	= new ArrayList<Attribute>();
+	private List<Attribute>    attributes = new ArrayList<Attribute>();
 	/**
 	 * 
 	 * (Required)
 	 * 
 	 */
 	@JsonProperty("records")
-	private List<SimilarityRecord>	records		= new ArrayList<SimilarityRecord>();
+	private List<RecordWithId> records    = new ArrayList<RecordWithId>();
 
 	/**
 	 * 
@@ -62,7 +63,7 @@ public class FFSimilarRecords {
 	 * @return The records
 	 */
 	@JsonProperty("records")
-	public List<SimilarityRecord> getRecords() {
+	public List<RecordWithId> getRecords() {
 		return records;
 	}
 
@@ -73,7 +74,7 @@ public class FFSimilarRecords {
 	 * @param records The records
 	 */
 	@JsonProperty("records")
-	public void setRecords(List<SimilarityRecord> records) {
+	public void setRecords(List<RecordWithId> records) {
 		this.records = records;
 	}
 

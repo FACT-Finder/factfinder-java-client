@@ -7,6 +7,8 @@ import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import de.factfinder.api.RecordWithId;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -25,14 +27,14 @@ public class FFCompare {
      * 
      */
     @JsonProperty("attributes")
-    private List<Attribute>     attributes = new ArrayList<Attribute>();
+    private List<Attribute>    attributes = new ArrayList<Attribute>();
     /**
      * 
      * (Required)
      * 
      */
     @JsonProperty("records")
-    private List<CompareRecord> records    = new ArrayList<CompareRecord>();
+    private List<RecordWithId> records    = new ArrayList<RecordWithId>();
 
     /**
      * 
@@ -66,7 +68,7 @@ public class FFCompare {
      *     The records
      */
     @JsonProperty("records")
-    public List<CompareRecord> getRecords() {
+    public List<RecordWithId> getRecords() {
         return records;
     }
 
@@ -78,7 +80,7 @@ public class FFCompare {
      *     The records
      */
     @JsonProperty("records")
-    public void setRecords(List<CompareRecord> records) {
+    public void setRecords(List<RecordWithId> records) {
         this.records = records;
     }
 

@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 
 import de.factfinder.api.FFApi;
 import de.factfinder.ffsimilarrecords.FFSimilarRecords;
-import de.factfinder.ffsimilarrecords.SimilarityRecord;
 import de.factfinder.runner.print.SearchResultInformationPrinter;
 
 /**
@@ -29,19 +28,12 @@ public final class RunnerSimilarArticles {
 
 		LOG.info("=== BEGIN SIMILAR ARTICLES (NORMAL) ===");
 		FFSimilarRecords result = api.getSimilarRecords(CHANNEL, RECORD_ID, MAX_ARTICLES);
-		print(result, srip);
+		result.getRecords().forEach(srip::printRecord);
 		LOG.info("=== END SIMILAR ARTICLES (NORMAL) ===");
 
 		LOG.info("=== BEGIN SIMILAR ARTICLES (IDs ONLY) ===");
 		result = api.getSimilarRecords(CHANNEL, RECORD_ID, MAX_ARTICLES, true);
-		print(result, srip);
+		result.getRecords().forEach(srip::printRecord);
 		LOG.info("=== END SIMILAR ARTICLES (IDs ONLY) ===");
-	}
-
-	private static void print(final FFSimilarRecords result, final SearchResultInformationPrinter srip) {
-		for (final SimilarityRecord rec : result.getRecords()) {
-			LOG.info("Record: id=" + rec.getId());
-			srip.printRecord(rec.getRecord());
-		}
 	}
 }
