@@ -1,5 +1,10 @@
 # Changelog
 
+### 1.1.1 (2016-08-26)
+- Combined `FirstLink`, `NextLink`, `PageLink`, `LastLink` and `PreviousLink` to `Link`
+- Combined `CompareRecord`, `ResultRecord`(ffrecommender) and `SimilarityRecord` to `RecordWithId`
+- Adjusted `absolute*Value` and `selected*Value` inside `Element` to `Double`
+
 ### 1.1.0 (2016-08-10)
 - Adjusted API to be compatible with FACT-Finder 7.1
 
