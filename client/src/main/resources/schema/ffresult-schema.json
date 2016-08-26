@@ -17,7 +17,6 @@
         "campaigns",
         "resultStatus",
         "simiFirstRecord",
-        "refKey",
         "resultsPerPageList",
         "timedOut",
         "sortsList",
@@ -29,7 +28,8 @@
         "groups",
         "paging",
         "searchControlParams",
-        "resultArticleNumberStatus"
+        "resultArticleNumberStatus",
+        "fieldRoles"
       ],
       "properties": {
         "breadCrumbTrailItems": {
@@ -61,7 +61,12 @@
                 ]
               },
               "type": {
-                "enum": ["search", "filter", "advisor", "unspecified"]
+                "enum": [
+                  "search",
+                  "filter",
+                  "advisor",
+                  "unspecified"
+                ]
               }
             }
           }
@@ -160,8 +165,7 @@
                   "additionalProperties": false,
                   "required": [
                     "id",
-                    "record",
-                    "simiMalusAdd"
+                    "record"
                   ],
                   "properties": {
                     "id": {
@@ -169,9 +173,6 @@
                     },
                     "record": {
                       "$ref": "#/definitions/record"
-                    },
-                    "simiMalusAdd": {
-                      "type": "integer"
                     }
                   }
                 }
@@ -218,9 +219,6 @@
         },
         "simiFirstRecord": {
           "type": "integer"
-        },
-        "refKey": {
-          "type": "string"
         },
         "resultsPerPageList": {
           "type": "array",
@@ -544,143 +542,26 @@
             "pageLinks": {
               "type": "array",
               "items": {
-                "type": "object",
-                "additionalProperties": false,
-                "required": [
-                  "searchResult",
-                  "number",
-                  "caption",
-                  "currentPage"
-                ],
-                "properties": {
-                  "searchParams": {
-                    "type": "string"
-                  },
-                  "number": {
-                    "type": "integer"
-                  },
-                  "caption": {
-                    "type": "string"
-                  },
-                  "currentPage": {
-                    "type": "boolean"
-                  }
-                }
+                "$ref": "#/definitions/pageLink"
               }
             },
             "previousLink": {
-              "type": [
-                "object",
-                "null"
-              ],
-              "additionalProperties": false,
-              "required": [
-                "searchParams",
-                "number",
-                "caption",
-                "currentPage"
-              ],
-              "properties": {
-                "searchParams": {
-                  "type": "string"
-                },
-                "number": {
-                  "type": "integer"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "currentPage": {
-                  "type": "boolean"
-                }
-              }
+              "$ref": "#/definitions/pageLink"
             },
             "firstLink": {
-              "type": [
-                "object",
-                "null"
-              ],
-              "additionalProperties": false,
-              "required": [
-                "searchParams",
-                "number",
-                "caption",
-                "currentPage"
-              ],
-              "properties": {
-                "searchParams": {
-                  "type": "string"
-                },
-                "number": {
-                  "type": "integer"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "currentPage": {
-                  "type": "boolean"
-                }
-              }
+              "$ref": "#/definitions/pageLink"
             },
             "resultsPerPage": {
               "type": "integer"
             },
             "lastLink": {
-              "type": [
-                "object",
-                "null"
-              ],
-              "additionalProperties": false,
-              "required": [
-                "searchParams",
-                "number",
-                "caption",
-                "currentPage"
-              ],
-              "properties": {
-                "searchParams": {
-                  "type": "string"
-                },
-                "number": {
-                  "type": "integer"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "currentPage": {
-                  "type": "boolean"
-                }
-              }
+              "$ref": "#/definitions/pageLink"
             },
             "currentPage": {
               "type": "integer"
             },
             "nextLink": {
-              "type": [
-                "object",
-                "null"
-              ],
-              "additionalProperties": false,
-              "required": [
-                "searchParams",
-                "number",
-                "caption",
-                "currentPage"
-              ],
-              "properties": {
-                "searchParams": {
-                  "type": "string"
-                },
-                "number": {
-                  "type": "integer"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "currentPage": {
-                  "type": "boolean"
-                }
-              }
+              "$ref": "#/definitions/pageLink"
             }
           }
         },
@@ -738,6 +619,12 @@
             "nothingFound",
             "resultsFound"
           ]
+        },
+        "fieldRoles": {
+          "type": "object",
+          "items": {
+            "type": "string"
+          }
         }
       }
     }
@@ -812,7 +699,7 @@
         "associatedFieldName"
       ],
       "properties": {
-        "recordCount": {
+       	"recordCount": {
           "type": "integer"
         },
         "previewImageURL": {
@@ -848,6 +735,30 @@
         "selectedMaxValue": {
           "type": "number"
         }
+      }
+    },
+    "pageLink":{
+		"type": ["object", "null"],
+		"additionalProperties": false,
+		"required": [
+			"searchParams",
+			"number",
+			"caption",
+			"currentPage"
+		],
+		"properties": {
+		  "searchParams": {
+			"type": "string"
+		  },
+		  "number": {
+			"type": "integer"
+		  },
+		  "caption": {
+			"type": "string"
+		  },
+		  "currentPage": {
+			"type": "boolean"
+		  }
       }
     }
   }

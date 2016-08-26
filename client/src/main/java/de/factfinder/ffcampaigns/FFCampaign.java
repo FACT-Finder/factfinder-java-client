@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonValue;
+import de.factfinder.api.RecordWithId;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -18,86 +20,86 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
 @JsonPropertyOrder({
-    "id",
-    "advisorTree",
-    "category",
-    "name",
-    "activeQuestions",
-    "target",
-    "pushedProductsRecords",
-    "flavour",
-    "feedbackTexts"
+        "id",
+        "advisorTree",
+        "category",
+        "name",
+        "activeQuestions",
+        "target",
+        "pushedProductsRecords",
+        "flavour",
+        "feedbackTexts"
 })
 public class FFCampaign {
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("id")
     private String id;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("advisorTree")
     private List<AdvisorTree> advisorTree = new ArrayList<AdvisorTree>();
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("category")
     private String category;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("name")
     private String name;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("activeQuestions")
     private List<Question> activeQuestions = new ArrayList<Question>();
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("target")
     private Target target;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("pushedProductsRecords")
-    private List<PushedProductsRecord> pushedProductsRecords = new ArrayList<PushedProductsRecord>();
+    private List<RecordWithId> pushedProductsRecords = new ArrayList<RecordWithId>();
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("flavour")
     private FFCampaign.Flavour flavour;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("feedbackTexts")
     private List<FeedbackText> feedbackTexts = new ArrayList<FeedbackText>();
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @return
      *     The id
      */
@@ -107,9 +109,9 @@ public class FFCampaign {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @param id
      *     The id
      */
@@ -119,9 +121,9 @@ public class FFCampaign {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @return
      *     The advisorTree
      */
@@ -131,9 +133,9 @@ public class FFCampaign {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @param advisorTree
      *     The advisorTree
      */
@@ -143,9 +145,9 @@ public class FFCampaign {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @return
      *     The category
      */
@@ -155,9 +157,9 @@ public class FFCampaign {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @param category
      *     The category
      */
@@ -167,9 +169,9 @@ public class FFCampaign {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @return
      *     The name
      */
@@ -179,9 +181,9 @@ public class FFCampaign {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @param name
      *     The name
      */
@@ -191,9 +193,9 @@ public class FFCampaign {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @return
      *     The activeQuestions
      */
@@ -203,9 +205,9 @@ public class FFCampaign {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @param activeQuestions
      *     The activeQuestions
      */
@@ -215,9 +217,9 @@ public class FFCampaign {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @return
      *     The target
      */
@@ -227,9 +229,9 @@ public class FFCampaign {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @param target
      *     The target
      */
@@ -239,33 +241,33 @@ public class FFCampaign {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @return
      *     The pushedProductsRecords
      */
     @JsonProperty("pushedProductsRecords")
-    public List<PushedProductsRecord> getPushedProductsRecords() {
+    public List<RecordWithId> getPushedProductsRecords() {
         return pushedProductsRecords;
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @param pushedProductsRecords
      *     The pushedProductsRecords
      */
     @JsonProperty("pushedProductsRecords")
-    public void setPushedProductsRecords(List<PushedProductsRecord> pushedProductsRecords) {
+    public void setPushedProductsRecords(List<RecordWithId> pushedProductsRecords) {
         this.pushedProductsRecords = pushedProductsRecords;
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @return
      *     The flavour
      */
@@ -275,9 +277,9 @@ public class FFCampaign {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @param flavour
      *     The flavour
      */
@@ -287,9 +289,9 @@ public class FFCampaign {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @return
      *     The feedbackTexts
      */
@@ -299,9 +301,9 @@ public class FFCampaign {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      * @param feedbackTexts
      *     The feedbackTexts
      */
@@ -337,7 +339,8 @@ public class FFCampaign {
 
         ADVISOR("ADVISOR"),
         REDIRECT("REDIRECT"),
-        FEEDBACK("FEEDBACK");
+        FEEDBACK("FEEDBACK"),
+        PRODUCT("PRODUCT");
         private final String value;
         private final static Map<String, FFCampaign.Flavour> CONSTANTS = new HashMap<String, FFCampaign.Flavour>();
 

@@ -84,13 +84,7 @@
           "additionalProperties": false,
           "required": [
             "id",
-            "record",
-            "simiMalusAdd",
-            "simiMalusMul",
-            "foundWords",
-            "keywords",
-            "position",
-            "searchSimilarity"
+            "record"
           ],
           "properties": {
             "id": {
@@ -98,45 +92,17 @@
             },
             "record": {
               "type": "object"
-            },
-            "simiMalusAdd": {
-              "type": "integer"
-            },
-            "simiMalusMul": {
-              "type": "number"
-            },
-            "foundWords": {
-              "type": "array",
-              "items": {
-                "type": [
-                  "string",
-                  "null"
-                ]
-              }
-            },
-            "keywords": {
-              "type": [
-                "array",
-                "null"
-              ],
-              "items": {
-                "type": [
-                  "string",
-                  "null"
-                ]
-              }
-            },
-            "position": {
-              "type": "integer"
-            },
-            "searchSimilarity": {
-              "type": "number"
             }
           }
         }
       },
       "flavour": {
-        "enum": ["ADVISOR", "REDIRECT", "FEEDBACK"]
+        "enum": [
+          "ADVISOR",
+          "REDIRECT",
+          "FEEDBACK",
+          "PRODUCT"
+        ]
       },
       "feedbackTexts": {
         "type": "array",

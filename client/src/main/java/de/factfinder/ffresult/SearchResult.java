@@ -21,9 +21,9 @@ import de.factfinder.ffcampaigns.FFCampaign;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
-@JsonPropertyOrder({"breadCrumbTrailItems", "simiLastRecord", "searchParams", "resultCount", "campaigns", "resultStatus", "simiFirstRecord", "refKey",
+@JsonPropertyOrder({"breadCrumbTrailItems", "simiLastRecord", "searchParams", "resultCount", "campaigns", "resultStatus", "simiFirstRecord",
 		"resultsPerPageList", "timedOut", "sortsList", "singleWordResults", "searchTime", "records", "channel", "filters", "groups", "paging",
-		"searchControlParams", "resultArticleNumberStatus"})
+		"searchControlParams", "resultArticleNumberStatus", "fieldRoles"})
 public class SearchResult {
 
 	/**
@@ -41,136 +41,136 @@ public class SearchResult {
 	@JsonProperty("simiLastRecord")
 	private Integer									simiLastRecord;
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("searchParams")
 	private String									searchParams;
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("resultCount")
 	private Integer									resultCount;
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("campaigns")
 	private List<FFCampaign>						campaigns				= new ArrayList<FFCampaign>();
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("resultStatus")
 	private SearchResult.ResultStatus				resultStatus;
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("simiFirstRecord")
 	private Integer									simiFirstRecord;
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
-	 */
-	@JsonProperty("refKey")
-	private String									refKey;
-	/**
-	 *
-	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("resultsPerPageList")
 	private List<ResultsPerPageList>				resultsPerPageList		= new ArrayList<ResultsPerPageList>();
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("timedOut")
 	private Boolean									timedOut;
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("sortsList")
 	private List<SortsList>							sortsList				= new ArrayList<SortsList>();
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("singleWordResults")
 	private List<SingleWordResult>					singleWordResults		= new ArrayList<SingleWordResult>();
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("searchTime")
 	private Integer									searchTime;
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("records")
-	private List<ResultRecord> records = new ArrayList<ResultRecord>();
+	private List<ResultRecord>						records					= new ArrayList<ResultRecord>();
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("channel")
 	private String									channel;
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("filters")
 	private List<Filter>							filters					= new ArrayList<Filter>();
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("groups")
 	private List<Group>								groups					= new ArrayList<Group>();
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("paging")
 	private Paging									paging;
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("searchControlParams")
 	private SearchControlParams						searchControlParams;
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 */
 	@JsonProperty("resultArticleNumberStatus")
 	private SearchResult.ResultArticleNumberStatus	resultArticleNumberStatus;
+	/**
+	 * 
+	 * (Required)
+	 * 
+	 */
+	@JsonProperty("fieldRoles")
+	private FieldRoles								fieldRoles;
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The breadCrumbTrailItems
 	 */
 	@JsonProperty("breadCrumbTrailItems")
@@ -179,9 +179,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param breadCrumbTrailItems The breadCrumbTrailItems
 	 */
 	@JsonProperty("breadCrumbTrailItems")
@@ -190,9 +190,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The simiLastRecord
 	 */
 	@JsonProperty("simiLastRecord")
@@ -201,9 +201,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param simiLastRecord The simiLastRecord
 	 */
 	@JsonProperty("simiLastRecord")
@@ -212,9 +212,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The searchParams
 	 */
 	@JsonProperty("searchParams")
@@ -223,9 +223,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param searchParams The searchParams
 	 */
 	@JsonProperty("searchParams")
@@ -234,9 +234,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The resultCount
 	 */
 	@JsonProperty("resultCount")
@@ -245,9 +245,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param resultCount The resultCount
 	 */
 	@JsonProperty("resultCount")
@@ -256,9 +256,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The campaigns
 	 */
 	@JsonProperty("campaigns")
@@ -267,9 +267,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param campaigns The campaigns
 	 */
 	@JsonProperty("campaigns")
@@ -278,9 +278,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The resultStatus
 	 */
 	@JsonProperty("resultStatus")
@@ -289,9 +289,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param resultStatus The resultStatus
 	 */
 	@JsonProperty("resultStatus")
@@ -300,9 +300,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The simiFirstRecord
 	 */
 	@JsonProperty("simiFirstRecord")
@@ -311,9 +311,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param simiFirstRecord The simiFirstRecord
 	 */
 	@JsonProperty("simiFirstRecord")
@@ -322,31 +322,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
-	 * @return The refKey
-	 */
-	@JsonProperty("refKey")
-	public String getRefKey() {
-		return refKey;
-	}
-
-	/**
-	 *
-	 * (Required)
-	 *
-	 * @param refKey The refKey
-	 */
-	@JsonProperty("refKey")
-	public void setRefKey(String refKey) {
-		this.refKey = refKey;
-	}
-
-	/**
-	 *
-	 * (Required)
-	 *
+	 * 
 	 * @return The resultsPerPageList
 	 */
 	@JsonProperty("resultsPerPageList")
@@ -355,9 +333,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param resultsPerPageList The resultsPerPageList
 	 */
 	@JsonProperty("resultsPerPageList")
@@ -366,9 +344,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The timedOut
 	 */
 	@JsonProperty("timedOut")
@@ -377,9 +355,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param timedOut The timedOut
 	 */
 	@JsonProperty("timedOut")
@@ -388,9 +366,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The sortsList
 	 */
 	@JsonProperty("sortsList")
@@ -399,9 +377,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param sortsList The sortsList
 	 */
 	@JsonProperty("sortsList")
@@ -410,9 +388,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The singleWordResults
 	 */
 	@JsonProperty("singleWordResults")
@@ -421,9 +399,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param singleWordResults The singleWordResults
 	 */
 	@JsonProperty("singleWordResults")
@@ -432,9 +410,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The searchTime
 	 */
 	@JsonProperty("searchTime")
@@ -443,9 +421,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param searchTime The searchTime
 	 */
 	@JsonProperty("searchTime")
@@ -454,9 +432,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The records
 	 */
 	@JsonProperty("records")
@@ -465,9 +443,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param records The records
 	 */
 	@JsonProperty("records")
@@ -476,9 +454,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The channel
 	 */
 	@JsonProperty("channel")
@@ -487,9 +465,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param channel The channel
 	 */
 	@JsonProperty("channel")
@@ -498,9 +476,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The filters
 	 */
 	@JsonProperty("filters")
@@ -509,9 +487,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param filters The filters
 	 */
 	@JsonProperty("filters")
@@ -520,9 +498,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The groups
 	 */
 	@JsonProperty("groups")
@@ -531,9 +509,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param groups The groups
 	 */
 	@JsonProperty("groups")
@@ -542,9 +520,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The paging
 	 */
 	@JsonProperty("paging")
@@ -553,9 +531,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param paging The paging
 	 */
 	@JsonProperty("paging")
@@ -564,9 +542,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The searchControlParams
 	 */
 	@JsonProperty("searchControlParams")
@@ -575,9 +553,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param searchControlParams The searchControlParams
 	 */
 	@JsonProperty("searchControlParams")
@@ -586,9 +564,9 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @return The resultArticleNumberStatus
 	 */
 	@JsonProperty("resultArticleNumberStatus")
@@ -597,14 +575,36 @@ public class SearchResult {
 	}
 
 	/**
-	 *
+	 * 
 	 * (Required)
-	 *
+	 * 
 	 * @param resultArticleNumberStatus The resultArticleNumberStatus
 	 */
 	@JsonProperty("resultArticleNumberStatus")
 	public void setResultArticleNumberStatus(SearchResult.ResultArticleNumberStatus resultArticleNumberStatus) {
 		this.resultArticleNumberStatus = resultArticleNumberStatus;
+	}
+
+	/**
+	 * 
+	 * (Required)
+	 * 
+	 * @return The fieldRoles
+	 */
+	@JsonProperty("fieldRoles")
+	public FieldRoles getFieldRoles() {
+		return fieldRoles;
+	}
+
+	/**
+	 * 
+	 * (Required)
+	 * 
+	 * @param fieldRoles The fieldRoles
+	 */
+	@JsonProperty("fieldRoles")
+	public void setFieldRoles(FieldRoles fieldRoles) {
+		this.fieldRoles = fieldRoles;
 	}
 
 	@Override
@@ -615,9 +615,9 @@ public class SearchResult {
 	@Override
 	public int hashCode() {
 		return new HashCodeBuilder().append(breadCrumbTrailItems).append(simiLastRecord).append(searchParams).append(resultCount).append(campaigns)
-									.append(resultStatus).append(simiFirstRecord).append(refKey).append(resultsPerPageList).append(timedOut).append(sortsList)
+									.append(resultStatus).append(simiFirstRecord).append(resultsPerPageList).append(timedOut).append(sortsList)
 									.append(singleWordResults).append(searchTime).append(records).append(channel).append(filters).append(groups).append(paging)
-									.append(searchControlParams).append(resultArticleNumberStatus).toHashCode();
+									.append(searchControlParams).append(resultArticleNumberStatus).append(fieldRoles).toHashCode();
 	}
 
 	@Override
@@ -627,12 +627,12 @@ public class SearchResult {
 		SearchResult rhs = ((SearchResult) other);
 		return new EqualsBuilder().append(breadCrumbTrailItems, rhs.breadCrumbTrailItems).append(simiLastRecord, rhs.simiLastRecord)
 									.append(searchParams, rhs.searchParams).append(resultCount, rhs.resultCount).append(campaigns, rhs.campaigns)
-									.append(resultStatus, rhs.resultStatus).append(simiFirstRecord, rhs.simiFirstRecord).append(refKey, rhs.refKey)
+									.append(resultStatus, rhs.resultStatus).append(simiFirstRecord, rhs.simiFirstRecord)
 									.append(resultsPerPageList, rhs.resultsPerPageList).append(timedOut, rhs.timedOut).append(sortsList, rhs.sortsList)
 									.append(singleWordResults, rhs.singleWordResults).append(searchTime, rhs.searchTime).append(records, rhs.records)
 									.append(channel, rhs.channel).append(filters, rhs.filters).append(groups, rhs.groups).append(paging, rhs.paging)
 									.append(searchControlParams, rhs.searchControlParams).append(resultArticleNumberStatus, rhs.resultArticleNumberStatus)
-									.isEquals();
+									.append(fieldRoles, rhs.fieldRoles).isEquals();
 	}
 
 	@Generated("org.jsonschema2pojo")
