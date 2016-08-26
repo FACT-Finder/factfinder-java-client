@@ -41,9 +41,10 @@ import de.factfinder.ffsuggest.FFSuggest;
 import de.factfinder.fftagcloud.FFTagCloud;
 
 public class FFApi {
-	public static final String			VERSION			= "7.1";
+	public static final String			VERSION			= "7.2";
 	private static final UrlValidator	URL_VALIDATOR	= new UrlValidator(new String[] {"http", "https"});
 	private static final String			IDS_ONLY		= "idsOnly";
+	private static final String			SESSION_ID		= "sid";
 
 	private final String				endPoint;
 	private final Authentication		authentication;
@@ -390,7 +391,7 @@ public class FFApi {
 		additionalProps.put(PROPERTY_DO, "getRecommendation");
 		ids.forEach(id -> addIfNotNull(additionalProps, "id", id));
 		addIfNotNull(additionalProps, "maxResults", maxResults);
-		addIfNotNull(additionalProps, "sid", sid);
+		addIfNotNull(additionalProps, SESSION_ID, sid);
 		addIfNotNull(additionalProps, IDS_ONLY, idsOnly);
 		return sendRequestAndDeserialize(FFApiActions.RECOMMENDER, additionalProps, new TypeReference<FFRecommender>() {});
 	}
@@ -424,15 +425,31 @@ public class FFApi {
 	 * @param channel the channel
 	 * @param id the product id
 	 * @param idsOnly if true request only product ids
+	 * @param sid the session id
+	 * @return product campaigns
+	 */
+	public List<FFCampaign> getProductCampaigns(final String channel, final String id, final Boolean idsOnly, final String sid) {
+		return getProductCampaigns(channel, id, idsOnly, sid, null);
+	}
+
+	/**
+	 * Returns products campaigns for the given product.
+	 *
+	 * @param channel the channel
+	 * @param id the product id
+	 * @param idsOnly if true request only product ids
+	 * @param sid the session id
 	 * @param customParameters parameters which will be added additional to the request url
 	 * @return product campaigns
 	 */
-	public List<FFCampaign> getProductCampaigns(final String channel, final String id, final Boolean idsOnly, final Iterable<CustomParameter> customParameters) {
+	public List<FFCampaign> getProductCampaigns(final String channel, final String id, final Boolean idsOnly, final String sid,
+			final Iterable<CustomParameter> customParameters) {
 		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
 		Validate.notNull(id, "The id may not be null");
 		additionalProps.put(PROPERTY_DO, "getProductCampaigns");
 		addIfNotNull(additionalProps, "productNumber", id);
 		addIfNotNull(additionalProps, IDS_ONLY, idsOnly);
+		addIfNotNull(additionalProps, SESSION_ID, sid);
 		return sendRequestAndDeserialize(FFApiActions.PRODUCT_CAMPAIGN, additionalProps, new TypeReference<List<FFCampaign>>() {});
 	}
 
@@ -465,10 +482,24 @@ public class FFApi {
 	 * @param channel the channel
 	 * @param ids the product ids
 	 * @param idsOnly if true request only product ids
+	 * @param sid the session id
+	 * @return shopping cart campaigns
+	 */
+	public List<FFCampaign> getShoppingCartCampaigns(final String channel, final Collection<String> ids, final Boolean idsOnly, final String sid) {
+		return getShoppingCartCampaigns(channel, ids, idsOnly, sid, null);
+	}
+
+	/**
+	 * Returns shopping cart campaigns for the given products.
+	 *
+	 * @param channel the channel
+	 * @param ids the product ids
+	 * @param idsOnly if true request only product ids
+	 * @param sid the session id
 	 * @param customParameters parameters which will be added additional to the request url
 	 * @return shopping cart campaigns
 	 */
-	public List<FFCampaign> getShoppingCartCampaigns(final String channel, final Collection<String> ids, final Boolean idsOnly,
+	public List<FFCampaign> getShoppingCartCampaigns(final String channel, final Collection<String> ids, final Boolean idsOnly, final String sid,
 			final Iterable<CustomParameter> customParameters) {
 		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
 		Validate.notNull(ids, "The ids may not be null");
@@ -476,6 +507,66 @@ public class FFApi {
 		additionalProps.put(PROPERTY_DO, "getShoppingCartCampaigns");
 		ids.forEach(id -> addIfNotNull(additionalProps, "productNumber", id));
 		addIfNotNull(additionalProps, IDS_ONLY, idsOnly);
+		addIfNotNull(additionalProps, SESSION_ID, sid);
+		return sendRequestAndDeserialize(FFApiActions.PRODUCT_CAMPAIGN, additionalProps, new TypeReference<List<FFCampaign>>() {});
+	}
+
+	/**
+	 * Returns campaigns for the given page.
+	 *
+	 * @param channel the channel
+	 * @param pageId the page id
+	 * @return page campaigns
+	 */
+	public List<FFCampaign> getPageCampaigns(final String channel, final String pageId) {
+		return getPageCampaigns(channel, pageId, null);
+	}
+
+	/**
+	 * Returns campaigns for the given page.
+	 *
+	 * @param channel the channel
+	 * @param pageId the page id
+	 * @param idsOnly if true returns only the ids of the record
+	 * @return page campaigns
+	 */
+	public List<FFCampaign> getPageCampaigns(final String channel, final String pageId, final Boolean idsOnly) {
+		return getPageCampaigns(channel, pageId, idsOnly, null);
+	}
+
+	/**
+	 * Returns campaigns for the given page.
+	 *
+	 * @param channel the channel
+	 * @param pageId the page id
+	 * @param idsOnly if true returns only the ids of the record
+	 * @param sid the session id
+	 * @return page campaigns
+	 */
+	public List<FFCampaign> getPageCampaigns(final String channel, final String pageId, final Boolean idsOnly, final String sid) {
+		return getPageCampaigns(channel, pageId, idsOnly, sid, null);
+	}
+
+	/**
+	 * Returns campaigns for the given page.
+	 *
+	 * @param channel the channel
+	 * @param pageId the page id
+	 * @param idsOnly if true returns only the ids of the record
+	 * @param sid the session id
+	 * @param customParameters parameters which will be added additional to the request url
+	 * @return page campaigns
+	 */
+	public List<FFCampaign> getPageCampaigns(final String channel, final String pageId, final Boolean idsOnly, final String sid,
+			final Iterable<CustomParameter> customParameters) {
+		final MultiValuedMap<String, String> additionalProps = getMapWithChannelAndCustomParams(channel, customParameters);
+		Validate.notNull(pageId, "The pageId may not be null");
+
+		addIfNotNull(additionalProps, "pageId", pageId);
+		addIfNotNull(additionalProps, SESSION_ID, sid);
+		addIfNotNull(additionalProps, IDS_ONLY, idsOnly);
+		additionalProps.put(PROPERTY_DO, "getPageCampaigns");
+
 		return sendRequestAndDeserialize(FFApiActions.PRODUCT_CAMPAIGN, additionalProps, new TypeReference<List<FFCampaign>>() {});
 	}
 

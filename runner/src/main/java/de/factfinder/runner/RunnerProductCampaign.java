@@ -16,13 +16,15 @@ import de.factfinder.runner.print.SearchResultInformationPrinter;
  *
  */
 public final class RunnerProductCampaign {
+	private static final Logger			LOG									= LogManager.getLogger(RunnerProductCampaign.class);
 	private static final String			CHANNEL								= Settings.getChannel();
 	/** Example product number for getting product campaigns. Please adjust it according to your data. */
 	private static final String			PRODUCT_NUMBER						= "025-0004";
 	/** Example product numbers for getting shopping cart product campaigns. Please adjust it according to your data. */
 	private static final List<String>	SHOPPING_CART_PRODUCT_NUMBER_LIST	= Arrays.asList(PRODUCT_NUMBER, "702-0011");
 	private static final boolean		IDS_ONLY							= false;
-	private static final Logger			LOG									= LogManager.getLogger(RunnerProductCampaign.class);
+	private static final String			PAGE_ID								= "landingpage";
+	private static final String			SESSION_ID							= "session123";
 
 	private RunnerProductCampaign() {
 	}
@@ -34,18 +36,24 @@ public final class RunnerProductCampaign {
 
 		printProductCampaigns(campaignInfoPrinter, api);
 		printShoppingCartCampaigns(campaignInfoPrinter, api);
+		printPageCampaigns(campaignInfoPrinter, api);
 	}
 
 	private static void printProductCampaigns(final CampaignInformationPrinter campaignInfoPrinter, final FFApi api) {
 		LOG.info("Product campaigns");
-		final List<FFCampaign> campaigns = api.getProductCampaigns(CHANNEL, PRODUCT_NUMBER, IDS_ONLY);
+		final List<FFCampaign> campaigns = api.getProductCampaigns(CHANNEL, PRODUCT_NUMBER, IDS_ONLY, SESSION_ID);
 		campaignInfoPrinter.printCampaigns(campaigns);
 	}
 
 	private static void printShoppingCartCampaigns(final CampaignInformationPrinter campaignInfoPrinter, final FFApi api) {
 		LOG.info("Shopping cart campaigns");
-		final List<FFCampaign> campaigns = api.getShoppingCartCampaigns(CHANNEL, SHOPPING_CART_PRODUCT_NUMBER_LIST, IDS_ONLY);
+		final List<FFCampaign> campaigns = api.getShoppingCartCampaigns(CHANNEL, SHOPPING_CART_PRODUCT_NUMBER_LIST, IDS_ONLY, SESSION_ID);
 		campaignInfoPrinter.printCampaigns(campaigns);
 	}
 
+	private static void printPageCampaigns(final CampaignInformationPrinter campaignInfoPrinter, final FFApi api) {
+		LOG.info("Page campaigns");
+		final List<FFCampaign> campaigns = api.getPageCampaigns(CHANNEL, PAGE_ID, IDS_ONLY, SESSION_ID);
+		campaignInfoPrinter.printCampaigns(campaigns);
+	}
 }

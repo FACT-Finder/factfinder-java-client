@@ -5,10 +5,10 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import de.factfinder.api.RecordWithId;
 import de.factfinder.ffcampaigns.Answer;
 import de.factfinder.ffcampaigns.FFCampaign;
 import de.factfinder.ffcampaigns.FeedbackText;
-import de.factfinder.ffcampaigns.PushedProductsRecord;
 import de.factfinder.ffcampaigns.Question;
 import de.factfinder.ffcampaigns.Target;
 
@@ -46,20 +46,31 @@ public final class CampaignInformationPrinter {
 		LOG.info(campaigns.size() + " campaigns found:");
 		for (final FFCampaign campaign : campaigns) {
 			LOG.info("campaign name: [" + campaign.getName() + "] with flavour: [" + campaign.getFlavour() + "]");
-			switch (campaign.getFlavour()) {
-				case ADVISOR:
-					printAdvisorCampaign(campaign);
-					break;
-				case FEEDBACK:
-					printFeedbackCampaign(campaign);
-					break;
-				case REDIRECT:
-					printRedirectCampaign(campaign);
-					break;
-				default:
-					break;
-			}
+			printCampaign(campaign);
 		}
+	}
+
+	private void printCampaign(FFCampaign campaign) {
+		switch (campaign.getFlavour()) {
+			case ADVISOR:
+				printAdvisorCampaign(campaign);
+				break;
+			case FEEDBACK:
+				printFeedbackCampaign(campaign);
+				break;
+			case REDIRECT:
+				printRedirectCampaign(campaign);
+				break;
+			case PRODUCT:
+				printProductCampaign(campaign);
+				break;
+			default:
+				break;
+		}
+	}
+
+	private void printProductCampaign(FFCampaign campaign) {
+		printPushedProducts(campaign);
 	}
 
 	private void printAdvisorCampaign(final FFCampaign campaign) {
@@ -67,17 +78,13 @@ public final class CampaignInformationPrinter {
 		// if we need the whole tree make sure the search control parameter "generateAdvisorTree" is set and use campaign.getAdvisorTree()
 		for (final Question question : campaign.getActiveQuestions()) {
 			printQuestion(question);
-			for (final Answer answer : question.getAnswers()) {
-				printAnswer(answer);
-			}
+			question.getAnswers().forEach(this::printAnswer);
 		}
 	}
 
 	private void printAnswer(final Answer answer) {
 		LOG.info("\t\tANSWER id: [" + answer.getId() + "] text: [" + answer.getText() + "] parameter: [" + answer.getParams() + "]");
-		for (final Question question : answer.getQuestions()) {
-			printQuestion(question);
-		}
+		answer.getQuestions().forEach(this::printQuestion);
 	}
 
 	private void printQuestion(final Question question) {
@@ -95,12 +102,10 @@ public final class CampaignInformationPrinter {
 	}
 
 	private void printPushedProducts(final FFCampaign campaign) {
-		final List<PushedProductsRecord> pushedProductsRecords = campaign.getPushedProductsRecords();
+		final List<RecordWithId> pushedProductsRecords = campaign.getPushedProductsRecords();
 		if (!pushedProductsRecords.isEmpty()) {
 			LOG.info("\tPUSHED PRODUCTS");
-			for (final PushedProductsRecord product : pushedProductsRecords) {
-				searchResultInfoPrinter.printRecord(product.getRecord());
-			}
+			pushedProductsRecords.forEach(searchResultInfoPrinter::printRecord);
 		}
 	}
 
