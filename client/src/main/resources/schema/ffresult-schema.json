@@ -837,16 +837,16 @@
           "type": "string"
         },
         "absoluteMinValue": {
-          "type": "integer"
+          "type": "number"
         },
         "absoluteMaxValue": {
-          "type": "integer"
+          "type": "number"
         },
         "selectedMinValue": {
-          "type": "integer"
+          "type": "number"
         },
         "selectedMaxValue": {
-          "type": "integer"
+          "type": "number"
         }
       }
     }

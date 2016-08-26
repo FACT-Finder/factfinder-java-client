@@ -76,13 +76,13 @@ public class Element {
     @JsonProperty("associatedFieldName")
     private String associatedFieldName;
     @JsonProperty("absoluteMinValue")
-    private Integer absoluteMinValue;
+    private Double absoluteMinValue;
     @JsonProperty("absoluteMaxValue")
-    private Integer absoluteMaxValue;
+    private Double absoluteMaxValue;
     @JsonProperty("selectedMinValue")
-    private Integer selectedMinValue;
+    private Double selectedMinValue;
     @JsonProperty("selectedMaxValue")
-    private Integer selectedMaxValue;
+    private Double selectedMaxValue;
 
     /**
      * 
@@ -258,7 +258,7 @@ public class Element {
      *     The absoluteMinValue
      */
     @JsonProperty("absoluteMinValue")
-    public Integer getAbsoluteMinValue() {
+    public Double getAbsoluteMinValue() {
         return absoluteMinValue;
     }
 
@@ -268,7 +268,7 @@ public class Element {
      *     The absoluteMinValue
      */
     @JsonProperty("absoluteMinValue")
-    public void setAbsoluteMinValue(Integer absoluteMinValue) {
+    public void setAbsoluteMinValue(Double absoluteMinValue) {
         this.absoluteMinValue = absoluteMinValue;
     }
 
@@ -278,7 +278,7 @@ public class Element {
      *     The absoluteMaxValue
      */
     @JsonProperty("absoluteMaxValue")
-    public Integer getAbsoluteMaxValue() {
+    public Double getAbsoluteMaxValue() {
         return absoluteMaxValue;
     }
 
@@ -288,7 +288,7 @@ public class Element {
      *     The absoluteMaxValue
      */
     @JsonProperty("absoluteMaxValue")
-    public void setAbsoluteMaxValue(Integer absoluteMaxValue) {
+    public void setAbsoluteMaxValue(Double absoluteMaxValue) {
         this.absoluteMaxValue = absoluteMaxValue;
     }
 
@@ -298,7 +298,7 @@ public class Element {
      *     The selectedMinValue
      */
     @JsonProperty("selectedMinValue")
-    public Integer getSelectedMinValue() {
+    public Double getSelectedMinValue() {
         return selectedMinValue;
     }
 
@@ -308,7 +308,7 @@ public class Element {
      *     The selectedMinValue
      */
     @JsonProperty("selectedMinValue")
-    public void setSelectedMinValue(Integer selectedMinValue) {
+    public void setSelectedMinValue(Double selectedMinValue) {
         this.selectedMinValue = selectedMinValue;
     }
 
@@ -318,7 +318,7 @@ public class Element {
      *     The selectedMaxValue
      */
     @JsonProperty("selectedMaxValue")
-    public Integer getSelectedMaxValue() {
+    public Double getSelectedMaxValue() {
         return selectedMaxValue;
     }
 
@@ -328,7 +328,7 @@ public class Element {
      *     The selectedMaxValue
      */
     @JsonProperty("selectedMaxValue")
-    public void setSelectedMaxValue(Integer selectedMaxValue) {
+    public void setSelectedMaxValue(Double selectedMaxValue) {
         this.selectedMaxValue = selectedMaxValue;
     }
 
