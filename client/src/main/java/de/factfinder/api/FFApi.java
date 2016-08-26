@@ -42,7 +42,6 @@ import de.factfinder.fftagcloud.FFTagCloud;
 
 public class FFApi {
 	public static final String			VERSION			= "7.2";
-	private static final UrlValidator	URL_VALIDATOR	= new UrlValidator(new String[] {"http", "https"});
 	private static final String			IDS_ONLY		= "idsOnly";
 	private static final String			SESSION_ID		= "sid";
 
@@ -58,7 +57,6 @@ public class FFApi {
 	 */
 	public FFApi(final String endPoint,
 			final Authentication authentication) {
-		Validate.isTrue(URL_VALIDATOR.isValid(endPoint), "The endPoint must be a valid url.");
 		this.endPoint = endPoint + (endPoint.endsWith("/") ? "" : "/");
 		this.authentication = authentication;
 	}
