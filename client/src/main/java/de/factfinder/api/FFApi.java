@@ -23,7 +23,6 @@ import java.util.stream.Collectors;
 import org.apache.commons.collections4.MultiValuedMap;
 import org.apache.commons.collections4.multimap.ArrayListValuedHashMap;
 import org.apache.commons.lang3.Validate;
-import org.apache.commons.validator.UrlValidator;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -41,13 +40,13 @@ import de.factfinder.ffsuggest.FFSuggest;
 import de.factfinder.fftagcloud.FFTagCloud;
 
 public class FFApi {
-	public static final String			VERSION			= "7.2";
-	private static final String			IDS_ONLY		= "idsOnly";
-	private static final String			SESSION_ID		= "sid";
+	public static final String		VERSION		= "7.2";
+	private static final String		IDS_ONLY	= "idsOnly";
+	private static final String		SESSION_ID	= "sid";
 
-	private final String				endPoint;
-	private final Authentication		authentication;
-	private final ObjectMapper			mapper			= new ObjectMapper();
+	private final String			endPoint;
+	private final Authentication	authentication;
+	private final ObjectMapper		mapper		= new ObjectMapper();
 
 	/**
 	 * Constructs a new FFApi.
@@ -602,6 +601,70 @@ public class FFApi {
 	public void track(final String channel, final MultiValuedMap<String, String> parameters) {
 		parameters.put("channel", channel);
 		sendRequest(FFApiActions.TRACKING, parameters);
+	}
+
+	/**
+	 * Refreshes all search databases.
+	 */
+	public void refreshDatabases() {
+		refreshDatabases("refreshDatabases", null);
+	}
+
+	/**
+	 * Refreshes given search databases.
+	 *
+	 * @param channels the channels
+	 */
+	public void refreshDatabases(final Collection<String> channels) {
+		refreshDatabases("refreshDatabases", channels);
+	}
+
+	/**
+	 * Refreshes all suggest databases.
+	 */
+	public void refreshSuggestDatabases() {
+		refreshDatabases("refreshSuggestDatabases", null);
+	}
+
+	/**
+	 * Refreshes suggest databases.
+	 *
+	 * @param channels the channels
+	 */
+	public void refreshSuggestDatabases(final Collection<String> channels) {
+		refreshDatabases("refreshSuggestDatabases", channels);
+	}
+
+	/**
+	 * Refreshes all suggest and search databases.
+	 */
+	public void refreshAllDatabases() {
+		refreshDatabases("refreshAllDatabases", null);
+	}
+
+	/**
+	 * Refreshes suggest and search databases.
+	 *
+	 * @param channels the channels
+	 */
+	public void refreshAllDatabases(final Collection<String> channels) {
+		refreshDatabases("refreshAllDatabases", channels);
+	}
+
+	/**
+	 * Refresh both databases on the next request.
+	 */
+	public void refreshDatabasesOnNextRequest() {
+		refreshDatabases("refreshDatabasesOnNextRequest", null);
+	}
+
+	private void refreshDatabases(final String doParam, final Collection<String> channels) {
+		final MultiValuedMap<String, String> parameters = new ArrayListValuedHashMap<>();
+		parameters.put(PROPERTY_DO, doParam);
+		if (channels != null) {
+			parameters.put("channel", channels.stream().collect(Collectors.joining(",")));
+		}
+		sendRequest(FFApiActions.REFRESH_DATABASES, parameters);
 	}
 
 	private MultiValuedMap<String, String> getMapWithChannelAndCustomParams(final String channel, final Iterable<CustomParameter> customParameters) {

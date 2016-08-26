@@ -15,6 +15,7 @@ public final class FFApiActions {
 	public static final String	PRODUCT_CAMPAIGN	= "ProductCampaign.ff";
 	public static final String	DATABASE_EXPIRATION	= "DatabaseExpiration.ff";
 	public static final String	TRACKING			= "Tracking.ff";
+	public static final String	REFRESH_DATABASES	= "RefreshDatabases.ff";
 
 	private FFApiActions() {
 	}

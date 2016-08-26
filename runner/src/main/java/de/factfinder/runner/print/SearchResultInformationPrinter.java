@@ -1,6 +1,5 @@
 package de.factfinder.runner.print;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -128,14 +127,18 @@ public final class SearchResultInformationPrinter {
 
 		LOG.info("--- START RECORDS ---");
 		// This loop gets all the records of the current search result page.
-		for (final ResultRecord record : result.getRecords()) {
-			printResultRecord(record);
-		}
+		result.getRecords().forEach(this::printResultRecord);
 		LOG.info("--- END RECORDS ---");
 
 		printAfterSearchNavigation(result);
 		printCampaigns(result);
+		printFieldRoles(result);
+	}
 
+	private void printFieldRoles(final SearchResult result) {
+		LOG.info("--- START FIELDROLES ---");
+		result.getFieldRoles().forEach((k, v) -> LOG.info(k + " = " + v));
+		LOG.info("--- END FIELDROLES ---");
 	}
 
 	private void printCampaigns(final SearchResult result) {
