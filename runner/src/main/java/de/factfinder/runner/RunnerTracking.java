@@ -170,7 +170,8 @@ public final class RunnerTracking {
 			api.track(Settings.getChannel(), parameters);
 			LOG.info("Tracking " + parameters.get("event") + " successful");
 		} catch (final FFApiException e) {
-			LOG.error("Tracking " + parameters.get("event") + " not successful: " + e.getResponse());
+			LOG.error("Tracking " + parameters.get("event") + " not successful: " + e.getResponseMessage());
+			LOG.error(e.getResponseStacktrace());
 		}
 	}
 }

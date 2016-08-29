@@ -703,11 +703,19 @@ public class FFApi {
 					response = readInputStream(connection.getErrorStream());
 				} catch (final IOException ignored) {}
 			}
-			throw new FFApiException(statusCode, response, e);
+			throw new FFApiException(statusCode, response, deserializeError(response), e);
 		} finally {
 			if (connection != null) {
 				connection.disconnect();
 			}
+		}
+	}
+
+	private FFError deserializeError(final String error) {
+		try {
+			return mapper.readValue(error, new TypeReference<FFError>() {});
+		} catch (final IOException ignored) {
+			return null; // not a valid factfinder response
 		}
 	}
 
@@ -725,7 +733,7 @@ public class FFApi {
 	}
 
 	private URL getUrl(final String action, final MultiValuedMap<String, String> additionalGetParameters) {
-		final StringBuilder urlParameter = new StringBuilder("?format=json");
+		final StringBuilder urlParameter = new StringBuilder("?format=json&verbose=true");
 		addIfNotNull(additionalGetParameters, "version", VERSION);
 		final Consumer<Map.Entry<String, String>> addToUrl = entry -> {
 			try {
