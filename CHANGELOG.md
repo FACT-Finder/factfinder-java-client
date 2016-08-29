@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.2.0 (2016-08-29)
+- Adjusted API to be compatible with FACT-Finder 7.2
+- Added refresh databases api
+- Adjust the error handling that the error message get deserialized and is available inside the `FFApiException`
+- Removed Url Validation in the `FFApi` due to a bug
+
 ### 1.1.1 (2016-08-26)
 - Combined `FirstLink`, `NextLink`, `PageLink`, `LastLink` and `PreviousLink` to `Link`
 - Combined `CompareRecord`, `ResultRecord`(ffrecommender) and `SimilarityRecord` to `RecordWithId`
