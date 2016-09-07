@@ -1,5 +1,14 @@
 # Changelog
 
+### 1.2.1 (2016-09-07)
+- Added Gzip support
+- Added timeout handling:
+  - A timeout configuration can be added as 3rd parameter of the `FFApi` constructor
+  - When a timeout occurs a `FFApiException` is thrown
+- Added `isTimeout` property to `FFApiException`
+- Updated Gradle Wrapper Version to 3.0
+- Added `FFApi#refreshRecommenderDatabases` api and runner example
+
 ### 1.2.0 (2016-08-29)
 - Adjusted API to be compatible with FACT-Finder 7.2
 - Added refresh databases api
