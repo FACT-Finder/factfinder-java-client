@@ -8,19 +8,23 @@ import lombok.Getter;
 public class FFApiException extends RuntimeException {
 	private static final long	serialVersionUID	= 1042719219480632336L;
 	@Getter
-	private final int     statusCode;
+	private final int			statusCode;
 	@Getter
-	private final String  serializedResponse;
-	private final FFError error;
+	private final String		serializedResponse;
+	@Getter
+	private final boolean		isTimeout;
+	private final FFError		error;
 
 	public FFApiException(final int statusCode,
 			final String serializedResponse,
 			final FFError error,
-			final Throwable e) {
-		super("StatusCode: " + statusCode + " Response: " + serializedResponse, e);
+			final Throwable e,
+			final boolean isTimeout) {
+		super("StatusCode: " + statusCode + "; IsTimeout: " + isTimeout + "; Response: " + serializedResponse.replaceAll("\\r|\\n", ""), e);
 		this.statusCode = statusCode;
 		this.error = error;
 		this.serializedResponse = serializedResponse;
+		this.isTimeout = isTimeout;
 	}
 
 	/**

@@ -13,12 +13,14 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
+import java.util.zip.GZIPInputStream;
 
 import org.apache.commons.collections4.MultiValuedMap;
 import org.apache.commons.collections4.multimap.ArrayListValuedHashMap;
@@ -40,13 +42,16 @@ import de.factfinder.ffsuggest.FFSuggest;
 import de.factfinder.fftagcloud.FFTagCloud;
 
 public class FFApi {
-	public static final String		VERSION		= "7.2";
-	private static final String		IDS_ONLY	= "idsOnly";
-	private static final String		SESSION_ID	= "sid";
+	public static final String		VERSION				= "7.2";
+	private static final String		IDS_ONLY			= "idsOnly";
+	private static final String		SESSION_ID			= "sid";
+	private static final String		COMPRESSION_TYPE	= "gzip";
 
 	private final String			endPoint;
 	private final Authentication	authentication;
-	private final ObjectMapper		mapper		= new ObjectMapper();
+	private final ObjectMapper		mapper				= new ObjectMapper();
+
+	private FFApiTimeoutConfig		timeoutConfig;
 
 	/**
 	 * Constructs a new FFApi.
@@ -56,6 +61,20 @@ public class FFApi {
 	 */
 	public FFApi(final String endPoint,
 			final Authentication authentication) {
+		this(endPoint, authentication, new FFApiTimeoutConfig());
+	}
+
+	/**
+	 * Constructs a new FFApi.
+	 *
+	 * @param endPoint the endPoint to the fact-finder application
+	 * @param authentication the authentication to access fact-finder
+	 * @param timeoutConfig the timeout configuration
+	 */
+	public FFApi(final String endPoint,
+			final Authentication authentication,
+			final FFApiTimeoutConfig timeoutConfig) {
+		this.timeoutConfig = timeoutConfig;
 		this.endPoint = endPoint + (endPoint.endsWith("/") ? "" : "/");
 		this.authentication = authentication;
 	}
@@ -647,7 +666,7 @@ public class FFApi {
 	 *
 	 * @param channels the channels
 	 */
-	public void refreshRecommenderDatabases(Collection<String> channels) {
+	public void refreshRecommenderDatabases(final Collection<String> channels) {
 		refreshDatabases("refreshRecommenderDatabases", channels);
 	}
 
@@ -697,29 +716,31 @@ public class FFApi {
 		HttpURLConnection connection = null;
 
 		try {
-			// Create connection
-
 			final URL url = getUrl(action, additionalGetParameters);
 			connection = (HttpURLConnection) url.openConnection();
 			connection.setRequestMethod("GET");
 			connection.setRequestProperty("Content-Type", "application/json");
 			connection.setRequestProperty("Content-Language", "en-US");
-
+			connection.setRequestProperty("Accept-Encoding", COMPRESSION_TYPE);
+			connection.setConnectTimeout(timeoutConfig.getConnectionTimeout(action) * 1000);
+			connection.setReadTimeout(timeoutConfig.getReadTimeout(action) * 1000);
 			connection.setUseCaches(false);
 			connection.setInstanceFollowRedirects(false);
 			connection.setDoOutput(true);
 
-			return readInputStream(connection.getInputStream());
+			return readInputStream(connection.getInputStream(), connection.getContentEncoding());
+		} catch (final SocketTimeoutException e) {
+			throw new FFApiException(-1, "Request Timeout", new FFError("timeout", ""), e, true);
 		} catch (final IOException e) {
 			int statusCode = -1;
 			String response = null;
 			if (connection != null) {
 				try {
 					statusCode = connection.getResponseCode();
-					response = readInputStream(connection.getErrorStream());
+					response = readInputStream(connection.getErrorStream(), connection.getContentEncoding());
 				} catch (final IOException ignored) {}
 			}
-			throw new FFApiException(statusCode, response, deserializeError(response), e);
+			throw new FFApiException(statusCode, response, deserializeError(response), e, false);
 		} finally {
 			if (connection != null) {
 				connection.disconnect();
@@ -729,16 +750,24 @@ public class FFApi {
 
 	private FFError deserializeError(final String error) {
 		try {
+			if (error == null) { return new FFError("-EMPTY-", "none"); }
+
 			return mapper.readValue(error, new TypeReference<FFError>() {});
 		} catch (final IOException ignored) {
 			return null; // not a valid factfinder response
 		}
 	}
 
-	private String readInputStream(final InputStream inputStream) throws IOException {
+	private String readInputStream(final InputStream inputStream, final String encoding) throws IOException {
 		if (inputStream == null) { return ""; }
+		InputStream encodedInputStream = inputStream;
+
+		if (COMPRESSION_TYPE.equals(encoding)) {
+			encodedInputStream = new GZIPInputStream(inputStream);
+		}
+
 		final StringBuilder response = new StringBuilder(500);
-		try (final BufferedReader rd = new BufferedReader(new InputStreamReader(inputStream))) {
+		try (final BufferedReader rd = new BufferedReader(new InputStreamReader(encodedInputStream))) {
 			String line;
 			while ((line = rd.readLine()) != null) {
 				response.append(line);
