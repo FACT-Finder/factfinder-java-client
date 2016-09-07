@@ -23,19 +23,33 @@ public final class RunnerRefreshDatabases {
 		final FFApi api = new FFApi(Settings.getEndpointUrl(), Settings.getAuthentication());
 
 		try {
+
 			LOG.info("Refresh search database for channel: " + CHANNEL);
 			api.refreshDatabases(asList(CHANNEL));
 
 			LOG.info("Refresh suggest database for channel: " + CHANNEL);
 			api.refreshSuggestDatabases(asList(CHANNEL));
 
+			LOG.info("Refresh recommender database for channel: " + CHANNEL);
+			api.refreshRecommenderDatabases(asList(CHANNEL));
+
+			LOG.info("Refresh all databases for channel: " + CHANNEL);
+			api.refreshAllDatabases(asList(CHANNEL));
+
 			LOG.info("Refresh all search databases");
 			api.refreshDatabases();
 
 			LOG.info("Refresh all suggest databases");
 			api.refreshSuggestDatabases();
+
+			LOG.info("Refresh all recommender databases");
+			api.refreshRecommenderDatabases();
+
+			LOG.info("Refresh all databases");
+			api.refreshAllDatabases();
+
 		} catch (final FFApiException e) {
-			LOG.error("An error occured: " + e.getResponseMessage());
+			LOG.error("An error occurred: " + e.getResponseMessage());
 			LOG.error(e.getResponseStacktrace());
 		}
 	}

@@ -607,7 +607,7 @@ public class FFApi {
 	 * Refreshes all search databases.
 	 */
 	public void refreshDatabases() {
-		refreshDatabases("refreshDatabases", null);
+		refreshDatabases(null);
 	}
 
 	/**
@@ -623,7 +623,7 @@ public class FFApi {
 	 * Refreshes all suggest databases.
 	 */
 	public void refreshSuggestDatabases() {
-		refreshDatabases("refreshSuggestDatabases", null);
+		refreshSuggestDatabases(null);
 	}
 
 	/**
@@ -636,14 +636,30 @@ public class FFApi {
 	}
 
 	/**
-	 * Refreshes all suggest and search databases.
+	 * Refresh all recommender databases.
 	 */
-	public void refreshAllDatabases() {
-		refreshDatabases("refreshAllDatabases", null);
+	public void refreshRecommenderDatabases() {
+		refreshRecommenderDatabases(null);
 	}
 
 	/**
-	 * Refreshes suggest and search databases.
+	 * Refreshes recommender databases.
+	 *
+	 * @param channels the channels
+	 */
+	public void refreshRecommenderDatabases(Collection<String> channels) {
+		refreshDatabases("refreshRecommenderDatabases", channels);
+	}
+
+	/**
+	 * Refreshes all databases.
+	 */
+	public void refreshAllDatabases() {
+		refreshAllDatabases(null);
+	}
+
+	/**
+	 * Refreshes all databases for the given channel's.
 	 *
 	 * @param channels the channels
 	 */
@@ -652,7 +668,7 @@ public class FFApi {
 	}
 
 	/**
-	 * Refresh both databases on the next request.
+	 * Refresh databases on the next request.
 	 */
 	public void refreshDatabasesOnNextRequest() {
 		refreshDatabases("refreshDatabasesOnNextRequest", null);
@@ -661,7 +677,7 @@ public class FFApi {
 	private void refreshDatabases(final String doParam, final Collection<String> channels) {
 		final MultiValuedMap<String, String> parameters = new ArrayListValuedHashMap<>();
 		parameters.put(PROPERTY_DO, doParam);
-		if (channels != null) {
+		if (channels != null && !channels.isEmpty()) {
 			parameters.put("channel", channels.stream().collect(Collectors.joining(",")));
 		}
 		sendRequest(FFApiActions.REFRESH_DATABASES, parameters);
