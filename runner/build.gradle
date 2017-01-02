@@ -3,3 +3,15 @@ dependencies {
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.6.2'
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.6.2'
 }
+
+jar {
+    manifest.attributes 'Main-Class': 'de.factfinder.runner.RunnerSearch'
+    from {
+        configurations.compile.collect { (it.directory ? it : zipTree(it)) }
+    }
+}
+
+task run(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main 'de.factfinder.runner.' + (project.findProperty('runner') ?: 'RunnerSearch')
+}
