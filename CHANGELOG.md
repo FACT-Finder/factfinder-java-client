@@ -1,5 +1,12 @@
 # Changelog
 
+### 1.2.2 (2017-01-02)
+- `jar`-GradleTask now produces a runnable jar in the runner project (#2)
+- Added `run`-task for executing the runner-classes directly with Gradle
+  - Example: `./gradlew run` executes the RunnerSearch
+  - For specifying the runner which should be executed the `runner` project property can be set
+  - Example: `./gradlew run -Prunner=RunnerSuggest` (only the classname is needed as value)
+
 ### 1.2.1 (2016-09-07)
 - Added Gzip support
 - Added timeout handling:
