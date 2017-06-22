@@ -1,6 +1,7 @@
 # FACT-Finder Java Client
 
-This project should help you integrate [FACT-Finder](http://www.fact-finder.com/) into your own system, by demonstrating how to use the different functionalities via the JSON API.
+This project should help you integrate [FACT-Finder](http://www.fact-finder.com/) into your own system, by demonstrating how to use the different 
+functionalities via the JSON based REST API.
   
 ## Usage
 ### Requirement
@@ -8,7 +9,12 @@ This project should help you integrate [FACT-Finder](http://www.fact-finder.com/
 - As this project is using [gradle](https://gradle.org/), you need a plugin to import it into your IDE. [IntelliJ](https://www.jetbrains.com/idea/) does support this by default, when using [Eclipse](https://eclipse.org/) we recommend using the [Buildship Plugin](http://marketplace.eclipse.org/content/buildship-gradle-integration).
 
 ### Project structure
-This project consists of two modules, named client and the runner. The client module contains POJO-classes which have been generated using the JSON-schema-definitions and [jsonschema2pojo](http://www.jsonschema2pojo.org/). In addition, this module contains all classes necessary to send requests to FACT-Finder and its JSON API.
+This project consists of two modules, named client and runner. 
+
+The client module contains POJO-classes and all classes necessary to send requests to FACT-Finder via its JSON based REST API. Most of the module has been 
+generated using [swagger codegen](http://swagger.io/docs/swagger-tools/). Only the classes under `de.factfinder.api` were added manually to ensure the validity
+ of the auth key for each service call. Some dependencies were also added to the generated `build.gradle`. These dependencies are needed by the manually 
+ created classes.
 
 The second module, named runner, contains example classes using that client classes. Each `Runner*`-class is executable on it's own and demonstrates a different FACT-Finder functionality.
 

@@ -5,19 +5,20 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import de.factfinder.api.RecordWithId;
-import de.factfinder.ffcampaigns.Answer;
-import de.factfinder.ffcampaigns.FFCampaign;
-import de.factfinder.ffcampaigns.FeedbackText;
-import de.factfinder.ffcampaigns.Question;
-import de.factfinder.ffcampaigns.Target;
+import io.swagger.client.model.Answer;
+import io.swagger.client.model.Campaign;
+import io.swagger.client.model.FeedbackText;
+import io.swagger.client.model.Question;
+import io.swagger.client.model.RecordWithId;
+import io.swagger.client.model.Target;
 
 /**
  * Prints information about campaigns.
  */
 public final class CampaignInformationPrinter {
-	private static final Logger						LOG	= LogManager.getLogger(CampaignInformationPrinter.class.getSimpleName());
-	private final SearchResultInformationPrinter	searchResultInfoPrinter;
+	private static final Logger LOG = LogManager.getLogger(CampaignInformationPrinter.class.getSimpleName());
+
+	private final SearchResultInformationPrinter searchResultInfoPrinter;
 
 	/**
 	 * Constructor.
@@ -42,15 +43,15 @@ public final class CampaignInformationPrinter {
 	 *
 	 * @param campaigns a list of campaigns.
 	 */
-	public void printCampaigns(final List<FFCampaign> campaigns) {
+	public void printCampaigns(final List<Campaign> campaigns) {
 		LOG.info(campaigns.size() + " campaigns found:");
-		for (final FFCampaign campaign : campaigns) {
+		for (final Campaign campaign : campaigns) {
 			LOG.info("campaign name: [" + campaign.getName() + "] with flavour: [" + campaign.getFlavour() + "]");
 			printCampaign(campaign);
 		}
 	}
 
-	private void printCampaign(FFCampaign campaign) {
+	private void printCampaign(final Campaign campaign) {
 		switch (campaign.getFlavour()) {
 			case ADVISOR:
 				printAdvisorCampaign(campaign);
@@ -69,11 +70,11 @@ public final class CampaignInformationPrinter {
 		}
 	}
 
-	private void printProductCampaign(FFCampaign campaign) {
+	private void printProductCampaign(final Campaign campaign) {
 		printPushedProducts(campaign);
 	}
 
-	private void printAdvisorCampaign(final FFCampaign campaign) {
+	private void printAdvisorCampaign(final Campaign campaign) {
 		LOG.info("\tADVISOR ACTIVE QUESTIONS");
 		// if we need the whole tree make sure the search control parameter "generateAdvisorTree" is set and use campaign.getAdvisorTree()
 		for (final Question question : campaign.getActiveQuestions()) {
@@ -96,12 +97,12 @@ public final class CampaignInformationPrinter {
 	 *
 	 * @param campaign the campaign.
 	 */
-	private void printFeedbackCampaign(final FFCampaign campaign) {
+	private void printFeedbackCampaign(final Campaign campaign) {
 		printFeedbackTexts(campaign);
 		printPushedProducts(campaign);
 	}
 
-	private void printPushedProducts(final FFCampaign campaign) {
+	private void printPushedProducts(final Campaign campaign) {
 		final List<RecordWithId> pushedProductsRecords = campaign.getPushedProductsRecords();
 		if (!pushedProductsRecords.isEmpty()) {
 			LOG.info("\tPUSHED PRODUCTS");
@@ -109,16 +110,15 @@ public final class CampaignInformationPrinter {
 		}
 	}
 
-	private void printFeedbackTexts(final FFCampaign campaign) {
+	private void printFeedbackTexts(final Campaign campaign) {
 		for (final FeedbackText text : campaign.getFeedbackTexts()) {
 			LOG.info("\tFEEDBACK TEXT id: [" + text.getId() + "] label: [" + text.getLabel() + "] text: [" + text.getText() + "] HTML-allowed: ["
-					+ text.getHtml() + "]");
+										 + text.getHtml() + "]");
 		}
 	}
 
-	private void printRedirectCampaign(final FFCampaign campaign) {
+	private void printRedirectCampaign(final Campaign campaign) {
 		final Target target = campaign.getTarget();
 		LOG.info("\tREDIRECT name: [" + target.getName() + "] destination: [" + target.getDestination() + "]");
 	}
-
 }

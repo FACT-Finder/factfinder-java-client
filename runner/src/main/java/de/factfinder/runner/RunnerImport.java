@@ -1,51 +1,56 @@
 package de.factfinder.runner;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import de.factfinder.api.FFApi;
-import de.factfinder.api.FFApiActions;
-import de.factfinder.api.FFApiException;
-import de.factfinder.api.FFApiTimeoutConfig;
-import de.factfinder.ffimport.FFImport;
+import io.swagger.client.ApiException;
+import io.swagger.client.Configuration;
+import io.swagger.client.api.ImportApi;
+import io.swagger.client.model.ImportChannelResult;
+import io.swagger.client.model.ImportResult;
 
 /**
- * This class demonstrates the usage of the FACT-Finder JSON API to externally trigger product data and suggest imports.
+ * This class demonstrates the usage of the FACT-Finder REST API to externally trigger product data and suggest imports.
  */
 public final class RunnerImport {
-	private static final Logger	LOG		= LogManager.getLogger(RunnerImport.class.getSimpleName());
-	private static final String	CHANNEL	= Settings.getChannel();
+	private static final Logger LOG     = LogManager.getLogger(RunnerImport.class.getSimpleName());
+	private static final String CHANNEL = Settings.getChannel();
 
 	private RunnerImport() {
 	}
 
 	public static void main(final String[] args) {
-		final FFApiTimeoutConfig timeoutConfig = new FFApiTimeoutConfig();
+		Settings.setupAuthKeyRefreshingClientWithHigherTimeout();
 
-		// set read timeout of the import to 10 minutes
-		timeoutConfig.setReadTimeout(FFApiActions.IMPORT, 60 * 10);
-
-		final FFApi api = new FFApi(Settings.getEndpointUrl(), Settings.getAuthentication(), timeoutConfig);
+		final ImportApi apiInstance = new ImportApi();
+		final List<String> channel = Collections.singletonList(CHANNEL);
+		final Boolean download = false;
+		final Boolean quiet = false;
 
 		try {
-
 			LOG.info("Start product data import");
-			FFImport result = api.startImport(CHANNEL);
-			result.getErrors().forEach(LOG::error);
-			result.getStatus().forEach(LOG::info);
+			final ImportResult productImportResult = apiInstance.startSearchImportUsingPOST(channel, download, quiet);
 
+			final ImportChannelResult channelResult = productImportResult.getMessages().get(CHANNEL);
+			channelResult.getErrorMessages().forEach(LOG::error);
+			channelResult.getStatusMessages().forEach(LOG::info);
+		} catch (final ApiException e) {
+			LOG.error("Exception when calling ImportApi#startSearchImportUsingPOST", e);
+		}
+
+		try {
 			LOG.info("Start suggest data import");
-			result = api.startSuggestImport(CHANNEL);
-			result.getErrors().forEach(LOG::error);
-			result.getStatus().forEach(LOG::info);
+			final ImportResult suggestImportResult = apiInstance.startSuggestImportUsingPOST(channel, quiet);
 
-		} catch (final FFApiException e) {
-			if (e.isTimeout()) {
-				LOG.error("Timeout");
-			} else {
-				LOG.error(e.getMessage());
-			}
+			final ImportChannelResult channelResultForSuggest = suggestImportResult.getMessages().get(CHANNEL);
+			channelResultForSuggest.getErrorMessages().forEach(LOG::error);
+			channelResultForSuggest.getStatusMessages().forEach(LOG::info);
+		} catch (final ApiException e) {
+			LOG.error("Exception when calling ImportApi#startSuggestImportUsingPOST", e);
 		}
 	}
-
 }

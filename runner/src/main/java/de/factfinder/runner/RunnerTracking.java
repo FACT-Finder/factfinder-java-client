@@ -1,177 +1,172 @@
 package de.factfinder.runner;
 
-import org.apache.commons.collections4.MultiValuedMap;
-import org.apache.commons.collections4.multimap.ArrayListValuedHashMap;
+import java.util.Collections;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import de.factfinder.api.FFApi;
-import de.factfinder.api.FFApiException;
+import io.swagger.client.ApiException;
+import io.swagger.client.api.TrackingApi;
+import io.swagger.client.model.CartOrCheckoutEvent;
+import io.swagger.client.model.ClickEvent;
+import io.swagger.client.model.FeedbackEvent;
+import io.swagger.client.model.Filter;
+import io.swagger.client.model.FilterValue;
+import io.swagger.client.model.LoginEvent;
+import io.swagger.client.model.RecommendationClickEvent;
+import io.swagger.client.model.SearchLogEvent;
 
 /**
- * This class demonstrates the usage of the FACT-Finder JSON API to track various events.
- *
+ * This class demonstrates the usage of the FACT-Finder REST API to track various events.
  */
 public final class RunnerTracking {
-	private static final Logger	LOG	= LogManager.getLogger(RunnerTracking.class.getSimpleName());
+	private static final Logger LOG = LogManager.getLogger(RunnerTracking.class.getSimpleName());
 
 	private RunnerTracking() {
 	}
 
 	public static void main(final String[] args) {
-		final FFApi api = new FFApi(Settings.getEndpointUrl(), Settings.getAuthentication());
+		Settings.setupAuthKeyRefreshingClientWithHigherTimeout();
 
-		trackDetailClick(api);
-		trackCart(api);
-		trackBuy(api);
-		trackRecEngineClick(api);
-		trackSearchFeedback(api);
-		trackLogin(api);
-		trackShopCacheHit(api);
+		final TrackingApi apiInstance = new TrackingApi();
+
+		trackDetailClick(apiInstance);
+		trackCart(apiInstance);
+		trackBuy(apiInstance);
+		trackRecEngineClick(apiInstance);
+		trackSearchFeedback(apiInstance);
+		trackLogin(apiInstance);
+		trackSearchLogEvent(apiInstance);
 	}
 
-	private static void trackDetailClick(final FFApi api) {
-		// general information
-		final MultiValuedMap<String, String> map = new ArrayListValuedHashMap<>();
+	private static void trackDetailClick(final TrackingApi apiInstance) {
+		final ClickEvent event = new ClickEvent();
+		event.setId("3865");
+		event.setSid("abc123def456ghi789");
+		event.setTitle("BMC streetfire SSW");
+		event.setUserId("user123");
+		event.setQuery("mountain bike");
+		event.setPos(28);
+		event.setOrigPos(28);
+		event.setPage(3);
+		event.setPageSize(12);
+		event.setOrigPageSize(12);
+		event.setSimi(99.41d);
+		event.setMasterId("1234");
 
-		// general information
-		map.put("id", "3865");
-		// channel id will be passed below
-		map.put("sid", "abc123def456ghi789");
-		map.put("event", "click");
-		map.put("title", "BMC streetfire SSW");
-		map.put("userId", "user123");
-		// event specific information
-		map.put("query", "mountain bike");
-		map.put("pos", "28");
-		map.put("origPos", "28");
-		map.put("page", "3");
-		map.put("pageSize", "12");
-		map.put("origPageSize", "12");
-		map.put("simi", "99.41");
-		map.put("masterId", "1234");
-
-		sendTrackingRequest(api, map);
-	}
-
-	private static void trackBuy(final FFApi api) {
-		final MultiValuedMap<String, String> map = new ArrayListValuedHashMap<>();
-
-		// general information
-		map.put("id", "3865");
-		// channel id will be passed below
-		map.put("sid", "abc123def456ghi789");
-		map.put("event", "cart");
-		map.put("title", "BMC streetfire SSW");
-		map.put("userId", "user123");
-
-		// event specific information
-		map.put("count", "48");
-		map.put("price", "1499");
-		map.put("masterId", "1234");
-
-		sendTrackingRequest(api, map);
-	}
-
-	private static void trackCart(final FFApi api) {
-		final MultiValuedMap<String, String> map = new ArrayListValuedHashMap<>();
-
-		// general information
-		map.put("id", "3865");
-		// channel id will be passed below
-		map.put("sid", "abc123def456ghi789");
-		map.put("event", "checkout");
-		map.put("title", "BMC streetfire SSW");
-		map.put("userId", "user123");
-
-		// event specific information
-		map.put("count", "48");
-		map.put("price", "1499");
-		map.put("masterId", "1234");
-
-		sendTrackingRequest(api, map);
-	}
-
-	private static void trackRecEngineClick(final FFApi api) {
-		final MultiValuedMap<String, String> map = new ArrayListValuedHashMap<>();
-
-		// general information
-		map.put("id", "3865");
-		// channel id will be passed below
-		map.put("sid", "abc123def456ghi789");
-		map.put("event", "recommendationClick");
-		map.put("title", "BMC streetfire SSW");
-		map.put("userId", "user123");
-
-		// event specific information
-		map.put("mainId", "4848");
-		map.put("masterId", "1234");
-
-		sendTrackingRequest(api, map);
-	}
-
-	private static void trackSearchFeedback(final FFApi api) {
-		final MultiValuedMap<String, String> map = new ArrayListValuedHashMap<>();
-
-		// general information
-		map.put("id", "3865");
-		// channel id will be passed below
-		map.put("sid", "abc123def456ghi789");
-		map.put("event", "feedback");
-		map.put("title", "BMC streetfire SSW");
-		map.put("userId", "user123");
-
-		// event specific information
-		map.put("query", "mountain bike");
-		map.put("positive", "true");
-		map.put("message", "great products, I really found what I was looking for.");
-
-		sendTrackingRequest(api, map);
-
-	}
-
-	private static void trackLogin(final FFApi api) {
-		final MultiValuedMap<String, String> map = new ArrayListValuedHashMap<>();
-
-		// channel id will be passed below
-		map.put("event", "login");
-		map.put("sid", "abc123def456ghi789");
-		map.put("userId", "user123");
-
-		sendTrackingRequest(api, map);
-	}
-
-	private static void trackShopCacheHit(FFApi api) {
-		final MultiValuedMap<String, String> map = new ArrayListValuedHashMap<>();
-
-		// general information
-		map.put("id", "3865");
-		map.put("sid", "abc123def456ghi789");
-		map.put("event", "log");
-
-		// event specific information
-		map.put("page", "3");
-		map.put("pageSize", "12");
-		map.put("query", "mountain bike");
-		map.put("hitCount", "520");
-		map.put("searchTime", "128");
-		// range of bestSimi and minSimi is 10000 - 0 instead of a percentage
-		map.put("bestSimi", "9941");
-		map.put("minSimi", "9323");
-
-		// optional event specific information (details see integration documentation)
-		map.put("filterBrand", "Cube");
-
-		sendTrackingRequest(api, map);
-	}
-
-	private static void sendTrackingRequest(final FFApi api, final MultiValuedMap<String, String> parameters) {
 		try {
-			api.track(Settings.getChannel(), parameters);
-			LOG.info("Tracking " + parameters.get("event") + " successful");
-		} catch (final FFApiException e) {
-			LOG.error("Tracking " + parameters.get("event") + " not successful: " + e.getResponseMessage());
-			LOG.error(e.getResponseStacktrace());
+			apiInstance.trackClickUsingPOST(Settings.getChannel(), Collections.singletonList(event));
+		} catch (final ApiException e) {
+			LOG.error("Exception when calling TrackingApi#trackClickUsingPOST", e);
 		}
+	}
+
+	private static void trackBuy(final TrackingApi apiInstance) {
+		final CartOrCheckoutEvent event = new CartOrCheckoutEvent();
+		event.setId("3865");
+		event.setSid("abc123def456ghi789");
+		event.setTitle("BMC streetfire SSW");
+		event.setUserId("user123");
+		event.setCount(48);
+		event.setPrice(1499d);
+		event.setMasterId("1234");
+
+		try {
+			apiInstance.trackCheckoutUsingPOST(Settings.getChannel(), Collections.singletonList(event));
+		} catch (final ApiException e) {
+			LOG.error("Exception when calling TrackingApi#trackCheckoutUsingPOST", e);
+		}
+	}
+
+	private static void trackCart(final TrackingApi apiInstance) {
+		final CartOrCheckoutEvent event = new CartOrCheckoutEvent();
+		event.setId("3865");
+		event.setSid("abc123def456ghi789");
+		event.setTitle("BMC streetfire SSW");
+		event.setUserId("user123");
+		event.setCount(48);
+		event.setPrice(1499d);
+		event.setMasterId("1234");
+
+		try {
+			apiInstance.trackCartUsingPOST(Settings.getChannel(), Collections.singletonList(event));
+		} catch (final ApiException e) {
+			LOG.error("Exception when calling TrackingApi#trackCartUsingPOST", e);
+		}
+	}
+
+	private static void trackRecEngineClick(final TrackingApi apiInstance) {
+		final RecommendationClickEvent event = new RecommendationClickEvent();
+		event.setId("3865");
+		event.setSid("abc123def456ghi789");
+		event.setTitle("BMC streetfire SSW");
+		event.setUserId("user123");
+		event.setMainId("4848");
+		event.setMasterId("1234");
+
+		try {
+			apiInstance.trackRecommendationClickUsingPOST(Settings.getChannel(), Collections.singletonList(event));
+		} catch (final ApiException e) {
+			LOG.error("Exception when calling TrackingApi#trackRecommendationClickUsingPOST", e);
+		}
+	}
+
+	private static void trackSearchFeedback(final TrackingApi apiInstance) {
+		final FeedbackEvent event = new FeedbackEvent();
+		event.setSid("abc123def456ghi789");
+		event.setQuery("mountain bike");
+		event.setPositive(true);
+		event.setMessage("great products, I really found what I was looking for.");
+
+		try {
+			apiInstance.trackFeedbackUsingPOST(Settings.getChannel(), Collections.singletonList(event));
+		} catch (final ApiException e) {
+			LOG.error("Exception when calling TrackingApi#trackFeedbackUsingPOST", e);
+		}
+
+	}
+
+	private static void trackLogin(final TrackingApi apiInstance) {
+		final LoginEvent event = new LoginEvent();
+		event.setSid("abc123def456ghi789");
+		event.setUserId("user123");
+
+		try {
+			apiInstance.trackLoginUsingPOST(Settings.getChannel(), Collections.singletonList(event));
+		} catch (final ApiException e) {
+			LOG.error("Exception when calling TrackingApi#trackLoginUsingPOST", e);
+		}
+	}
+
+	private static void trackSearchLogEvent(final TrackingApi apiInstance) {
+		final SearchLogEvent event = new SearchLogEvent();
+		event.setId("3865");
+		event.setSid("abc123def456ghi789");
+		event.setPage(3);
+		event.setPageSize(12);
+		event.setQuery("mountain bike");
+		event.setHitCount(520);
+		event.setSearchTime(128);
+		// range of bestSimi and minSimi is 10000 - 0 instead of a percentage
+		event.setBestSimi(9941);
+		event.setMinSimi(9323);
+		event.setFilters(Collections.singletonList(getFilter()));
+
+		try {
+			apiInstance.trackLogUsingPOST(Settings.getChannel(), Collections.singletonList(event));
+		} catch (final ApiException e) {
+			LOG.error("Exception when calling TrackingApi#trackLogUsingPOST", e);
+		}
+	}
+
+	private static Filter getFilter() {
+		final FilterValue filterValue = new FilterValue();
+		filterValue.setValue("Cube");
+
+		final Filter filter = new Filter();
+		filter.setName("filterBrand");
+		filter.setValueList(Collections.singletonList(filterValue));
+
+		return filter;
 	}
 }

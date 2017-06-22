@@ -1,56 +1,66 @@
 package de.factfinder.runner;
 
-import static java.util.Arrays.asList;
+import java.util.Collections;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import de.factfinder.api.FFApi;
-import de.factfinder.api.FFApiException;
+import io.swagger.client.ApiException;
+import io.swagger.client.api.RefreshdatabasesApi;
 
 /**
- * This class demonstrates the usage of the FACT-Finder JSON API to refresh the search and suggest databases.
- *
+ * This class demonstrates the usage of the FACT-Finder REST API to refresh the search and suggest databases.
  */
 public final class RunnerRefreshDatabases {
-	private static final Logger	LOG		= LogManager.getLogger(RunnerRefreshDatabases.class.getSimpleName());
-	private static final String	CHANNEL	= Settings.getChannel();
+	private static final Logger LOG     = LogManager.getLogger(RunnerRefreshDatabases.class.getSimpleName());
+	private static final String CHANNEL = Settings.getChannel();
 
 	private RunnerRefreshDatabases() {
 	}
 
 	public static void main(final String[] args) {
-		final FFApi api = new FFApi(Settings.getEndpointUrl(), Settings.getAuthentication());
+		Settings.setupAuthKeyRefreshingClientWithHigherTimeout();
+
+		final RefreshdatabasesApi apiInstance = new RefreshdatabasesApi();
 
 		try {
-
-			LOG.info("Refresh search database for channel: " + CHANNEL);
-			api.refreshDatabases(asList(CHANNEL));
-
-			LOG.info("Refresh suggest database for channel: " + CHANNEL);
-			api.refreshSuggestDatabases(asList(CHANNEL));
-
-			LOG.info("Refresh recommender database for channel: " + CHANNEL);
-			api.refreshRecommenderDatabases(asList(CHANNEL));
-
 			LOG.info("Refresh all databases for channel: " + CHANNEL);
-			api.refreshAllDatabases(asList(CHANNEL));
-
-			LOG.info("Refresh all search databases");
-			api.refreshDatabases();
-
-			LOG.info("Refresh all suggest databases");
-			api.refreshSuggestDatabases();
-
-			LOG.info("Refresh all recommender databases");
-			api.refreshRecommenderDatabases();
+			apiInstance.refreshAllDatabasesUsingPOST(Collections.singletonList(CHANNEL));
 
 			LOG.info("Refresh all databases");
-			api.refreshAllDatabases();
+			apiInstance.refreshAllDatabasesUsingPOST(Collections.emptyList());
+		} catch (final ApiException e) {
+			LOG.error("Exception when calling RefreshdatabasesApi#refreshAllDatabasesUsingPOST", e);
+		}
 
-		} catch (final FFApiException e) {
-			LOG.error("An error occurred: " + e.getResponseMessage());
-			LOG.error(e.getResponseStacktrace());
+		try {
+			LOG.info("Refresh recommender database for channel: " + CHANNEL);
+			apiInstance.refreshRecommendationDatabasesUsingPOST(Collections.singletonList(CHANNEL));
+
+			LOG.info("Refresh all recommender databases");
+			apiInstance.refreshRecommendationDatabasesUsingPOST(Collections.emptyList());
+		} catch (final ApiException e) {
+			LOG.error("Exception when calling RefreshdatabasesApi#refreshRecommendationDatabasesUsingPOST", e);
+		}
+
+		try {
+			LOG.info("Refresh suggest database for channel: " + CHANNEL);
+			apiInstance.refreshSuggestDatabasesUsingPOST(Collections.singletonList(CHANNEL));
+
+			LOG.info("Refresh all suggest databases");
+			apiInstance.refreshSuggestDatabasesUsingPOST(Collections.emptyList());
+		} catch (final ApiException e) {
+			LOG.error("Exception when calling RefreshdatabasesApi#refreshSuggestDatabasesUsingPOST", e);
+		}
+
+		try {
+			LOG.info("Refresh search database for channel: " + CHANNEL);
+			apiInstance.refreshSearchDatabasesUsingPOST(Collections.singletonList(CHANNEL));
+
+			LOG.info("Refresh all search databases");
+			apiInstance.refreshSearchDatabasesUsingPOST(Collections.emptyList());
+		} catch (final ApiException e) {
+			LOG.error("Exception when calling RefreshdatabasesApi#refreshSearchDatabasesUsingPOST", e);
 		}
 	}
 }
