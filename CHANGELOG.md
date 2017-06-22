@@ -1,5 +1,10 @@
 # Changelog
-
+### 1.3.0 (2017-06-14)
+- Adjusted API to be compatible with FACT-Finder 7.3
+- Replaced client code by swagger codegen generated code
+- Deleted databases expiration example as the new JSON based REST api does not support it anymore
+- Adjusted runner classes to use the new client classes
+  
 ### 1.2.2 (2017-01-02)
 - `jar`-GradleTask now produces a runnable jar in the runner project (#2)
 - Added `run`-task for executing the runner-classes directly with Gradle
