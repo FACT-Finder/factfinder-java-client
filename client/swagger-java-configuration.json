@@ -1,0 +1,5 @@
+{
+  "modelPackage": "de.factfinder.client.model",
+  "apiPackage": "de.factfinder.client.api",
+  "invokerPackage": "de.factfinder.client"
+}
