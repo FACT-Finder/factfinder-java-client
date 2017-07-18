@@ -16,11 +16,11 @@ Get similar products
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.SimilarproductsApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.SimilarproductsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

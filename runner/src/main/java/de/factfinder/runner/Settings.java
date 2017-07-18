@@ -2,9 +2,9 @@ package de.factfinder.runner;
 
 import java.util.concurrent.TimeUnit;
 
-import de.factfinder.api.UpdatingAuthKeyClient;
-import io.swagger.client.ApiClient;
-import io.swagger.client.Configuration;
+import de.factfinder.client.UpdatingAuthKeyClient;
+import de.factfinder.client.ApiClient;
+import de.factfinder.client.Configuration;
 
 public final class Settings {
 	private static final String ENDPOINT_URL = "http://{FACT_FINDER_INSTANCE}/rest";

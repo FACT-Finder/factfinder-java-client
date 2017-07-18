@@ -7,10 +7,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import de.factfinder.runner.print.SearchResultInformationPrinter;
-import io.swagger.client.ApiException;
-import io.swagger.client.api.CompareproductsApi;
-import io.swagger.client.model.CompareAttribute;
-import io.swagger.client.model.CompareResult;
+import de.factfinder.client.ApiException;
+import de.factfinder.client.api.CompareproductsApi;
+import de.factfinder.client.model.CompareAttribute;
+import de.factfinder.client.model.CompareResult;
 
 /**
  * This class demonstrates the usage of the FACT-Finder REST API to compare products.

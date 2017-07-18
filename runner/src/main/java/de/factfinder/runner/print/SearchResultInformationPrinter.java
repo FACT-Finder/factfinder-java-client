@@ -6,16 +6,16 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import io.swagger.client.model.Campaign;
-import io.swagger.client.model.Filter;
-import io.swagger.client.model.FilterValue;
-import io.swagger.client.model.Group;
-import io.swagger.client.model.GroupElement;
-import io.swagger.client.model.Params;
-import io.swagger.client.model.RecordWithId;
-import io.swagger.client.model.Result;
-import io.swagger.client.model.SearchRecord;
-import io.swagger.client.model.SortItem;
+import de.factfinder.client.model.Campaign;
+import de.factfinder.client.model.Filter;
+import de.factfinder.client.model.FilterValue;
+import de.factfinder.client.model.Group;
+import de.factfinder.client.model.GroupElement;
+import de.factfinder.client.model.Params;
+import de.factfinder.client.model.RecordWithId;
+import de.factfinder.client.model.Result;
+import de.factfinder.client.model.SearchRecord;
+import de.factfinder.client.model.SortItem;
 
 /**
  * Prints information about the search result.

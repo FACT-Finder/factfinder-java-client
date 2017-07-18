@@ -6,9 +6,9 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import io.swagger.client.ApiException;
-import io.swagger.client.api.SuggestApi;
-import io.swagger.client.model.ResultSuggestion;
+import de.factfinder.client.ApiException;
+import de.factfinder.client.api.SuggestApi;
+import de.factfinder.client.model.ResultSuggestion;
 
 /**
  * This class demonstrates the usage of the FACT-Finder REST API for suggest results.

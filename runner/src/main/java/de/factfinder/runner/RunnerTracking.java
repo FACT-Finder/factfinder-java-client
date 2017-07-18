@@ -5,16 +5,16 @@ import java.util.Collections;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import io.swagger.client.ApiException;
-import io.swagger.client.api.TrackingApi;
-import io.swagger.client.model.CartOrCheckoutEvent;
-import io.swagger.client.model.ClickEvent;
-import io.swagger.client.model.FeedbackEvent;
-import io.swagger.client.model.Filter;
-import io.swagger.client.model.FilterValue;
-import io.swagger.client.model.LoginEvent;
-import io.swagger.client.model.RecommendationClickEvent;
-import io.swagger.client.model.SearchLogEvent;
+import de.factfinder.client.ApiException;
+import de.factfinder.client.api.TrackingApi;
+import de.factfinder.client.model.CartOrCheckoutEvent;
+import de.factfinder.client.model.ClickEvent;
+import de.factfinder.client.model.FeedbackEvent;
+import de.factfinder.client.model.Filter;
+import de.factfinder.client.model.FilterValue;
+import de.factfinder.client.model.LoginEvent;
+import de.factfinder.client.model.RecommendationClickEvent;
+import de.factfinder.client.model.SearchLogEvent;
 
 /**
  * This class demonstrates the usage of the FACT-Finder REST API to track various events.

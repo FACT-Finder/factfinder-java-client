@@ -17,11 +17,11 @@ Execute whatshot import(s)
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.ManagementApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.ManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -71,11 +71,11 @@ Reload the configuration
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.ManagementApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.ManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

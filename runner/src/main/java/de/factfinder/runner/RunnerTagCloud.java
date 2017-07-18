@@ -5,9 +5,9 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import io.swagger.client.ApiException;
-import io.swagger.client.api.TagcloudApi;
-import io.swagger.client.model.TagCloudEntry;
+import de.factfinder.client.ApiException;
+import de.factfinder.client.api.TagcloudApi;
+import de.factfinder.client.model.TagCloudEntry;
 
 /**
  * This class demonstrates the usage of the FACT-Finder REST API for requesting the tag cloud.

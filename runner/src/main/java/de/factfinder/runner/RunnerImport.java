@@ -2,16 +2,14 @@ package de.factfinder.runner;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import io.swagger.client.ApiException;
-import io.swagger.client.Configuration;
-import io.swagger.client.api.ImportApi;
-import io.swagger.client.model.ImportChannelResult;
-import io.swagger.client.model.ImportResult;
+import de.factfinder.client.ApiException;
+import de.factfinder.client.api.ImportApi;
+import de.factfinder.client.model.ImportChannelResult;
+import de.factfinder.client.model.ImportResult;
 
 /**
  * This class demonstrates the usage of the FACT-Finder REST API to externally trigger product data and suggest imports.

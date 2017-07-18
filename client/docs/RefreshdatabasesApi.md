@@ -19,11 +19,11 @@ Refresh all databases
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.RefreshdatabasesApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.RefreshdatabasesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -71,11 +71,11 @@ Refresh recommendation databases
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.RefreshdatabasesApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.RefreshdatabasesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -123,11 +123,11 @@ Refresh search databases
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.RefreshdatabasesApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.RefreshdatabasesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -175,11 +175,11 @@ Refresh suggest databases
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.RefreshdatabasesApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.RefreshdatabasesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

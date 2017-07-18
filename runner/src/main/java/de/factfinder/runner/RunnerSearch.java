@@ -7,14 +7,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import de.factfinder.runner.print.SearchResultInformationPrinter;
-import io.swagger.client.ApiException;
-import io.swagger.client.api.SearchApi;
-import io.swagger.client.model.Filter;
-import io.swagger.client.model.FilterValue;
-import io.swagger.client.model.Params;
-import io.swagger.client.model.Result;
-import io.swagger.client.model.SearchControlParams;
-import io.swagger.client.model.SearchRequest;
+import de.factfinder.client.ApiException;
+import de.factfinder.client.api.SearchApi;
+import de.factfinder.client.model.Filter;
+import de.factfinder.client.model.FilterValue;
+import de.factfinder.client.model.Params;
+import de.factfinder.client.model.Result;
+import de.factfinder.client.model.SearchControlParams;
+import de.factfinder.client.model.SearchRequest;
 
 /**
  * This class demonstrates the usage of the FACT-Finder REST API for search results.

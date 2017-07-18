@@ -8,9 +8,9 @@ import org.apache.logging.log4j.Logger;
 
 import de.factfinder.runner.print.CampaignInformationPrinter;
 import de.factfinder.runner.print.SearchResultInformationPrinter;
-import io.swagger.client.ApiException;
-import io.swagger.client.api.CampaignApi;
-import io.swagger.client.model.Campaign;
+import de.factfinder.client.ApiException;
+import de.factfinder.client.api.CampaignApi;
+import de.factfinder.client.model.Campaign;
 
 /**
  * This class demonstrates the usage of the FACT-Finder REST API to check for product campaigns.

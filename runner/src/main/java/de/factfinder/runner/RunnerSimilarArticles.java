@@ -4,9 +4,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import de.factfinder.runner.print.SearchResultInformationPrinter;
-import io.swagger.client.ApiException;
-import io.swagger.client.api.SimilarproductsApi;
-import io.swagger.client.model.SimilarProducts;
+import de.factfinder.client.ApiException;
+import de.factfinder.client.api.SimilarproductsApi;
+import de.factfinder.client.model.SimilarProducts;
 
 /**
  * This class demonstrates the usage of the FACT-Finder REST API to get similar products.

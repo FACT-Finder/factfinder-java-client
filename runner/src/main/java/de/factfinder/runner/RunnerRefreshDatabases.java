@@ -5,8 +5,8 @@ import java.util.Collections;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import io.swagger.client.ApiException;
-import io.swagger.client.api.RefreshdatabasesApi;
+import de.factfinder.client.ApiException;
+import de.factfinder.client.api.RefreshdatabasesApi;
 
 /**
  * This class demonstrates the usage of the FACT-Finder REST API to refresh the search and suggest databases.

@@ -19,11 +19,11 @@ Delete records
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.RecordsApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.RecordsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -75,11 +75,11 @@ Get records
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.RecordsApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.RecordsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -130,11 +130,11 @@ Insert records
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.RecordsApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.RecordsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -186,11 +186,11 @@ Update records
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.RecordsApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.RecordsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

@@ -7,10 +7,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import de.factfinder.runner.print.SearchResultInformationPrinter;
-import io.swagger.client.ApiException;
-import io.swagger.client.api.RecommendationApi;
-import io.swagger.client.model.RecommendationResult;
-import io.swagger.client.model.RecordWithId;
+import de.factfinder.client.ApiException;
+import de.factfinder.client.api.RecommendationApi;
+import de.factfinder.client.model.RecommendationResult;
+import de.factfinder.client.model.RecordWithId;
 
 import static java.util.Arrays.asList;
 

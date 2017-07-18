@@ -22,11 +22,11 @@ Track a cart event
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.TrackingApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.TrackingApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -76,11 +76,11 @@ Track a checkout event
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.TrackingApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.TrackingApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -130,11 +130,11 @@ Track a click event
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.TrackingApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.TrackingApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -184,11 +184,11 @@ Track a feedback event
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.TrackingApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.TrackingApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -238,11 +238,11 @@ Track a log event
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.TrackingApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.TrackingApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -292,11 +292,11 @@ Track a login event
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.TrackingApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.TrackingApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -346,11 +346,11 @@ Track a recommendation click event
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.TrackingApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.TrackingApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

@@ -4,10 +4,64 @@ All URIs are relative to *http://{FACT_FINDER_INSTANCE}/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**isImportRunningUsingGET**](ImportApi.md#isImportRunningUsingGET) | **GET** /v1/import/running | Check if an import is running in any of the supplied channels
 [**startRecommendationImportUsingPOST**](ImportApi.md#startRecommendationImportUsingPOST) | **POST** /v1/import/recommendation | Start recommendation import
 [**startSearchImportUsingPOST**](ImportApi.md#startSearchImportUsingPOST) | **POST** /v1/import/search | Start search import
 [**startSuggestImportUsingPOST**](ImportApi.md#startSuggestImportUsingPOST) | **POST** /v1/import/suggest | Start suggest import
 
+
+<a name="isImportRunningUsingGET"></a>
+# **isImportRunningUsingGET**
+> Wrapperboolean isImportRunningUsingGET(channel)
+
+Check if an import is running in any of the supplied channels
+
+### Example
+```java
+// Import classes:
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.ImportApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
+
+ImportApi apiInstance = new ImportApi();
+List<String> channel = Arrays.asList("channel_example"); // List<String> | channel
+try {
+    Wrapperboolean result = apiInstance.isImportRunningUsingGET(channel);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ImportApi#isImportRunningUsingGET");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channel** | [**List&lt;String&gt;**](String.md)| channel |
+
+### Return type
+
+[**Wrapperboolean**](Wrapperboolean.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/xml, application/json
 
 <a name="startRecommendationImportUsingPOST"></a>
 # **startRecommendationImportUsingPOST**
@@ -18,11 +72,11 @@ Start recommendation import
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.ImportApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.ImportApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -73,11 +127,11 @@ Start search import
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.ImportApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.ImportApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -130,11 +184,11 @@ Start suggest import
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.ImportApi;
+//import de.factfinder.client.ApiClient;
+//import de.factfinder.client.ApiException;
+//import de.factfinder.client.Configuration;
+//import de.factfinder.client.auth.*;
+//import de.factfinder.client.api.ImportApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

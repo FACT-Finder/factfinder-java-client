@@ -5,12 +5,12 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import io.swagger.client.model.Answer;
-import io.swagger.client.model.Campaign;
-import io.swagger.client.model.FeedbackText;
-import io.swagger.client.model.Question;
-import io.swagger.client.model.RecordWithId;
-import io.swagger.client.model.Target;
+import de.factfinder.client.model.Answer;
+import de.factfinder.client.model.Campaign;
+import de.factfinder.client.model.FeedbackText;
+import de.factfinder.client.model.Question;
+import de.factfinder.client.model.RecordWithId;
+import de.factfinder.client.model.Target;
 
 /**
  * Prints information about campaigns.
