@@ -1,4 +1,8 @@
 # Changelog
+### 1.3.1 (2017-07-18)
+- Added swagger java configuration
+- Moved client-classes to `de.factfinder.client`
+
 ### 1.3.0 (2017-06-14)
 - Adjusted API to be compatible with FACT-Finder 7.3
 - Replaced client code by swagger codegen generated code
