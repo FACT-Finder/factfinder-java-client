@@ -1,4 +1,7 @@
 # Changelog
+### 1.3.2 (2017-08-03)
+- Updated `required` documentation
+
 ### 1.3.1 (2017-07-18)
 - Added swagger java configuration
 - Moved client-classes to `de.factfinder.client`
