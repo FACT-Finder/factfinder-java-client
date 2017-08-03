@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * FeedbackText
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class FeedbackText {
   @SerializedName("html")
   private Boolean html = null;
@@ -62,7 +62,7 @@ public class FeedbackText {
    * Get id
    * @return id
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getId() {
     return id;
   }

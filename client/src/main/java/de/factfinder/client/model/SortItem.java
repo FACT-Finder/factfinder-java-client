@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * SortItem
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class SortItem {
   @SerializedName("description")
   private String description = null;
@@ -66,7 +66,7 @@ public class SortItem {
    * Get description
    * @return description
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getDescription() {
     return description;
   }
@@ -84,7 +84,7 @@ public class SortItem {
    * Get name
    * @return name
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getName() {
     return name;
   }
@@ -102,7 +102,7 @@ public class SortItem {
    * Get order
    * @return order
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public OrderEnum getOrder() {
     return order;
   }

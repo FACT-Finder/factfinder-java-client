@@ -4,11 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**nr** | **Integer** |  |  [optional]
+**nr** | **Integer** |  | 
 **params** | [**Params**](Params.md) |  |  [optional]
-**searchCount** | **Integer** |  |  [optional]
-**searchTerm** | **String** |  |  [optional]
-**weight** | **Double** |  |  [optional]
+**searchCount** | **Integer** |  | 
+**searchTerm** | **String** |  | 
+**weight** | **Double** |  | 
 
 
 

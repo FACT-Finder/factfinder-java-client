@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * SearchRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class SearchRequest {
   @SerializedName("params")
   private Params params = null;
@@ -46,7 +46,7 @@ public class SearchRequest {
    * Get params
    * @return params
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Params getParams() {
     return params;
   }

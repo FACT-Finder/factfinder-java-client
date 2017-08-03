@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * Answer
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class Answer {
   @SerializedName("id")
   private String id = null;
@@ -48,7 +48,7 @@ public class Answer {
    * Get id
    * @return id
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getId() {
     return id;
   }
@@ -66,7 +66,7 @@ public class Answer {
    * Get params
    * @return params
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Params getParams() {
     return params;
   }
@@ -107,7 +107,7 @@ public class Answer {
    * Get text
    * @return text
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getText() {
     return text;
   }
@@ -142,7 +142,7 @@ public class Answer {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Answer {\n");
-    
+
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    params: ").append(toIndentedString(params)).append("\n");
     sb.append("    questions: ").append(toIndentedString(questions)).append("\n");
@@ -161,6 +161,6 @@ public class Answer {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

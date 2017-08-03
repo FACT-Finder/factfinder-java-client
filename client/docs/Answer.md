@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  |  [optional]
-**params** | [**Params**](Params.md) |  |  [optional]
+**id** | **String** |  | 
+**params** | [**Params**](Params.md) |  | 
 **questions** | [**List&lt;Question&gt;**](Question.md) |  |  [optional]
-**text** | **String** |  |  [optional]
+**text** | **String** |  | 
 
 
 

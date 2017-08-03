@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * CustomParameter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class CustomParameter {
   @SerializedName("cacheIgnored")
   private Boolean cacheIgnored = null;
@@ -43,7 +43,7 @@ public class CustomParameter {
    * Get cacheIgnored
    * @return cacheIgnored
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getCacheIgnored() {
     return cacheIgnored;
   }
@@ -61,7 +61,7 @@ public class CustomParameter {
    * Get name
    * @return name
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getName() {
     return name;
   }
@@ -84,7 +84,7 @@ public class CustomParameter {
    * Get values
    * @return values
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<String> getValues() {
     return values;
   }

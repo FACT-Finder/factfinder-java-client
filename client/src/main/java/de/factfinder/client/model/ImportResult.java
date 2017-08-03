@@ -26,7 +26,7 @@ import org.joda.time.DateTime;
 /**
  * ImportResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class ImportResult {
   @SerializedName("messages")
   private Map<String, ImportChannelResult> messages = new HashMap<String, ImportChannelResult>();
@@ -48,7 +48,7 @@ public class ImportResult {
    * Get messages
    * @return messages
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Map<String, ImportChannelResult> getMessages() {
     return messages;
   }
@@ -66,7 +66,7 @@ public class ImportResult {
    * Get startDate
    * @return startDate
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public DateTime getStartDate() {
     return startDate;
   }

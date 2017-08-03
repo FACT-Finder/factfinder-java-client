@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * RecommendationClickEvent
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class RecommendationClickEvent {
   @SerializedName("cookieId")
   private String cookieId = null;
@@ -71,7 +71,7 @@ public class RecommendationClickEvent {
    * Get id
    * @return id
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getId() {
     return id;
   }
@@ -89,7 +89,7 @@ public class RecommendationClickEvent {
    * Get mainId
    * @return mainId
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getMainId() {
     return mainId;
   }
@@ -125,7 +125,7 @@ public class RecommendationClickEvent {
    * Get sid
    * @return sid
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getSid() {
     return sid;
   }

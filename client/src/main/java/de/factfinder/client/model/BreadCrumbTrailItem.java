@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * BreadCrumbTrailItem
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class BreadCrumbTrailItem {
   @SerializedName("associatedFieldName")
   private String associatedFieldName = null;
@@ -130,7 +130,7 @@ public class BreadCrumbTrailItem {
    * Get type
    * @return type
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public TypeEnum getType() {
     return type;
   }

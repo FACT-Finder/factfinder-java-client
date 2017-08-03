@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**List&lt;SimilarAttributeInfo&gt;**](SimilarAttributeInfo.md) |  |  [optional]
-**records** | [**List&lt;RecordWithId&gt;**](RecordWithId.md) |  |  [optional]
+**attributes** | [**List&lt;SimilarAttributeInfo&gt;**](SimilarAttributeInfo.md) |  | 
+**records** | [**List&lt;RecordWithId&gt;**](RecordWithId.md) |  | 
 
 
 

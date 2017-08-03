@@ -5,25 +5,25 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **appliedPreprocessorEntries** | [**List&lt;PreprocessorEntry&gt;**](PreprocessorEntry.md) |  |  [optional]
-**asnGroups** | [**List&lt;Group&gt;**](Group.md) |  |  [optional]
-**breadCrumbTrail** | [**List&lt;BreadCrumbTrailItem&gt;**](BreadCrumbTrailItem.md) |  |  [optional]
-**campaignsList** | [**List&lt;Campaign&gt;**](Campaign.md) |  |  [optional]
-**fieldRoles** | **Map&lt;String, String&gt;** |  |  [optional]
-**filters** | [**List&lt;Filter&gt;**](Filter.md) |  |  [optional]
+**asnGroups** | [**List&lt;Group&gt;**](Group.md) |  | 
+**breadCrumbTrail** | [**List&lt;BreadCrumbTrailItem&gt;**](BreadCrumbTrailItem.md) |  | 
+**campaignsList** | [**List&lt;Campaign&gt;**](Campaign.md) |  | 
+**fieldRoles** | **Map&lt;String, String&gt;** |  | 
+**filters** | [**List&lt;Filter&gt;**](Filter.md) |  | 
 **paging** | [**Paging**](Paging.md) |  |  [optional]
-**records** | [**List&lt;SearchRecord&gt;**](SearchRecord.md) |  |  [optional]
-**resultArticleNumberStatus** | [**ResultArticleNumberStatusEnum**](#ResultArticleNumberStatusEnum) |  |  [optional]
-**resultCount** | **Integer** |  |  [optional]
-**resultStatus** | [**ResultStatusEnum**](#ResultStatusEnum) |  |  [optional]
-**resultsPerPageList** | [**List&lt;ResultsPerPageOptionWithSearchParams&gt;**](ResultsPerPageOptionWithSearchParams.md) |  |  [optional]
-**searchControlParams** | [**SearchControlParams**](SearchControlParams.md) |  |  [optional]
+**records** | [**List&lt;SearchRecord&gt;**](SearchRecord.md) |  | 
+**resultArticleNumberStatus** | [**ResultArticleNumberStatusEnum**](#ResultArticleNumberStatusEnum) |  | 
+**resultCount** | **Integer** |  | 
+**resultStatus** | [**ResultStatusEnum**](#ResultStatusEnum) |  | 
+**resultsPerPageList** | [**List&lt;ResultsPerPageOptionWithSearchParams&gt;**](ResultsPerPageOptionWithSearchParams.md) |  | 
+**searchControlParams** | [**SearchControlParams**](SearchControlParams.md) |  | 
 **searchParams** | [**Params**](Params.md) |  |  [optional]
-**searchTime** | **Long** |  |  [optional]
-**simiFirstRecord** | **Integer** |  |  [optional]
-**simiLastRecord** | **Integer** |  |  [optional]
+**searchTime** | **Long** |  | 
+**simiFirstRecord** | **Integer** |  | 
+**simiLastRecord** | **Integer** |  | 
 **singleWordResults** | [**List&lt;SingleWordSearchResult&gt;**](SingleWordSearchResult.md) |  |  [optional]
-**sortsList** | [**List&lt;ResultSortItem&gt;**](ResultSortItem.md) |  |  [optional]
-**timedOut** | **Boolean** |  |  [optional]
+**sortsList** | [**List&lt;ResultSortItem&gt;**](ResultSortItem.md) |  | 
+**timedOut** | **Boolean** |  | 
 
 
 <a name="ResultArticleNumberStatusEnum"></a>

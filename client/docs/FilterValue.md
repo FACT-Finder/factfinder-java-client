@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**exclude** | **Boolean** |  |  [optional]
-**type** | [**TypeEnum**](#TypeEnum) |  |  [optional]
+**exclude** | **Boolean** |  | 
+**type** | [**TypeEnum**](#TypeEnum) |  | 
 **value** | **String** |  |  [optional]
 
 

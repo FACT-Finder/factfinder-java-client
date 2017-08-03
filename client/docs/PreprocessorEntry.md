@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**from** | **String** |  |  [optional]
+**from** | **String** |  | 
 **group** | **String** |  |  [optional]
-**sort** | **Integer** |  |  [optional]
-**to** | **String** |  |  [optional]
+**sort** | **Integer** |  | 
+**to** | **String** |  | 
 
 
 

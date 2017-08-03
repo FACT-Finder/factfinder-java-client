@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**defaultValue** | **Boolean** |  |  [optional]
-**selected** | **Boolean** |  |  [optional]
-**value** | **Integer** |  |  [optional]
+**defaultValue** | **Boolean** |  | 
+**selected** | **Boolean** |  | 
+**value** | **Integer** |  | 
 
 
 

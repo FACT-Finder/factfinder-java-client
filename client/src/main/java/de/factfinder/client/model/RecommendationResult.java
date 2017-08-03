@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * RecommendationResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class RecommendationResult {
   @SerializedName("resultRecords")
   private List<RecordWithId> resultRecords = new ArrayList<RecordWithId>();
@@ -46,7 +46,7 @@ public class RecommendationResult {
    * Get resultRecords
    * @return resultRecords
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<RecordWithId> getResultRecords() {
     return resultRecords;
   }
@@ -64,7 +64,7 @@ public class RecommendationResult {
    * Get timedOut
    * @return timedOut
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getTimedOut() {
     return timedOut;
   }

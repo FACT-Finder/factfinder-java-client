@@ -4,13 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**campaign** | **String** |  |  [optional]
+**campaign** | **String** |  | 
 **cookieId** | **String** |  |  [optional]
-**count** | **Integer** |  |  [optional]
-**id** | **String** |  |  [optional]
+**count** | **Integer** |  | 
+**id** | **String** |  | 
 **masterId** | **String** |  |  [optional]
 **price** | **Double** |  |  [optional]
-**sid** | **String** |  |  [optional]
+**sid** | **String** |  | 
 **title** | **String** |  |  [optional]
 **userId** | **String** |  |  [optional]
 

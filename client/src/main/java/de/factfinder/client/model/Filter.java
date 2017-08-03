@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Filter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class Filter {
   @SerializedName("name")
   private String name = null;
@@ -44,7 +44,7 @@ public class Filter {
    * Get name
    * @return name
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getName() {
     return name;
   }
@@ -62,7 +62,7 @@ public class Filter {
    * Get substring
    * @return substring
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getSubstring() {
     return substring;
   }
@@ -85,7 +85,7 @@ public class Filter {
    * Get valueList
    * @return valueList
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<FilterValue> getValueList() {
     return valueList;
   }

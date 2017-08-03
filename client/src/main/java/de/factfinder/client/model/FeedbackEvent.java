@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * FeedbackEvent
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class FeedbackEvent {
   @SerializedName("message")
   private String message = null;
@@ -62,7 +62,7 @@ public class FeedbackEvent {
    * Get positive
    * @return positive
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getPositive() {
     return positive;
   }
@@ -80,7 +80,7 @@ public class FeedbackEvent {
    * Get query
    * @return query
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getQuery() {
     return query;
   }
@@ -98,7 +98,7 @@ public class FeedbackEvent {
    * Get sid
    * @return sid
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getSid() {
     return sid;
   }

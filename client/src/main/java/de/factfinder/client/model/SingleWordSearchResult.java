@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * SingleWordSearchResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class SingleWordSearchResult {
   @SerializedName("previewRecords")
   private List<SearchRecord> previewRecords = new ArrayList<SearchRecord>();
@@ -53,7 +53,7 @@ public class SingleWordSearchResult {
    * Get previewRecords
    * @return previewRecords
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<SearchRecord> getPreviewRecords() {
     return previewRecords;
   }
@@ -71,7 +71,7 @@ public class SingleWordSearchResult {
    * Get recordCount
    * @return recordCount
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getRecordCount() {
     return recordCount;
   }
@@ -107,7 +107,7 @@ public class SingleWordSearchResult {
    * Get word
    * @return word
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getWord() {
     return word;
   }

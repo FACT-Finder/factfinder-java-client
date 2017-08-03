@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * SearchLogEvent
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class SearchLogEvent {
   @SerializedName("additionalInfo")
   private String additionalInfo = null;
@@ -104,7 +104,7 @@ public class SearchLogEvent {
    * Get bestSimi
    * @return bestSimi
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getBestSimi() {
     return bestSimi;
   }
@@ -163,7 +163,7 @@ public class SearchLogEvent {
    * Get filters
    * @return filters
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<Filter> getFilters() {
     return filters;
   }
@@ -181,7 +181,7 @@ public class SearchLogEvent {
    * Get hitCount
    * @return hitCount
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getHitCount() {
     return hitCount;
   }
@@ -199,7 +199,7 @@ public class SearchLogEvent {
    * Get id
    * @return id
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getId() {
     return id;
   }
@@ -235,7 +235,7 @@ public class SearchLogEvent {
    * Get minSimi
    * @return minSimi
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getMinSimi() {
     return minSimi;
   }
@@ -253,7 +253,7 @@ public class SearchLogEvent {
    * Get page
    * @return page
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getPage() {
     return page;
   }
@@ -271,7 +271,7 @@ public class SearchLogEvent {
    * Get pageSize
    * @return pageSize
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getPageSize() {
     return pageSize;
   }
@@ -289,7 +289,7 @@ public class SearchLogEvent {
    * Get query
    * @return query
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getQuery() {
     return query;
   }
@@ -325,7 +325,7 @@ public class SearchLogEvent {
    * Get searchTime
    * @return searchTime
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getSearchTime() {
     return searchTime;
   }
@@ -343,7 +343,7 @@ public class SearchLogEvent {
    * Get sid
    * @return sid
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getSid() {
     return sid;
   }

@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ResultsPerPageOption
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class ResultsPerPageOption {
   @SerializedName("defaultValue")
   private Boolean defaultValue = null;
@@ -41,7 +41,7 @@ public class ResultsPerPageOption {
    * Get defaultValue
    * @return defaultValue
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getDefaultValue() {
     return defaultValue;
   }
@@ -59,7 +59,7 @@ public class ResultsPerPageOption {
    * Get selected
    * @return selected
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getSelected() {
     return selected;
   }
@@ -77,7 +77,7 @@ public class ResultsPerPageOption {
    * Get value
    * @return value
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getValue() {
     return value;
   }

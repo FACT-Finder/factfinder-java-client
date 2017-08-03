@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * Campaign
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class Campaign {
   @SerializedName("activeQuestions")
   private List<Question> activeQuestions = new ArrayList<Question>();
@@ -121,7 +121,7 @@ public class Campaign {
    * Get advisorTree
    * @return advisorTree
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<Question> getAdvisorTree() {
     return advisorTree;
   }
@@ -139,7 +139,7 @@ public class Campaign {
    * Get category
    * @return category
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getCategory() {
     return category;
   }
@@ -180,7 +180,7 @@ public class Campaign {
    * Get flavour
    * @return flavour
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public FlavourEnum getFlavour() {
     return flavour;
   }

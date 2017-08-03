@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ClickEvent
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class ClickEvent {
   @SerializedName("campaign")
   private String campaign = null;
@@ -74,7 +74,7 @@ public class ClickEvent {
    * Get campaign
    * @return campaign
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getCampaign() {
     return campaign;
   }
@@ -110,7 +110,7 @@ public class ClickEvent {
    * Get id
    * @return id
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getId() {
     return id;
   }
@@ -146,7 +146,7 @@ public class ClickEvent {
    * Get origPageSize
    * @return origPageSize
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getOrigPageSize() {
     return origPageSize;
   }
@@ -164,7 +164,7 @@ public class ClickEvent {
    * Get origPos
    * @return origPos
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getOrigPos() {
     return origPos;
   }
@@ -182,7 +182,7 @@ public class ClickEvent {
    * Get page
    * @return page
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getPage() {
     return page;
   }
@@ -218,7 +218,7 @@ public class ClickEvent {
    * Get pos
    * @return pos
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getPos() {
     return pos;
   }
@@ -236,7 +236,7 @@ public class ClickEvent {
    * Get query
    * @return query
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getQuery() {
     return query;
   }
@@ -254,7 +254,7 @@ public class ClickEvent {
    * Get sid
    * @return sid
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getSid() {
     return sid;
   }

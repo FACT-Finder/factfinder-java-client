@@ -4,14 +4,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**detailedLinks** | **Integer** |  |  [optional]
-**elements** | [**List&lt;GroupElement&gt;**](GroupElement.md) |  |  [optional]
-**filterStyle** | [**FilterStyleEnum**](#FilterStyleEnum) |  |  [optional]
-**groupOrder** | **Integer** |  |  [optional]
+**detailedLinks** | **Integer** |  | 
+**elements** | [**List&lt;GroupElement&gt;**](GroupElement.md) |  | 
+**filterStyle** | [**FilterStyleEnum**](#FilterStyleEnum) |  | 
+**groupOrder** | **Integer** |  | 
 **name** | **String** |  |  [optional]
-**selectedElements** | [**List&lt;GroupElement&gt;**](GroupElement.md) |  |  [optional]
-**selectionType** | [**SelectionTypeEnum**](#SelectionTypeEnum) |  |  [optional]
-**showPreviewImages** | **Boolean** |  |  [optional]
+**selectedElements** | [**List&lt;GroupElement&gt;**](GroupElement.md) |  | 
+**selectionType** | [**SelectionTypeEnum**](#SelectionTypeEnum) |  | 
+**showPreviewImages** | **Boolean** |  | 
 **type** | [**TypeEnum**](#TypeEnum) |  |  [optional]
 **unit** | **String** |  |  [optional]
 

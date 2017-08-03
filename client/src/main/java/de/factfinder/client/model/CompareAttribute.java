@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * CompareAttribute
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class CompareAttribute {
   @SerializedName("attributeName")
   private String attributeName = null;
@@ -41,7 +41,7 @@ public class CompareAttribute {
    * Get attributeName
    * @return attributeName
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getAttributeName() {
     return attributeName;
   }
@@ -59,7 +59,7 @@ public class CompareAttribute {
    * Get different
    * @return different
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getDifferent() {
     return different;
   }
@@ -77,7 +77,7 @@ public class CompareAttribute {
    * Get sourceField
    * @return sourceField
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getSourceField() {
     return sourceField;
   }

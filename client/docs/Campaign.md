@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **activeQuestions** | [**List&lt;Question&gt;**](Question.md) |  |  [optional]
-**advisorTree** | [**List&lt;Question&gt;**](Question.md) |  |  [optional]
-**category** | **String** |  |  [optional]
+**advisorTree** | [**List&lt;Question&gt;**](Question.md) |  | 
+**category** | **String** |  | 
 **feedbackTexts** | [**List&lt;FeedbackText&gt;**](FeedbackText.md) |  |  [optional]
-**flavour** | [**FlavourEnum**](#FlavourEnum) |  |  [optional]
+**flavour** | [**FlavourEnum**](#FlavourEnum) |  | 
 **id** | **String** |  |  [optional]
 **name** | **String** |  |  [optional]
 **pushedProductsRecords** | [**List&lt;RecordWithId&gt;**](RecordWithId.md) |  |  [optional]

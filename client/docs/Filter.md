@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  |  [optional]
-**substring** | **Boolean** |  |  [optional]
-**valueList** | [**List&lt;FilterValue&gt;**](FilterValue.md) |  |  [optional]
+**name** | **String** |  | 
+**substring** | **Boolean** |  | 
+**valueList** | [**List&lt;FilterValue&gt;**](FilterValue.md) |  | 
 
 
 

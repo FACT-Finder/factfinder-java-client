@@ -4,16 +4,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**disableCache** | **Boolean** |  |  [optional]
-**generateAdvisorTree** | **Boolean** |  |  [optional]
-**idsOnly** | **Boolean** |  |  [optional]
-**useAsn** | **Boolean** |  |  [optional]
-**useAso** | **Boolean** |  |  [optional]
-**useCampaigns** | **Boolean** |  |  [optional]
-**useFoundWords** | **Boolean** |  |  [optional]
-**useKeywords** | **Boolean** |  |  [optional]
-**usePersonalization** | **Boolean** |  |  [optional]
-**useSemanticEnhancer** | **Boolean** |  |  [optional]
+**disableCache** | **Boolean** |  | 
+**generateAdvisorTree** | **Boolean** |  | 
+**idsOnly** | **Boolean** |  | 
+**useAsn** | **Boolean** |  | 
+**useAso** | **Boolean** |  | 
+**useCampaigns** | **Boolean** |  | 
+**useFoundWords** | **Boolean** |  | 
+**useKeywords** | **Boolean** |  | 
+**usePersonalization** | **Boolean** |  | 
+**useSemanticEnhancer** | **Boolean** |  | 
 
 
 

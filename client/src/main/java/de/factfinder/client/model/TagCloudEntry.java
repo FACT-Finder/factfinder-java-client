@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TagCloudEntry
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class TagCloudEntry {
   @SerializedName("nr")
   private Integer nr = null;
@@ -48,7 +48,7 @@ public class TagCloudEntry {
    * Get nr
    * @return nr
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getNr() {
     return nr;
   }
@@ -84,7 +84,7 @@ public class TagCloudEntry {
    * Get searchCount
    * @return searchCount
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getSearchCount() {
     return searchCount;
   }
@@ -102,7 +102,7 @@ public class TagCloudEntry {
    * Get searchTerm
    * @return searchTerm
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getSearchTerm() {
     return searchTerm;
   }
@@ -120,7 +120,7 @@ public class TagCloudEntry {
    * Get weight
    * @return weight
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Double getWeight() {
     return weight;
   }

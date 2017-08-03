@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cacheIgnored** | **Boolean** |  |  [optional]
-**name** | **String** |  |  [optional]
-**values** | **List&lt;String&gt;** |  |  [optional]
+**cacheIgnored** | **Boolean** |  | 
+**name** | **String** |  | 
+**values** | **List&lt;String&gt;** |  | 
 
 
 

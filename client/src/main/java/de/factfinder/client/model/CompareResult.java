@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * CompareResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class CompareResult {
   @SerializedName("attributes")
   private List<CompareAttribute> attributes = new ArrayList<CompareAttribute>();
@@ -47,7 +47,7 @@ public class CompareResult {
    * Get attributes
    * @return attributes
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<CompareAttribute> getAttributes() {
     return attributes;
   }
@@ -70,7 +70,7 @@ public class CompareResult {
    * Get records
    * @return records
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<RecordWithId> getRecords() {
     return records;
   }

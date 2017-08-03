@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cookieId** | **String** |  |  [optional]
-**sid** | **String** |  |  [optional]
-**userId** | **String** |  |  [optional]
+**sid** | **String** |  | 
+**userId** | **String** |  | 
 
 
 

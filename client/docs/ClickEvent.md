@@ -4,17 +4,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**campaign** | **String** |  |  [optional]
+**campaign** | **String** |  | 
 **cookieId** | **String** |  |  [optional]
-**id** | **String** |  |  [optional]
+**id** | **String** |  | 
 **masterId** | **String** |  |  [optional]
-**origPageSize** | **Integer** |  |  [optional]
-**origPos** | **Integer** |  |  [optional]
-**page** | **Integer** |  |  [optional]
+**origPageSize** | **Integer** |  | 
+**origPos** | **Integer** |  | 
+**page** | **Integer** |  | 
 **pageSize** | **Integer** |  |  [optional]
-**pos** | **Integer** |  |  [optional]
-**query** | **String** |  |  [optional]
-**sid** | **String** |  |  [optional]
+**pos** | **Integer** |  | 
+**query** | **String** |  | 
+**sid** | **String** |  | 
 **simi** | **Double** |  |  [optional]
 **title** | **String** |  |  [optional]
 **userId** | **String** |  |  [optional]

@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * CartOrCheckoutEvent
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class CartOrCheckoutEvent {
   @SerializedName("campaign")
   private String campaign = null;
@@ -59,7 +59,7 @@ public class CartOrCheckoutEvent {
    * Get campaign
    * @return campaign
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getCampaign() {
     return campaign;
   }
@@ -95,7 +95,7 @@ public class CartOrCheckoutEvent {
    * Get count
    * @return count
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getCount() {
     return count;
   }
@@ -113,7 +113,7 @@ public class CartOrCheckoutEvent {
    * Get id
    * @return id
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getId() {
     return id;
   }
@@ -167,7 +167,7 @@ public class CartOrCheckoutEvent {
    * Get sid
    * @return sid
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getSid() {
     return sid;
   }

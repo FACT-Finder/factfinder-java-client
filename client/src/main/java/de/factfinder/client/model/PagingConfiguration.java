@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * PagingConfiguration
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class PagingConfiguration {
   @SerializedName("defaultResultsPerPage")
   private Integer defaultResultsPerPage = null;
@@ -68,7 +68,7 @@ public class PagingConfiguration {
    * Get linkCount
    * @return linkCount
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getLinkCount() {
     return linkCount;
   }
@@ -86,7 +86,7 @@ public class PagingConfiguration {
    * Get nextCaption
    * @return nextCaption
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getNextCaption() {
     return nextCaption;
   }
@@ -104,7 +104,7 @@ public class PagingConfiguration {
    * Get previousCaption
    * @return previousCaption
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getPreviousCaption() {
     return previousCaption;
   }
@@ -127,7 +127,7 @@ public class PagingConfiguration {
    * Get resultsPerPage
    * @return resultsPerPage
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<ResultsPerPageOption> getResultsPerPage() {
     return resultsPerPage;
   }

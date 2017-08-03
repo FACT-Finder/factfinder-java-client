@@ -14,36 +14,12 @@
 package de.factfinder.client.model;
 
 import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Wrapperboolean
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class Wrapperboolean {
-  @SerializedName("value")
-  private Boolean value = null;
-
-  public Wrapperboolean value(Boolean value) {
-    this.value = value;
-    return this;
-  }
-
-   /**
-   * Get value
-   * @return value
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public Boolean getValue() {
-    return value;
-  }
-
-  public void setValue(Boolean value) {
-    this.value = value;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -53,13 +29,12 @@ public class Wrapperboolean {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Wrapperboolean wrapperboolean = (Wrapperboolean) o;
-    return Objects.equals(this.value, wrapperboolean.value);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value);
+    return Objects.hash();
   }
 
 
@@ -68,7 +43,6 @@ public class Wrapperboolean {
     StringBuilder sb = new StringBuilder();
     sb.append("class Wrapperboolean {\n");
     
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * GroupElement
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class GroupElement {
   @SerializedName("absoluteMaxValue")
   private Double absoluteMaxValue = null;
@@ -105,7 +105,7 @@ public class GroupElement {
    * Get active
    * @return active
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getActive() {
     return active;
   }
@@ -123,7 +123,7 @@ public class GroupElement {
    * Get associatedFieldName
    * @return associatedFieldName
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getAssociatedFieldName() {
     return associatedFieldName;
   }
@@ -141,7 +141,7 @@ public class GroupElement {
    * Get clusterLevel
    * @return clusterLevel
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getClusterLevel() {
     return clusterLevel;
   }
@@ -177,7 +177,7 @@ public class GroupElement {
    * Get recordCount
    * @return recordCount
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getRecordCount() {
     return recordCount;
   }
@@ -213,7 +213,7 @@ public class GroupElement {
    * Get selected
    * @return selected
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getSelected() {
     return selected;
   }

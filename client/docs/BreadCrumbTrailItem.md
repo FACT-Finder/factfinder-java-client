@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **associatedFieldName** | **String** |  |  [optional]
 **searchParams** | [**Params**](Params.md) |  |  [optional]
 **text** | **String** |  |  [optional]
-**type** | [**TypeEnum**](#TypeEnum) |  |  [optional]
+**type** | [**TypeEnum**](#TypeEnum) |  | 
 **value** | **String** |  |  [optional]
 
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **html** | **Boolean** |  |  [optional]
-**id** | **Integer** |  |  [optional]
+**id** | **Integer** |  | 
 **label** | **String** |  |  [optional]
 **text** | **String** |  |  [optional]
 

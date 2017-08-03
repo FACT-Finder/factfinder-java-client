@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Target
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class Target {
   @SerializedName("destination")
   private String destination = null;

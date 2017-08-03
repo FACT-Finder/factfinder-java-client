@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Question
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class Question {
   @SerializedName("answers")
   private List<Answer> answers = new ArrayList<Answer>();
@@ -70,7 +70,7 @@ public class Question {
    * Get id
    * @return id
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getId() {
     return id;
   }
@@ -88,7 +88,7 @@ public class Question {
    * Get text
    * @return text
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getText() {
     return text;
   }

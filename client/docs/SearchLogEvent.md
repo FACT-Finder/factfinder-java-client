@@ -5,20 +5,20 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **additionalInfo** | **String** |  |  [optional]
-**bestSimi** | **Integer** |  |  [optional]
+**bestSimi** | **Integer** |  | 
 **cookieId** | **String** |  |  [optional]
 **customSorting** | **Boolean** |  |  [optional]
-**filters** | [**List&lt;Filter&gt;**](Filter.md) |  |  [optional]
-**hitCount** | **Integer** |  |  [optional]
-**id** | **String** |  |  [optional]
+**filters** | [**List&lt;Filter&gt;**](Filter.md) |  | 
+**hitCount** | **Integer** |  | 
+**id** | **String** |  | 
 **masterId** | **String** |  |  [optional]
-**minSimi** | **Integer** |  |  [optional]
-**page** | **Integer** |  |  [optional]
-**pageSize** | **Integer** |  |  [optional]
-**query** | **String** |  |  [optional]
+**minSimi** | **Integer** |  | 
+**page** | **Integer** |  | 
+**pageSize** | **Integer** |  | 
+**query** | **String** |  | 
 **searchField** | **String** |  |  [optional]
-**searchTime** | **Integer** |  |  [optional]
-**sid** | **String** |  |  [optional]
+**searchTime** | **Integer** |  | 
+**sid** | **String** |  | 
 **title** | **String** |  |  [optional]
 **userId** | **String** |  |  [optional]
 

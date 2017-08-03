@@ -24,7 +24,7 @@ import java.util.Map;
 /**
  * RecordWithId
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class RecordWithId {
   @SerializedName("id")
   private String id = null;
@@ -41,7 +41,7 @@ public class RecordWithId {
    * Get id
    * @return id
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getId() {
     return id;
   }
@@ -64,7 +64,7 @@ public class RecordWithId {
    * Get record
    * @return record
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Map<String, String> getRecord() {
     return record;
   }

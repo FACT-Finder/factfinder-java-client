@@ -4,12 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**description** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
-**order** | [**OrderEnum**](#OrderEnum) |  |  [optional]
+**description** | **String** |  | 
+**name** | **String** |  | 
+**order** | [**OrderEnum**](#OrderEnum) |  | 
 **relevanceSortItem** | **Boolean** |  |  [optional]
 **searchParams** | [**Params**](Params.md) |  |  [optional]
-**selected** | **Boolean** |  |  [optional]
+**selected** | **Boolean** |  | 
 
 
 <a name="OrderEnum"></a>

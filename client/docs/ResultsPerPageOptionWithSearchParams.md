@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**defaultValue** | **Boolean** |  |  [optional]
+**defaultValue** | **Boolean** |  | 
 **searchParams** | [**Params**](Params.md) |  |  [optional]
-**selected** | **Boolean** |  |  [optional]
-**value** | **Integer** |  |  [optional]
+**selected** | **Boolean** |  | 
+**value** | **Integer** |  | 
 
 
 

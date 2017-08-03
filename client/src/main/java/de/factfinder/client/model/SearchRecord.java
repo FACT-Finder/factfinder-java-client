@@ -25,7 +25,7 @@ import java.util.Map;
 /**
  * SearchRecord
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class SearchRecord {
   @SerializedName("foundWords")
   private List<String> foundWords = new ArrayList<String>();
@@ -59,7 +59,7 @@ public class SearchRecord {
    * Get foundWords
    * @return foundWords
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<String> getFoundWords() {
     return foundWords;
   }
@@ -77,7 +77,7 @@ public class SearchRecord {
    * Get id
    * @return id
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getId() {
     return id;
   }
@@ -100,7 +100,7 @@ public class SearchRecord {
    * Get keywords
    * @return keywords
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<String> getKeywords() {
     return keywords;
   }
@@ -118,7 +118,7 @@ public class SearchRecord {
    * Get position
    * @return position
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getPosition() {
     return position;
   }
@@ -141,7 +141,7 @@ public class SearchRecord {
    * Get record
    * @return record
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Map<String, String> getRecord() {
     return record;
   }
@@ -159,7 +159,7 @@ public class SearchRecord {
    * Get searchSimilarity
    * @return searchSimilarity
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Float getSearchSimilarity() {
     return searchSimilarity;
   }

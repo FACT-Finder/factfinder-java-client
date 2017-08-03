@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Group
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class Group {
   @SerializedName("detailedLinks")
   private Integer detailedLinks = null;
@@ -149,7 +149,7 @@ public class Group {
    * Get detailedLinks
    * @return detailedLinks
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getDetailedLinks() {
     return detailedLinks;
   }
@@ -172,7 +172,7 @@ public class Group {
    * Get elements
    * @return elements
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<GroupElement> getElements() {
     return elements;
   }
@@ -190,7 +190,7 @@ public class Group {
    * Get filterStyle
    * @return filterStyle
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public FilterStyleEnum getFilterStyle() {
     return filterStyle;
   }
@@ -208,7 +208,7 @@ public class Group {
    * Get groupOrder
    * @return groupOrder
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getGroupOrder() {
     return groupOrder;
   }
@@ -249,7 +249,7 @@ public class Group {
    * Get selectedElements
    * @return selectedElements
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<GroupElement> getSelectedElements() {
     return selectedElements;
   }
@@ -267,7 +267,7 @@ public class Group {
    * Get selectionType
    * @return selectionType
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public SelectionTypeEnum getSelectionType() {
     return selectionType;
   }
@@ -285,7 +285,7 @@ public class Group {
    * Get showPreviewImages
    * @return showPreviewImages
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getShowPreviewImages() {
     return showPreviewImages;
   }

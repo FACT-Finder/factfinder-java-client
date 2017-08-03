@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **absoluteMaxValue** | **Double** |  |  [optional]
 **absoluteMinValue** | **Double** |  |  [optional]
-**active** | **Boolean** |  |  [optional]
-**associatedFieldName** | **String** |  |  [optional]
-**clusterLevel** | **Integer** |  |  [optional]
+**active** | **Boolean** |  | 
+**associatedFieldName** | **String** |  | 
+**clusterLevel** | **Integer** |  | 
 **previewImageURL** | **String** |  |  [optional]
-**recordCount** | **Integer** |  |  [optional]
+**recordCount** | **Integer** |  | 
 **searchParams** | [**Params**](Params.md) |  |  [optional]
-**selected** | **Boolean** |  |  [optional]
+**selected** | **Boolean** |  | 
 **selectedMaxValue** | **Double** |  |  [optional]
 **selectedMinValue** | **Double** |  |  [optional]
 **text** | **String** |  |  [optional]

@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * PreprocessorEntry
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class PreprocessorEntry {
   @SerializedName("from")
   private String from = null;
@@ -44,7 +44,7 @@ public class PreprocessorEntry {
    * Get from
    * @return from
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getFrom() {
     return from;
   }
@@ -80,7 +80,7 @@ public class PreprocessorEntry {
    * Get sort
    * @return sort
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getSort() {
     return sort;
   }
@@ -98,7 +98,7 @@ public class PreprocessorEntry {
    * Get to
    * @return to
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getTo() {
     return to;
   }

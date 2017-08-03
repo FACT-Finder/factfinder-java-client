@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**resultRecords** | [**List&lt;RecordWithId&gt;**](RecordWithId.md) |  |  [optional]
-**timedOut** | **Boolean** |  |  [optional]
+**resultRecords** | [**List&lt;RecordWithId&gt;**](RecordWithId.md) |  | 
+**timedOut** | **Boolean** |  | 
 
 
 

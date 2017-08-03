@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **caption** | **String** |  |  [optional]
-**currentPage** | **Boolean** |  |  [optional]
-**number** | **Integer** |  |  [optional]
+**currentPage** | **Boolean** |  | 
+**number** | **Integer** |  | 
 **searchParams** | [**Params**](Params.md) |  |  [optional]
 
 

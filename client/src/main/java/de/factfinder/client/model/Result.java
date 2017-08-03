@@ -37,7 +37,7 @@ import java.util.Map;
 /**
  * Result
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class Result {
   @SerializedName("appliedPreprocessorEntries")
   private List<PreprocessorEntry> appliedPreprocessorEntries = new ArrayList<PreprocessorEntry>();
@@ -186,7 +186,7 @@ public class Result {
    * Get asnGroups
    * @return asnGroups
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<Group> getAsnGroups() {
     return asnGroups;
   }
@@ -209,7 +209,7 @@ public class Result {
    * Get breadCrumbTrail
    * @return breadCrumbTrail
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<BreadCrumbTrailItem> getBreadCrumbTrail() {
     return breadCrumbTrail;
   }
@@ -232,7 +232,7 @@ public class Result {
    * Get campaignsList
    * @return campaignsList
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<Campaign> getCampaignsList() {
     return campaignsList;
   }
@@ -255,7 +255,7 @@ public class Result {
    * Get fieldRoles
    * @return fieldRoles
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Map<String, String> getFieldRoles() {
     return fieldRoles;
   }
@@ -278,7 +278,7 @@ public class Result {
    * Get filters
    * @return filters
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<Filter> getFilters() {
     return filters;
   }
@@ -319,7 +319,7 @@ public class Result {
    * Get records
    * @return records
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<SearchRecord> getRecords() {
     return records;
   }
@@ -337,7 +337,7 @@ public class Result {
    * Get resultArticleNumberStatus
    * @return resultArticleNumberStatus
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public ResultArticleNumberStatusEnum getResultArticleNumberStatus() {
     return resultArticleNumberStatus;
   }
@@ -355,7 +355,7 @@ public class Result {
    * Get resultCount
    * @return resultCount
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getResultCount() {
     return resultCount;
   }
@@ -373,7 +373,7 @@ public class Result {
    * Get resultStatus
    * @return resultStatus
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public ResultStatusEnum getResultStatus() {
     return resultStatus;
   }
@@ -396,7 +396,7 @@ public class Result {
    * Get resultsPerPageList
    * @return resultsPerPageList
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<ResultsPerPageOptionWithSearchParams> getResultsPerPageList() {
     return resultsPerPageList;
   }
@@ -414,7 +414,7 @@ public class Result {
    * Get searchControlParams
    * @return searchControlParams
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public SearchControlParams getSearchControlParams() {
     return searchControlParams;
   }
@@ -450,7 +450,7 @@ public class Result {
    * Get searchTime
    * @return searchTime
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Long getSearchTime() {
     return searchTime;
   }
@@ -468,7 +468,7 @@ public class Result {
    * Get simiFirstRecord
    * @return simiFirstRecord
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getSimiFirstRecord() {
     return simiFirstRecord;
   }
@@ -486,7 +486,7 @@ public class Result {
    * Get simiLastRecord
    * @return simiLastRecord
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getSimiLastRecord() {
     return simiLastRecord;
   }
@@ -532,7 +532,7 @@ public class Result {
    * Get sortsList
    * @return sortsList
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<ResultSortItem> getSortsList() {
     return sortsList;
   }
@@ -550,7 +550,7 @@ public class Result {
    * Get timedOut
    * @return timedOut
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getTimedOut() {
     return timedOut;
   }

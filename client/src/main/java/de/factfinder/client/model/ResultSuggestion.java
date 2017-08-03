@@ -25,7 +25,7 @@ import java.util.Map;
 /**
  * ResultSuggestion
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class ResultSuggestion {
   @SerializedName("attributes")
   private Map<String, String> attributes = new HashMap<String, String>();
@@ -62,7 +62,7 @@ public class ResultSuggestion {
    * Get attributes
    * @return attributes
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Map<String, String> getAttributes() {
     return attributes;
   }
@@ -80,7 +80,7 @@ public class ResultSuggestion {
    * Get hitCount
    * @return hitCount
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getHitCount() {
     return hitCount;
   }
@@ -116,7 +116,7 @@ public class ResultSuggestion {
    * Get name
    * @return name
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getName() {
     return name;
   }
@@ -134,7 +134,7 @@ public class ResultSuggestion {
    * Get priority
    * @return priority
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getPriority() {
     return priority;
   }
@@ -152,7 +152,7 @@ public class ResultSuggestion {
    * Get searchParams
    * @return searchParams
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Params getSearchParams() {
     return searchParams;
   }
@@ -170,7 +170,7 @@ public class ResultSuggestion {
    * Get type
    * @return type
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getType() {
     return type;
   }

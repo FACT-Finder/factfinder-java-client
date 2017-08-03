@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * SearchControlParams
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class SearchControlParams {
   @SerializedName("disableCache")
   private Boolean disableCache = null;
@@ -62,7 +62,7 @@ public class SearchControlParams {
    * Get disableCache
    * @return disableCache
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getDisableCache() {
     return disableCache;
   }
@@ -80,7 +80,7 @@ public class SearchControlParams {
    * Get generateAdvisorTree
    * @return generateAdvisorTree
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getGenerateAdvisorTree() {
     return generateAdvisorTree;
   }
@@ -98,7 +98,7 @@ public class SearchControlParams {
    * Get idsOnly
    * @return idsOnly
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getIdsOnly() {
     return idsOnly;
   }
@@ -116,7 +116,7 @@ public class SearchControlParams {
    * Get useAsn
    * @return useAsn
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getUseAsn() {
     return useAsn;
   }
@@ -134,7 +134,7 @@ public class SearchControlParams {
    * Get useAso
    * @return useAso
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getUseAso() {
     return useAso;
   }
@@ -152,7 +152,7 @@ public class SearchControlParams {
    * Get useCampaigns
    * @return useCampaigns
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getUseCampaigns() {
     return useCampaigns;
   }
@@ -170,7 +170,7 @@ public class SearchControlParams {
    * Get useFoundWords
    * @return useFoundWords
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getUseFoundWords() {
     return useFoundWords;
   }
@@ -188,7 +188,7 @@ public class SearchControlParams {
    * Get useKeywords
    * @return useKeywords
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getUseKeywords() {
     return useKeywords;
   }
@@ -206,7 +206,7 @@ public class SearchControlParams {
    * Get usePersonalization
    * @return usePersonalization
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getUsePersonalization() {
     return usePersonalization;
   }
@@ -224,7 +224,7 @@ public class SearchControlParams {
    * Get useSemanticEnhancer
    * @return useSemanticEnhancer
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getUseSemanticEnhancer() {
     return useSemanticEnhancer;
   }

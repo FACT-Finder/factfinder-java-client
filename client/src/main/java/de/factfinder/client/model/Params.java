@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * Params
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-07-18T10:39:52.864+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-03T08:09:51.291+02:00")
 public class Params {
   @SerializedName("advisorStatus")
   private AdvisorCampaignStatusHolder advisorStatus = null;
@@ -136,7 +136,7 @@ public class Params {
    * Get customParameters
    * @return customParameters
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<CustomParameter> getCustomParameters() {
     return customParameters;
   }
@@ -159,7 +159,7 @@ public class Params {
    * Get filters
    * @return filters
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<Filter> getFilters() {
     return filters;
   }
@@ -177,7 +177,7 @@ public class Params {
    * Get followSearch
    * @return followSearch
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getFollowSearch() {
     return followSearch;
   }
@@ -195,7 +195,7 @@ public class Params {
    * Get noArticleNumberSearch
    * @return noArticleNumberSearch
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "false", required = true, value = "")
   public Boolean getNoArticleNumberSearch() {
     return noArticleNumberSearch;
   }
@@ -213,7 +213,7 @@ public class Params {
    * Get page
    * @return page
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getPage() {
     return page;
   }
@@ -249,7 +249,7 @@ public class Params {
    * Get resultsPerPage
    * @return resultsPerPage
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getResultsPerPage() {
     return resultsPerPage;
   }
@@ -308,7 +308,7 @@ public class Params {
    * Get sortsList
    * @return sortsList
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<SortItem> getSortsList() {
     return sortsList;
   }
