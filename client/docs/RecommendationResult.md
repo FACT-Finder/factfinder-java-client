@@ -1,11 +1,14 @@
 
+
 # RecommendationResult
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**resultRecords** | [**List&lt;RecordWithId&gt;**](RecordWithId.md) |  | 
-**timedOut** | **Boolean** |  | 
+**hits** | [**List&lt;TypedFlatRecord&gt;**](TypedFlatRecord.md) | Records of the recommended products. | 
+**timedOut** | **Boolean** | Set to true when a timeout occurs. | 
 
 
 

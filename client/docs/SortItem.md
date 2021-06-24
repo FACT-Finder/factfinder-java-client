@@ -1,17 +1,19 @@
 
+
 # SortItem
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**description** | **String** |  | 
-**name** | **String** |  | 
-**order** | [**OrderEnum**](#OrderEnum) |  | 
-**relevanceSortItem** | **Boolean** |  |  [optional]
+**name** | **String** | The name of the field to be sorted by, or &#39;Relevancy&#39;, for score based sorting. | 
+**order** | [**OrderEnum**](#OrderEnum) | The sort order direction (ascending, descending). | 
 
 
-<a name="OrderEnum"></a>
+
 ## Enum: OrderEnum
+
 Name | Value
 ---- | -----
 ASC | &quot;asc&quot;

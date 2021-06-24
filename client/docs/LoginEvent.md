@@ -1,12 +1,15 @@
 
+
 # LoginEvent
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cookieId** | **String** |  |  [optional]
-**sid** | **String** |  | 
-**userId** | **String** |  | 
+**purchaserId** | **String** | The ID for customer specific pricing. |  [optional]
+**sid** | **String** | Session ID. | 
+**userId** | **String** | The ID of the user currently logged in. | 
 
 
 

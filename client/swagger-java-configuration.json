@@ -1,5 +1,7 @@
 {
   "modelPackage": "de.factfinder.client.model",
   "apiPackage": "de.factfinder.client.api",
-  "invokerPackage": "de.factfinder.client"
+  "invokerPackage": "de.factfinder.client",
+  "hideGenerationTimestamp": "true",
+  "dateLibrary": "legacy"
 }
