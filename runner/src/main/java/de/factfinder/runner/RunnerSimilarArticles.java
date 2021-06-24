@@ -1,47 +1,41 @@
 package de.factfinder.runner;
 
+import de.factfinder.client.ApiException;
+import de.factfinder.client.api.RecordsApi;
+import de.factfinder.client.model.SimilarProductsWithFieldRoles;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import de.factfinder.runner.print.SearchResultInformationPrinter;
-import de.factfinder.client.ApiException;
-import de.factfinder.client.api.SimilarproductsApi;
-import de.factfinder.client.model.SimilarProducts;
+import java.util.Collections;
 
 /**
  * This class demonstrates the usage of the FACT-Finder REST API to get similar products.
  */
 public final class RunnerSimilarArticles {
-	private static final Logger LOG          = LogManager.getLogger(RunnerSimilarArticles.class.getSimpleName());
-	private static final int    MAX_ARTICLES = 10;
-	/** Example record id, this needs to be adjusted according to your data. */
-	private static final String RECORD_ID    = "3c03883d695c0e311c3bd106ba916";
+    private static final Logger LOG = LogManager.getLogger(RunnerSimilarArticles.class.getSimpleName());
+    private static final int MAX_ARTICLES = 10;
+    /**
+     * Example record id, this needs to be adjusted according to your data.
+     */
+    private static final String RECORD_ID = "036-0184-0119";
+    private static final String ID_TYPE = "productNumber"; //or id
+    private static final String PURCHASER_ID = "purchaser123";
 
-	private RunnerSimilarArticles() {
-	}
+    private RunnerSimilarArticles() {
+    }
 
-	public static void main(final String[] args) {
-		Settings.setupAuthKeyRefreshingClientWithHigherTimeout();
+    public static void main(final String[] args) {
+        final RecordsApi recordsClient = new RecordsApi(Settings.getClient());
 
-		final SearchResultInformationPrinter searchResultInfoPrinter = new SearchResultInformationPrinter();
-
-		final SimilarproductsApi apiInstance = new SimilarproductsApi();
-		Boolean idsOnly;
-
-		try {
-			LOG.info("=== BEGIN SIMILAR ARTICLES (NORMAL) ===");
-			idsOnly = false;
-			final SimilarProducts resultWithAllFields = apiInstance.getSimilarProductsUsingGET(Settings.getChannel(), RECORD_ID, idsOnly, MAX_ARTICLES);
-			resultWithAllFields.getRecords().forEach(searchResultInfoPrinter::printRecord);
-			LOG.info("=== END SIMILAR ARTICLES (NORMAL) ===");
-
-			LOG.info("=== BEGIN SIMILAR ARTICLES (IDs ONLY) ===");
-			idsOnly = true;
-			final SimilarProducts resultWithIdsOnly = apiInstance.getSimilarProductsUsingGET(Settings.getChannel(), RECORD_ID, idsOnly, MAX_ARTICLES);
-			resultWithIdsOnly.getRecords().forEach(searchResultInfoPrinter::printRecord);
-			LOG.info("=== END SIMILAR ARTICLES (IDs ONLY) ===");
-		} catch (final ApiException e) {
-			LOG.error("Exception when calling SimilarproductsApi#getSimilarProductsUsingGET", e);
-		}
-	}
+        try {
+            LOG.info("=== BEGIN SIMILAR ARTICLES (NORMAL) ===");
+            final boolean idsOnly = false;
+            final SimilarProductsWithFieldRoles resultWithAllFields = recordsClient.getSimilarProductsUsingGET(Settings.getChannel(), RECORD_ID, ID_TYPE, Collections.emptyList(),
+                    idsOnly, PURCHASER_ID, MAX_ARTICLES);
+            LOG.info(resultWithAllFields);
+            LOG.info("=== END SIMILAR ARTICLES (NORMAL) ===");
+        } catch (final ApiException e) {
+            LOG.error("Exception when calling RecordsApi#getSimilarProductsUsingGET", e);
+        }
+    }
 }
