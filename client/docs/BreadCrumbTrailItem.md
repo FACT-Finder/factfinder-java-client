@@ -1,18 +1,22 @@
 
+
 # BreadCrumbTrailItem
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**associatedFieldName** | **String** |  |  [optional]
-**searchParams** | [**Params**](Params.md) |  |  [optional]
-**text** | **String** |  |  [optional]
-**type** | [**TypeEnum**](#TypeEnum) |  | 
-**value** | **String** |  |  [optional]
+**associatedFieldName** | **String** | Contains the name of the field on which the filter operates. Used for filter type items. |  [optional]
+**searchParams** | [**SearchParams**](SearchParams.md) |  |  [optional]
+**text** | **String** | The text to be displayed to the user. |  [optional]
+**type** | [**TypeEnum**](#TypeEnum) | Breadcrumb trail item type. | 
+**value** | **Object** | Contains information corresponding to the item type (for example, contains the search term for the search type). |  [optional]
 
 
-<a name="TypeEnum"></a>
+
 ## Enum: TypeEnum
+
 Name | Value
 ---- | -----
 SEARCH | &quot;search&quot;

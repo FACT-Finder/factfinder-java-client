@@ -1,49 +1,56 @@
 
+
 # Group
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**detailedLinks** | **Integer** |  | 
-**elements** | [**List&lt;GroupElement&gt;**](GroupElement.md) |  | 
-**filterStyle** | [**FilterStyleEnum**](#FilterStyleEnum) |  | 
-**groupOrder** | **Integer** |  | 
-**name** | **String** |  |  [optional]
-**selectedElements** | [**List&lt;GroupElement&gt;**](GroupElement.md) |  | 
-**selectionType** | [**SelectionTypeEnum**](#SelectionTypeEnum) |  | 
-**showPreviewImages** | **Boolean** |  | 
-**type** | [**TypeEnum**](#TypeEnum) |  |  [optional]
-**unit** | **String** |  |  [optional]
+**name** | **String** | The name of the group. | 
+**roles** | [**List&lt;RolesEnum&gt;**](#List&lt;RolesEnum&gt;) | The roles that will be assigned to the users who are part of this group. | 
 
 
-<a name="FilterStyleEnum"></a>
-## Enum: FilterStyleEnum
+
+## Enum: List&lt;RolesEnum&gt;
+
 Name | Value
 ---- | -----
-DEFAULT | &quot;DEFAULT&quot;
-SLIDER | &quot;SLIDER&quot;
-MULTISELECT | &quot;MULTISELECT&quot;
-TREE | &quot;TREE&quot;
-
-
-<a name="SelectionTypeEnum"></a>
-## Enum: SelectionTypeEnum
-Name | Value
----- | -----
-SINGLEHIDEUNSELECTED | &quot;singleHideUnselected&quot;
-SINGLESHOWUNSELECTED | &quot;singleShowUnselected&quot;
-MULTISELECTOR | &quot;multiSelectOr&quot;
-MULTISELECTAND | &quot;multiSelectAnd&quot;
-
-
-<a name="TypeEnum"></a>
-## Enum: TypeEnum
-Name | Value
----- | -----
-NUMBER | &quot;number&quot;
-MULTI | &quot;multi&quot;
-TEXT | &quot;text&quot;
-CATEGORYPATH | &quot;categoryPath&quot;
+ABTESTMANAGER | &quot;AbTestManager&quot;
+AFTERSEARCHNAVIGATIONMANAGER | &quot;AfterSearchNavigationManager&quot;
+BACKUPMANAGER | &quot;BackupManager&quot;
+CACHEMANAGER | &quot;CacheManager&quot;
+CAMPAIGNMANAGER | &quot;CampaignManager&quot;
+CONFIGURATORMANAGER | &quot;ConfiguratorManager&quot;
+DEPLOYMENTMANAGER | &quot;DeploymentManager&quot;
+IMPORTMANAGER | &quot;ImportManager&quot;
+INTERMEDIATEONLYIMPORTMANAGER | &quot;IntermediateOnlyImportManager&quot;
+INSTALLMANAGER | &quot;InstallManager&quot;
+LANGUAGEMANAGER | &quot;LanguageManager&quot;
+LOGFILEANALYZERMANAGER | &quot;LogfileAnalyzerManager&quot;
+MAYCHANGEPASSWORD | &quot;MayChangePassword&quot;
+MESSAGESMANAGER | &quot;MessagesManager&quot;
+NOTIFICATIONMANAGER | &quot;NotificationManager&quot;
+PREPROCESSORMANAGER | &quot;PreprocessorManager&quot;
+RANKINGMANAGER | &quot;RankingManager&quot;
+RECOMMENDATIONENGINEMANAGER | &quot;RecommendationEngineManager&quot;
+SEARCHINTERFACEUSER | &quot;SearchInterfaceUser&quot;
+SEARCHMANAGER | &quot;SearchManager&quot;
+SHOWHELPSECTION | &quot;ShowHelpSection&quot;
+SUGGESTMANAGER | &quot;SuggestManager&quot;
+THESAURUSMANAGER | &quot;ThesaurusManager&quot;
+USERMANAGER | &quot;UserManager&quot;
+WORDVALUESMANAGER | &quot;WordValuesManager&quot;
+APIIMPORT | &quot;ApiImport&quot;
+APIANALYTICS | &quot;ApiAnalytics&quot;
+APIPUBLICQUERIES | &quot;ApiPublicQueries&quot;
+APICONFIG | &quot;ApiConfig&quot;
+APIJOBS | &quot;ApiJobs&quot;
+APIINSTOREADS | &quot;ApiInstoreAds&quot;
+APIDATABASE | &quot;ApiDatabase&quot;
+APIMANAGE | &quot;ApiManage&quot;
+APILICENCE | &quot;ApiLicence&quot;
+APIUSERS | &quot;ApiUsers&quot;
 
 
 

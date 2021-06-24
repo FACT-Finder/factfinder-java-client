@@ -1,47 +1,33 @@
 
+
 # Result
 
+
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**appliedPreprocessorEntries** | [**List&lt;PreprocessorEntry&gt;**](PreprocessorEntry.md) |  |  [optional]
-**asnGroups** | [**List&lt;Group&gt;**](Group.md) |  | 
-**breadCrumbTrail** | [**List&lt;BreadCrumbTrailItem&gt;**](BreadCrumbTrailItem.md) |  | 
-**campaignsList** | [**List&lt;Campaign&gt;**](Campaign.md) |  | 
-**fieldRoles** | **Map&lt;String, String&gt;** |  | 
-**filters** | [**List&lt;Filter&gt;**](Filter.md) |  | 
+**answers** | [**List&lt;Answer&gt;**](Answer.md) | The selected answers of this result. | 
+**articleNumberSearch** | **Boolean** | Set to true when an article number search was performed. | 
+**breadCrumbTrail** | [**List&lt;BreadCrumbTrailItem&gt;**](BreadCrumbTrailItem.md) | Describes the actions that lead to the current result. This may be used to return to an intermediate search result. | 
+**campaigns** | [**List&lt;Campaign&gt;**](Campaign.md) | Contains the active campaigns for this result. | 
+**facets** | [**List&lt;Facet&gt;**](Facet.md) | The ASN filters (for after search navigation). | 
+**fieldRoles** | **Map&lt;String, String&gt;** | A field to role mapping. For example, a field role may be &#39;brand&#39;, meaning that the field contains the manufacturer&#39;s name. (key &#x3D; field role, value &#x3D; field name) | 
+**filters** | [**List&lt;Filter&gt;**](Filter.md) | The filter applied for this result. | 
+**followSearch** | **String** | Request linking param for follow-up search requests. Can improve request performance. | 
+**geo** | [**Geo**](Geo.md) |  | 
+**hits** | [**List&lt;SearchRecord&gt;**](SearchRecord.md) | The relevant products. | 
 **paging** | [**Paging**](Paging.md) |  |  [optional]
-**records** | [**List&lt;SearchRecord&gt;**](SearchRecord.md) |  | 
-**resultArticleNumberStatus** | [**ResultArticleNumberStatusEnum**](#ResultArticleNumberStatusEnum) |  | 
-**resultCount** | **Integer** |  | 
-**resultStatus** | [**ResultStatusEnum**](#ResultStatusEnum) |  | 
-**resultsPerPageList** | [**List&lt;ResultsPerPageOptionWithSearchParams&gt;**](ResultsPerPageOptionWithSearchParams.md) |  | 
+**scoreFirstHit** | **Double** | The score of the best match in the search result. | 
+**scoreLastHit** | **Double** | The score of the worst match in the search result. | 
 **searchControlParams** | [**SearchControlParams**](SearchControlParams.md) |  | 
-**searchParams** | [**Params**](Params.md) |  |  [optional]
-**searchTime** | **Long** |  | 
-**simiFirstRecord** | **Integer** |  | 
-**simiLastRecord** | **Integer** |  | 
-**singleWordResults** | [**List&lt;SingleWordSearchResult&gt;**](SingleWordSearchResult.md) |  |  [optional]
-**sortsList** | [**List&lt;ResultSortItem&gt;**](ResultSortItem.md) |  | 
-**timedOut** | **Boolean** |  | 
-
-
-<a name="ResultArticleNumberStatusEnum"></a>
-## Enum: ResultArticleNumberStatusEnum
-Name | Value
----- | -----
-NOARTICLENUMBERSEARCH | &quot;noArticleNumberSearch&quot;
-NOTHINGFOUND | &quot;nothingFound&quot;
-RESULTSFOUND | &quot;resultsFound&quot;
-
-
-<a name="ResultStatusEnum"></a>
-## Enum: ResultStatusEnum
-Name | Value
----- | -----
-RESULTSFOUND | &quot;resultsFound&quot;
-NOTHINGFOUND | &quot;nothingFound&quot;
-ERROROCCURED | &quot;errorOccured&quot;
+**searchParams** | [**SearchParams**](SearchParams.md) |  |  [optional]
+**singleWordResults** | [**List&lt;SingleWordSearchResult&gt;**](SingleWordSearchResult.md) | Contains the result from the single word search. | 
+**sortItems** | [**List&lt;DescribedSortItem&gt;**](DescribedSortItem.md) | Contains the available sortings. | 
+**timedOut** | **Boolean** | If true, this search took longer than the timeout currently defined. Therefore, the results may not contain all relevant products. | 
+**tookTotal** | **Long** | The time required to produce the results in the framework (in ms). | 
+**tookWorldmatch** | **Long** | The time required to produce the results in the core (in ms). | 
+**totalHits** | **Integer** | Total number of items in the search result. | 
 
 
 
