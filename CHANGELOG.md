@@ -1,4 +1,8 @@
 # Changelog
+### 2.0.0 (2021-06-25)
+- Updated client & runner to be compatible with FACT-Finder NG 2.0
+- Migrated to openapi-generator for client generation
+
 ### 1.3.2 (2017-08-03)
 - Updated `required` documentation
 
