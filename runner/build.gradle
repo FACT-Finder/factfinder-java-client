@@ -6,8 +6,9 @@ dependencies {
 
 jar {
     manifest.attributes 'Main-Class': 'de.factfinder.runner.RunnerSearch'
+    duplicatesStrategy = 'exclude'
     from {
-        configurations.compile.collect { (it.directory ? it : zipTree(it)) }
+        configurations.runtimeClasspath.collect { (it.directory ? it : zipTree(it)) }
     }
 }
 
